@@ -145,8 +145,8 @@
   right: 0; /* align to right */
   left: auto;
   background: var(--background);
-  box-shadow: 0 6px 18px rgba(59, 59, 59, 0.12);
-  border-radius: 8px;
+  /* box-shadow: 0 6px 18px rgba(59, 59, 59, 0.12); */
+  border-radius: 0;
   min-width: max-content;
   width: auto;
   z-index: 10000;
@@ -179,6 +179,37 @@
 
   .navbar-mobile-menu {
     display: flex;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: fit-content;
+    min-width: auto;
+    border-radius: 0;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-mobile-menu .navbar-links {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-mobile-menu .navbar-link {
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    padding: 0.5rem 1rem;
+  }
+  .navbar-mobile-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
   }
 
   /* Social bar positioning on mobile */
@@ -195,7 +226,7 @@
     z-index: 9999 !important;
     opacity: 1 !important;
     pointer-events: auto !important;
-    background: var(--secondary); /* white panel */
+    background: var(--secondary-foreground) !important;
     padding: 0.5rem 0.625rem !important;
     border-radius: 0 8px 8px 0 !important;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12) !important;
@@ -217,7 +248,7 @@
   /* icons sit on top of white background and use dark color for contrast */
   .theme-social-bar .social-icon-link,
   .theme-social-bar .social-icon-btn {
-    color: var(--foreground) !important;
+    color: var(--primary-foreground) !important;
     background: transparent !important;
     display: flex !important;
     align-items: center !important;
@@ -235,7 +266,7 @@
   }
 
   .site-navbar-logo img {
-    height: clamp(48px, 15vw, 100px);
+    height: clamp(48px, 18vw, 100px);
     width: auto;
     display: block;
     object-fit: contain;
