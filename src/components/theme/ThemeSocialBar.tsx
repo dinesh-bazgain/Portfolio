@@ -45,7 +45,7 @@ const ThemeSocialBar = ({ hideOnMobileMenu = false }: ThemeSocialBarProps) => {
         className="social-icon-btn"
         aria-label="Toggle Theme"
       >
-        {resolvedTheme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+        {resolvedTheme === "dark" ? <Sun size={35} /> : <Moon size={35} />}
       </button>
 
       {/* Separator */}
@@ -59,7 +59,7 @@ const ThemeSocialBar = ({ hideOnMobileMenu = false }: ThemeSocialBarProps) => {
           rel="noopener noreferrer"
           className="social-icon-link"
         >
-          <Github size={20} />
+          <Github size={35} />
         </a>
         <a
           href="https://instagram.com/mr.bajgain"
@@ -67,7 +67,7 @@ const ThemeSocialBar = ({ hideOnMobileMenu = false }: ThemeSocialBarProps) => {
           rel="noopener noreferrer"
           className="social-icon-link"
         >
-          <Instagram size={20} />
+          <Instagram size={35} />
         </a>
         <a
           href="https://www.linkedin.com/in/mr-bajgain/"
@@ -75,7 +75,7 @@ const ThemeSocialBar = ({ hideOnMobileMenu = false }: ThemeSocialBarProps) => {
           rel="noopener noreferrer"
           className="social-icon-link"
         >
-          <Linkedin size={20} />
+          <Linkedin size={35} />
         </a>
         <a
           href="https://facebook.com/mr.bajgain"
@@ -83,7 +83,7 @@ const ThemeSocialBar = ({ hideOnMobileMenu = false }: ThemeSocialBarProps) => {
           rel="noopener noreferrer"
           className="social-icon-link"
         >
-          <Facebook size={20} />
+          <Facebook size={35} />
         </a>
         <a
           href="https://x.com/Mr_Bajgain"
@@ -91,7 +91,7 @@ const ThemeSocialBar = ({ hideOnMobileMenu = false }: ThemeSocialBarProps) => {
           rel="noopener noreferrer"
           className="social-icon-link"
         >
-          <Twitter size={20} />
+          <Twitter size={35} />
         </a>
       </div>
     </div>
