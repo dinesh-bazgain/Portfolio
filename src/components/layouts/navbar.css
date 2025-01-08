@@ -60,6 +60,22 @@
   flex: 0 0 auto;
 }
 
+.theme-social-bar .social-separator {
+  display: block !important;
+  width: 1px !important;
+  height: 24px !important;
+  background-color: transparent !important;
+  border-left: 2px dashed var(--foreground) !important;
+  opacity: 0.6 !important;
+  margin: 0 0.5rem !important;
+  align-self: center !important;
+}
+
+.social-icon-btn:hover,
+.social-icon-link:hover {
+  color: var(--hover-foreground);
+}
+
 /* CRITICAL: Override home.css absolute positioning when inside navbar - DESKTOP ONLY */
 @media (min-width: 769px) {
   .site-navbar-right .theme-social-bar {
@@ -79,12 +95,6 @@
     display: flex !important;
     flex-direction: row !important;
     gap: clamp(0.25rem, 0.8vw, 1rem) !important;
-  }
-
-  .site-navbar-right .theme-social-bar .social-separator {
-    display: block !important;
-    height: 16px;
-    width: 1px;
   }
 
   .site-navbar-right .theme-social-bar .social-icon-link,
@@ -118,7 +128,7 @@
 }
 
 .navbar-link:hover {
-  color: var(--secondary);
+  color: var(--hover-foreground);
 }
 
 .navbar-toggle {
@@ -145,15 +155,11 @@
   right: 0; /* align to right */
   left: auto;
   background: var(--background);
-  /* box-shadow: 0 6px 18px rgba(59, 59, 59, 0.12); */
-  border-radius: 0;
+  box-shadow: 0 6px 18px rgba(59, 59, 59, 0.12);
+  border-radius: 8px;
   min-width: max-content;
   width: auto;
   z-index: 10000;
-}
-
-.navbar-home-btn:hover {
-  color: var(--primary);
 }
 
 /* Mobile breakpoint - switch to hamburger menu */
@@ -164,10 +170,6 @@
   }
 
   .site-navbar-left {
-    display: none;
-  }
-
-  .navbar-home-btn {
     display: none;
   }
 
@@ -186,7 +188,7 @@
     width: 100%;
     height: fit-content;
     min-width: auto;
-    border-radius: 0;
+    border-radius: 0.5rem;
     padding: 1rem;
     align-items: center;
     justify-content: center;
@@ -236,13 +238,49 @@
 
   .theme-social-bar .social-links-row {
     flex-direction: column !important;
-    gap: 1rem !important;
+    /* enforce gap with high specificity to override other styles */
+    gap: 2.5rem !important;
     align-items: center !important;
     justify-content: center !important;
   }
 
+  /* Reinstate a compact horizontal separator on mobile between icon groups */
   .theme-social-bar .social-separator {
-    display: none !important;
+    display: block !important;
+    width: 22px !important;
+    height: 1px !important;
+    border-left: none !important;
+    border-top: 2px dashed var(--primary-foreground) !important;
+    margin: 0.35rem 0 !important;
+    opacity: 0.6 !important;
+    align-self: center !important;
+  }
+
+  .theme-social-bar {
+    padding: 1.5rem 0.75rem !important;
+    overflow: visible !important;
+  }
+
+  .theme-social-bar .social-icon-link svg,
+  .theme-social-bar .social-icon-btn svg {
+    width: 30px !important;
+    height: 30px !important;
+    display: block !important;
+  }
+
+  /* Additional vertical margins directly on the anchors so spacing is preserved
+     even if parent height or flex behaviors interfere with `gap`. */
+  .theme-social-bar .social-links-row .social-icon-link,
+  .theme-social-bar .social-links-row .social-icon-btn {
+    display: block !important;
+    margin: 0.8rem 0 !important;
+    padding: 0 !important;
+  }
+
+  /* If another global rule is constraining height, allow the social bar to expand */
+  .theme-social-bar {
+    min-height: auto !important;
+    height: auto !important;
   }
 
   /* icons sit on top of white background and use dark color for contrast */
