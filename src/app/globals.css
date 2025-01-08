@@ -34,15 +34,15 @@
 .dark {
   /* Dark Elegant Theme - Match Neria Katz Reference */
   --background: #1c1c1c;
-  --foreground: rgb(131, 130, 130);
+  --foreground: #686767;
 
-  --primary: #919191;
+  --primary: #ffffff;
   --primary-foreground: #1c1c1c;
 
   --secondary: #cbc7c7;
   --secondary-foreground: #b0b0b0;
 
-  --accent: #ffffff;
+  --accent: #b1b1b1;
   --accent-foreground: #b4b1b1;
 
   --muted: #2a2a2a;

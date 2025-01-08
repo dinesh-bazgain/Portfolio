@@ -39,7 +39,7 @@
 }
 
 .site-navbar-logo img {
-  height: clamp(30px, 5vw, 50px);
+  height: clamp(30px, 5vw, 90px);
   width: auto;
   cursor: pointer;
 }
@@ -114,6 +114,7 @@
   gap: clamp(0.5rem, 0.9vw, 2rem);
   align-items: center;
   flex-wrap: nowrap;
+  position: absolute;
 }
 
 .navbar-link {
@@ -123,7 +124,7 @@
   border-radius: 6px;
   transition: background 0.15s ease, color 0.15s ease;
   white-space: nowrap;
-  font-size: 1rem;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
   font-weight: 500;
 }
 
