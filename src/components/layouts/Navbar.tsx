@@ -115,11 +115,6 @@ const Navbar = ({
           </div>
 
           <div className="site-navbar-right">
-            <button
-              className="navbar-home-btn"
-              aria-label="Go to home"
-              onClick={() => router.push("/")}
-            ></button>
             <ThemeSocialBar />
           </div>
 
@@ -128,7 +123,7 @@ const Navbar = ({
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={35} /> : <Menu size={35} />}
           </button>
 
           {isOpen && (
