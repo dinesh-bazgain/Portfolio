@@ -381,12 +381,7 @@
     gap: 1rem !important;
     align-items: center !important;
   }
-
-  .theme-social-bar .social-icon-link,
-  .theme-social-bar .social-icon-btn {
-    color: var(--foreground) !important;
-  }
-
+  
   .social-links-row {
     flex-direction: column;
     gap: 1rem;
