@@ -23,7 +23,7 @@ export default function HomePage() {
           Full Stack Developer & Designer
         </h2>
         <p className="max-w-xl text-center text-lg mb-4">
-          Hi! I'm Dinesh, a passionate developer who loves building scalable web
+          Hi! I am Dinesh, a passionate developer who loves building scalable web
           applications and beautiful user experiences. I enjoy learning new
           technologies, solving real-world problems, and collaborating with
           creative teams.
