@@ -12,11 +12,9 @@ type ProjectsMap = {
   [key: string]: Project;
 };
 
-type PageProps = {
-  params: {
-    slug: string;
-  };
-};
+// type PageProps = {
+//   params: { slug: string };
+// };
 
 // Example project data
 const projects: ProjectsMap = {
@@ -47,7 +45,7 @@ const projects: ProjectsMap = {
   // Add more projects here
 };
 
-export default function ProjectSlugPage({ params }: PageProps) {
+export default function ProjectSlugPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const project: Project | undefined = projects[slug];
 
