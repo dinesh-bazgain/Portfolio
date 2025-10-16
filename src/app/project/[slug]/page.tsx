@@ -12,10 +12,6 @@ type ProjectsMap = {
   [key: string]: Project;
 };
 
-// type PageProps = {
-//   params: { slug: string };
-// };
-
 // Example project data
 const projects: ProjectsMap = {
   "currency-converter": {
@@ -45,7 +41,11 @@ const projects: ProjectsMap = {
   // Add more projects here
 };
 
-export default function ProjectSlugPage({ params }: { params: { slug: string } }) {
+export function generateStaticParams() {
+  return Object.keys(projects).map((slug) => ({ slug }));
+}
+
+export default function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const project: Project | undefined = projects[slug];
 
