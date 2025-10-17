@@ -28,7 +28,7 @@ const Footer = () => {
             href="mailto:dinesh.bazgain@example.com"
             className="hover:text-blue-600 transition"
           >
-            Email
+            E-mail
           </a>
         </div>
       </div>
