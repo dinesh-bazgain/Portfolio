@@ -1,8 +1,14 @@
-@import "tailwindcss";
+/* @import "tailwindcss"; */
+@import "./project/project.css";
+@import "./contact/contact.css";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 @media (prefers-color-scheme: dark) {
