@@ -1,22 +1,23 @@
 import React from "react";
 import Image from "next/image";
+import "./workwithme.css";
 
 export default function WorkWithMe() {
   return (
-    <main className="max-w-3xl mx-auto py-16 px-4 text-gray-900">
-      <section className="flex flex-col items-center gap-8 mb-12">
+    <main className="workwithme-container">
+      <section className="workwithme-profile-section">
         <Image
           src="/profile.jpeg"
           alt="Dinesh Bajgain portrait"
           width={140}
           height={140}
-          className="rounded-full border-4 border-blue-500 shadow-lg mb-4"
+          className="workwithme-profile-img"
         />
-        <h1 className="text-4xl font-bold mb-2 text-center">Work With Me</h1>
-        <h2 className="text-xl text-blue-600 mb-4 text-center">
+        <h1 className="workwithme-title">Work With Me</h1>
+        <h2 className="workwithme-subtitle">
           Let's build something great together!
         </h2>
-        <p className="max-w-xl text-center text-lg mb-4">
+        <p className="workwithme-desc">
           I’m Dinesh, a full stack developer and designer who loves
           collaborating on creative projects and solving real-world problems. If
           you’re looking for a reliable partner to help bring your ideas to
@@ -24,30 +25,28 @@ export default function WorkWithMe() {
         </p>
       </section>
 
-      <section className="mb-12">
-        <h3 className="text-2xl font-semibold mb-4">Skills</h3>
-        <ul className="grid grid-cols-2 md:grid-cols-3 gap-4 text-md">
-          <li className="bg-blue-50 px-4 py-2 rounded">
-            JavaScript / TypeScript
-          </li>
-          <li className="bg-blue-50 px-4 py-2 rounded">React / Next.js</li>
-          <li className="bg-blue-50 px-4 py-2 rounded">Node.js / Express</li>
-          <li className="bg-blue-50 px-4 py-2 rounded">UI/UX Design</li>
-          <li className="bg-blue-50 px-4 py-2 rounded">Tailwind CSS</li>
-          <li className="bg-blue-50 px-4 py-2 rounded">Figma / Adobe XD</li>
+      <section className="workwithme-skills-section">
+        <h3 className="workwithme-skills-title">Skills</h3>
+        <ul className="workwithme-skills-list">
+          <li className="workwithme-skill-item">JavaScript / TypeScript</li>
+          <li className="workwithme-skill-item">React / Next.js</li>
+          <li className="workwithme-skill-item">Node.js / Express</li>
+          <li className="workwithme-skill-item">UI/UX Design</li>
+          <li className="workwithme-skill-item">Tailwind CSS</li>
+          <li className="workwithme-skill-item">Figma / Adobe XD</li>
         </ul>
       </section>
 
-      <section>
-        <h3 className="text-2xl font-semibold mb-4">Contact</h3>
-        <p className="mb-4 text-lg text-center">
+      <section className="workwithme-contact-section">
+        <h3 className="workwithme-contact-title">Contact</h3>
+        <p className="workwithme-contact-desc">
           Interested in working together, collaborating, or just want to say
           hello? I’m always open to new opportunities and creative partnerships.
         </p>
-        <div className="flex justify-center">
+        <div className="workwithme-contact-btn-wrapper">
           <a
             href="mailto:dineshbajgain@gmail.com"
-            className="inline-block bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 transition"
+            className="workwithme-contact-btn"
           >
             Email Me
           </a>

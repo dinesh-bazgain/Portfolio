@@ -5,11 +5,12 @@ import Navbar from "../components/layouts/Navbar";
 import HomePage from "./home/page";
 import WorkWithMe from "./workWithMe/page";
 import ContactPage from "./contact/page";
+
 import ProjectListPage from "./project/page";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div>
       {/* Navbar */}
       <Navbar />
 

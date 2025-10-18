@@ -1,18 +1,19 @@
 import React from "react";
+import "./footer.css";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-gray-100 py-6 mt-8">
-      <div className="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between text-gray-600">
-        <div className="mb-2 md:mb-0 text-center md:text-left">
+    <footer className="footer-container">
+      <div className="footer-inner">
+        <div className="footer-copyright">
           &copy; {new Date().getFullYear()} Dinesh Bajgain. All rights reserved.
         </div>
-        <div className="flex gap-4">
+        <div className="footer-links">
           <a
             href="https://github.com/dinesh-bazgain"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-blue-600 transition"
+            className="footer-link"
           >
             GitHub
           </a>
@@ -20,14 +21,11 @@ const Footer = () => {
             href="https://www.linkedin.com/in/mr-bajgain/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-blue-600 transition"
+            className="footer-link"
           >
             LinkedIn
           </a>
-          <a
-            href="mailto:dinesh.bazgain@example.com"
-            className="hover:text-blue-600 transition"
-          >
+          <a href="mailto:dinesh.bazgain@example.com" className="footer-link">
             E-mail
           </a>
         </div>

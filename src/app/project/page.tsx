@@ -1,5 +1,6 @@
 import React from "react";
-import '../globals.css';
+import "../globals.css";
+import "./project.css";
 
 const projects = [
   {
@@ -24,27 +25,27 @@ const projects = [
 
 export default function ProjectListPage() {
   return (
-    <main className="priject-section mx-auto py-16 px-4 text-gray-900">
-      <h1 className="text-4xl font-bold mb-8 text-center">All Projects</h1>
-      <ul className="project-cards space-y-6">
+    <main className="project-section">
+      <h1 className="project-list-title">All Projects</h1>
+      <ul className="project-cards">
         {projects.map((project) => (
-          <li key={project.slug} className="bg-gray-50 rounded shadow p-6">
-            <h2 className="text-2xl font-semibold mb-2">{project.title}</h2>
-            <p className="text-gray-700 mb-2">{project.description}</p>
+          <li key={project.slug} className="project-card">
+            <h2 className="project-card-title">{project.title}</h2>
+            <p className="project-card-desc">{project.description}</p>
             <a
               href={
                 project.external ? project.external : `/project/${project.slug}`
               }
               target={project.external ? "_blank" : undefined}
               rel={project.external ? "noopener noreferrer" : undefined}
-              className="text-blue-600 hover:underline"
+              className="project-card-link"
             >
               {project.external ? "Visit Project" : "View Details"}
             </a>
           </li>
         ))}
       </ul>
-      <div className="mt-10 text-center text-gray-500 text-sm">
+      <div className="project-list-note">
         <p>
           Each project links to a unique URL like{" "}
           <code>/project/project-one</code> using the slug. The slug is a

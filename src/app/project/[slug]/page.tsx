@@ -1,5 +1,6 @@
 import React from "react";
 import { notFound } from "next/navigation";
+import "../project.css";
 
 type Project = {
   title: string;
@@ -58,11 +59,11 @@ export default function Page({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <main className="max-w-2xl mx-auto py-16 px-4">
-      <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
-      <h2 className="text-xl text-blue-600 mb-6">{project.subTitle}</h2>
-      <p className="text-lg mb-4">{project.description}</p>
-      <ul className="list-disc pl-6 mb-4">
+    <main className="project-details-container">
+      <h1 className="project-title">{project.title}</h1>
+      <h2 className="project-subtitle">{project.subTitle}</h2>
+      <p className="project-description">{project.description}</p>
+      <ul className="project-features">
         {project.features.map((feature: string, idx: number) => (
           <li key={idx}>{feature}</li>
         ))}
@@ -71,7 +72,7 @@ export default function Page({ params }: { params: { slug: string } }) {
         href={project.demo}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-block bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 transition"
+        className="project-demo-btn"
       >
         Live Demo
       </a>
