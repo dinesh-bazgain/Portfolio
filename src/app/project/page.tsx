@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import '../globals.css';
 
 const projects = [
   {
@@ -12,40 +12,35 @@ const projects = [
     title: "BMI Calculator",
     slug: "bmi-calculator",
     description: "A simple BMI calculator web app.",
+    external: undefined,
   },
   {
     title: "Currency Converter",
     slug: "currency-converter",
     description: "A currency converter tool built with React.",
+    external: undefined,
   },
 ];
 
 export default function ProjectListPage() {
   return (
-    <main className="max-w-3xl mx-auto py-16 px-4 text-gray-900">
+    <main className="priject-section mx-auto py-16 px-4 text-gray-900">
       <h1 className="text-4xl font-bold mb-8 text-center">All Projects</h1>
-      <ul className="space-y-6">
+      <ul className="project-cards space-y-6">
         {projects.map((project) => (
           <li key={project.slug} className="bg-gray-50 rounded shadow p-6">
             <h2 className="text-2xl font-semibold mb-2">{project.title}</h2>
             <p className="text-gray-700 mb-2">{project.description}</p>
-            {project.external ? (
-              <a
-                href={project.external}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                Visit Project
-              </a>
-            ) : (
-              <Link
-                href={`/project/${project.slug}`}
-                className="text-blue-600 hover:underline"
-              >
-                View Details
-              </Link>
-            )}
+            <a
+              href={
+                project.external ? project.external : `/project/${project.slug}`
+              }
+              target={project.external ? "_blank" : undefined}
+              rel={project.external ? "noopener noreferrer" : undefined}
+              className="text-blue-600 hover:underline"
+            >
+              {project.external ? "Visit Project" : "View Details"}
+            </a>
           </li>
         ))}
       </ul>

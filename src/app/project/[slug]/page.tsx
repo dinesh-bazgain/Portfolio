@@ -6,6 +6,7 @@ type Project = {
   description: string;
   features: string[];
   demo: string;
+  subTitle: string;
 };
 
 type ProjectsMap = {
@@ -24,6 +25,7 @@ const projects: ProjectsMap = {
       "Responsive layout",
       "Powered by public exchange rate APIs",
     ],
+    subTitle: "A simple currency converter built with React",
     demo: "https://dinesh-bazgain.github.io/Currency-Converter/",
   },
   "veda-samvaad": {
@@ -31,12 +33,14 @@ const projects: ProjectsMap = {
     description: "A platform for Vedic discussions and resources.",
     features: ["Community discussions", "Resource sharing", "Modern UI"],
     demo: "https://vedasamvaad-frontend.onrender.com/",
+    subTitle: "A platform for Vedic discussions and resources.",
   },
   "bmi-calculator": {
     title: "BMI Calculator",
     description: "A simple BMI calculator web app.",
     features: ["Easy BMI calculation", "Clean interface", "Mobile friendly"],
     demo: "https://bmi-calculator-by-mrbajgain.netlify.app/",
+    subTitle: "A simple BMI calculator built with React",
   },
   // Add more projects here
 };
@@ -54,8 +58,9 @@ export default function Page({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <main className="max-w-2xl mx-auto py-16 px-4 text-gray-900">
+    <main className="max-w-2xl mx-auto py-16 px-4">
       <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
+      <h2 className="text-xl text-blue-600 mb-6">{project.subTitle}</h2>
       <p className="text-lg mb-4">{project.description}</p>
       <ul className="list-disc pl-6 mb-4">
         {project.features.map((feature: string, idx: number) => (
