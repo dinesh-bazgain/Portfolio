@@ -23,8 +23,8 @@
   border-radius: 20px;
   margin-bottom: 0;
   display: block;
-  opacity: 0.8;
-  box-shadow: 0 4px 24px rgba(32, 31, 31, 0.06);
+  /* opacity: 0.8; */
+  /* filter: grayscale(); */
   max-height: 500px;
 }
 .profile-text {
