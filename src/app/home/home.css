@@ -2,41 +2,53 @@
   margin: 0 auto;
   padding: 1rem;
   color: #1a202c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .profile-section {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+.display-picture {
+  margin: 2rem auto;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 30%;
+}
+.profile-img {
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 0;
+  display: block;
+  opacity: 0.8;
+  box-shadow: 0 4px 24px rgba(32, 31, 31, 0.06);
+  max-height: 500px;
+}
+.profile-text {
+  width: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 4rem;
 }
-.profile-img {
-  border-radius: 9999px;
-  border: 4px solid #3b82f6;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  margin-bottom: 1rem;
-}
-.profile-title {
+.profile-text h1 {
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
-  text-align: center;
 }
-.profile-role {
+.profile-text h2 {
   font-size: 1.25rem;
-  color: #2563eb;
-  margin-bottom: 1rem;
-  text-align: center;
 }
-.profile-desc {
-  max-width: 36rem;
-  text-align: center;
-  font-size: 1.125rem;
-  margin-bottom: 1rem;
+.profile-text p {
+  width: 90%;
+  margin: 2rem 1rem;
+  font-size: 1rem;
 }
 .profile-interests {
   max-width: 36rem;
-  text-align: center;
   font-size: 1rem;
   color: #4b5563;
   margin-bottom: 1rem;
