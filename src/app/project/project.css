@@ -1,9 +1,6 @@
 .project-section {
   width: 80%;
   margin: auto;
-  scroll-margin-top: 120px;
-  min-height: 100vh;
-  scroll-margin-top: 120px;
 }
 .project-cards {
   display: grid;
