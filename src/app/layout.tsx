@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-
 export const metadata: Metadata = {
+  icons: {
+    icon: "/icon.png",
+  },
   title: "Dinesh Bajgain",
-  description: "Portfolio website of Dinesh Bajgain, showcasing projects and skills.",
+  description:
+    "Portfolio website of Dinesh Bajgain, showcasing projects and skills.",
 };
 
 export default function RootLayout({
@@ -14,9 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
-        {children}
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
