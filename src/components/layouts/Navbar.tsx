@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className="navbar-container">
       <div className="navbar-inner">
         <div className="navbar-logo">
-          <Image src="/file.svg" alt="Logo" width={40} height={40} />
+          <Image src="/icon.png" alt="Logo" width={40} height={40} />
           <span className="navbar-title">Dinesh Bajgain</span>
         </div>
         <div className="navbar-links">
