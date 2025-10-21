@@ -62,7 +62,6 @@
   display: flex;
   flex-direction: column;
   font-size: 1.25rem;
-  color: #4b5563;
 }
 .profile-interests ul {
   list-style: disc;
