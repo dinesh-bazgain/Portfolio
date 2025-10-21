@@ -15,13 +15,17 @@
     --foreground: #ededed;
   }
 }
-
 html {
   scroll-behavior: smooth;
 }
-
 section {
   /* background-color: var(--background);
   color: var(--foreground); */
   scroll-margin-top: 80px;
+}
+body{
+  background-color: #676869;
+  background-image: url("/grain.jpg");
+  background-repeat: repeat;
+  background-blend-mode: multiply;
 }
