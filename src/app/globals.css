@@ -25,7 +25,7 @@ section {
 }
 body{
   background-color: #676869;
-  background-image: url("/grain.jpg");
+  /* background-image: url("/grain.png"); */
   background-repeat: repeat;
   background-blend-mode: multiply;
 }
