@@ -8,7 +8,7 @@ export default function ContactPage() {
       <section className="contact-section">
         <h1 className="contact-title">Contact Me</h1>
         <p className="contact-desc">
-          Interested in working together, have a question, or just want to say hello? Fill out the form below or reach out directly!
+          Interested in working together, have a question, or just want to say hello? Fill out the form below or reach out directly!!
         </p>
       </section>
       <form className="contact-form">
