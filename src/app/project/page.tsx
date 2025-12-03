@@ -2,26 +2,9 @@ import React from "react";
 import "../globals.css";
 import "./project.css";
 
-const projects = [
-  {
-    title: "Veda Samvaad",
-    slug: "veda-samvaad",
-    description: "A platform for Vedic discussions and resources.",
-    external: "https://vedasamvaad-frontend.onrender.com/",
-  },
-  {
-    title: "BMI Calculator",
-    slug: "bmi-calculator",
-    description: "A simple BMI calculator web app.",
-    external: undefined,
-  },
-  {
-    title: "Currency Converter",
-    slug: "currency-converter",
-    description: "A currency converter tool built with React.",
-    external: undefined,
-  },
-];
+import projectsData from "../../data/projects.json";
+
+const projects = projectsData;
 
 export default function ProjectListPage() {
   return (

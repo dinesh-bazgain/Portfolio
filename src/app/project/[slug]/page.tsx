@@ -2,57 +2,27 @@ import React from "react";
 import { notFound } from "next/navigation";
 import "../project.css";
 
+import projectsData from "../../../data/projects.json";
+
 type Project = {
   title: string;
   description: string;
   features: string[];
   demo: string;
   subTitle: string;
+  slug: string;
+  external: string | null;
 };
 
-type ProjectsMap = {
-  [key: string]: Project;
-};
-
-// Example project data
-const projects: ProjectsMap = {
-  "currency-converter": {
-    title: "Currency Converter",
-    description:
-      "A simple and intuitive web application for real-time currency conversion.",
-    features: [
-      "Real-time conversion",
-      "User-friendly design",
-      "Responsive layout",
-      "Powered by public exchange rate APIs",
-    ],
-    subTitle: "A simple currency converter built with React",
-    demo: "https://dinesh-bazgain.github.io/Currency-Converter/",
-  },
-  "veda-samvaad": {
-    title: "Veda Samvaad",
-    description: "A platform for Vedic discussions and resources.",
-    features: ["Community discussions", "Resource sharing", "Modern UI"],
-    demo: "https://vedasamvaad-frontend.onrender.com/",
-    subTitle: "A platform for Vedic discussions and resources.",
-  },
-  "bmi-calculator": {
-    title: "BMI Calculator",
-    description: "A simple BMI calculator web app.",
-    features: ["Easy BMI calculation", "Clean interface", "Mobile friendly"],
-    demo: "https://bmi-calculator-by-mrbajgain.netlify.app/",
-    subTitle: "A simple BMI calculator built with React",
-  },
-  // Add more projects here
-};
+const projects = projectsData as Project[];
 
 export function generateStaticParams() {
-  return Object.keys(projects).map((slug) => ({ slug }));
+  return projects.map((project) => ({ slug: project.slug }));
 }
 
 export default function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
-  const project: Project | undefined = projects[slug];
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     notFound(); // Show 404 if project not found
