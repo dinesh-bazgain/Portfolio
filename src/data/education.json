@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "type": "degree",
+        "institution": "University of Technology",
+        "degree": "Bachelor of Science in Computer Science",
+        "field": "Computer Science",
+        "startDate": "2013-09",
+        "endDate": "2017-05",
+        "location": "City, Country",
+        "description": "Focused on algorithms, data structures, and software engineering principles.",
+        "achievements": [
+            "Graduated with Honors (GPA: 3.8/4.0)",
+            "Dean's List for 6 consecutive semesters",
+            "Led final year capstone project on Machine Learning applications"
+        ]
+    },
+    {
+        "id": 2,
+        "type": "certification",
+        "institution": "Google",
+        "title": "Google Cloud Professional Developer",
+        "issuer": "Google Cloud",
+        "issueDate": "2023-08",
+        "expiryDate": "2025-08",
+        "credentialId": "GCP-DEV-2023-XXXXX",
+        "credentialUrl": "https://www.credential.net/example",
+        "description": "Professional certification demonstrating expertise in Google Cloud Platform development."
+    },
+    {
+        "id": 3,
+        "type": "certification",
+        "institution": "Meta",
+        "title": "Meta Front-End Developer Professional Certificate",
+        "issuer": "Meta (via Coursera)",
+        "issueDate": "2023-03",
+        "expiryDate": null,
+        "credentialId": "META-FE-2023-XXXXX",
+        "credentialUrl": "https://www.coursera.org/account/accomplishments/example",
+        "description": "Comprehensive program covering React, advanced React patterns, and modern front-end development."
+    },
+    {
+        "id": 4,
+        "type": "certification",
+        "institution": "AWS",
+        "title": "AWS Certified Developer - Associate",
+        "issuer": "Amazon Web Services",
+        "issueDate": "2022-11",
+        "expiryDate": "2025-11",
+        "credentialId": "AWS-DEV-2022-XXXXX",
+        "credentialUrl": "https://aws.amazon.com/verification/example",
+        "description": "Validated expertise in developing and maintaining AWS-based applications."
+    },
+    {
+        "id": 5,
+        "type": "certification",
+        "institution": "MongoDB University",
+        "title": "MongoDB Certified Developer",
+        "issuer": "MongoDB",
+        "issueDate": "2022-06",
+        "expiryDate": null,
+        "credentialId": "MONGO-DEV-2022-XXXXX",
+        "credentialUrl": "https://university.mongodb.com/exam_certificates/example",
+        "description": "Certification in MongoDB database development and optimization."
+    },
+    {
+        "id": 6,
+        "type": "course",
+        "institution": "Stanford Online",
+        "title": "Machine Learning Specialization",
+        "issuer": "Stanford University (via Coursera)",
+        "issueDate": "2021-12",
+        "expiryDate": null,
+        "credentialId": "STAN-ML-2021-XXXXX",
+        "credentialUrl": "https://www.coursera.org/account/accomplishments/example",
+        "description": "Comprehensive ML course covering supervised learning, unsupervised learning, and neural networks."
+    },
+    {
+        "id": 7,
+        "type": "course",
+        "institution": "DeepLearning.AI",
+        "title": "Deep Learning Specialization",
+        "issuer": "DeepLearning.AI (via Coursera)",
+        "issueDate": "2022-03",
+        "expiryDate": null,
+        "credentialId": "DL-AI-2022-XXXXX",
+        "credentialUrl": "https://www.coursera.org/account/accomplishments/example",
+        "description": "Advanced deep learning course covering CNNs, RNNs, and sequence models."
+    },
+    {
+        "id": 8,
+        "type": "certification",
+        "institution": "freeCodeCamp",
+        "title": "Responsive Web Design Certification",
+        "issuer": "freeCodeCamp",
+        "issueDate": "2020-05",
+        "expiryDate": null,
+        "credentialId": "FCC-RWD-2020-XXXXX",
+        "credentialUrl": "https://www.freecodecamp.org/certification/example",
+        "description": "300-hour curriculum covering HTML, CSS, responsive design, and accessibility."
+    }
+]

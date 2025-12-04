@@ -3,11 +3,18 @@
         "title": "Veda Samvaad",
         "slug": "veda-samvaad",
         "description": "A platform for Vedic discussions and resources.",
-        "subTitle": "A platform for Vedic discussions and resources.",
+        "subTitle": "A community-driven platform for Vedic knowledge sharing",
         "features": [
             "Community discussions",
             "Resource sharing",
-            "Modern UI"
+            "Modern UI",
+            "User authentication"
+        ],
+        "tags": [
+            "React",
+            "Node.js",
+            "MongoDB",
+            "Express"
         ],
         "external": "https://vedasamvaad-frontend.onrender.com/",
         "demo": "https://vedasamvaad-frontend.onrender.com/"
@@ -20,7 +27,13 @@
         "features": [
             "Easy BMI calculation",
             "Clean interface",
-            "Mobile friendly"
+            "Mobile friendly",
+            "Health recommendations"
+        ],
+        "tags": [
+            "React",
+            "JavaScript",
+            "CSS"
         ],
         "external": null,
         "demo": "https://bmi-calculator-by-mrbajgain.netlify.app/"
@@ -35,6 +48,11 @@
             "User-friendly design",
             "Responsive layout",
             "Powered by public exchange rate APIs"
+        ],
+        "tags": [
+            "React",
+            "API Integration",
+            "JavaScript"
         ],
         "external": null,
         "demo": "https://dinesh-bazgain.github.io/Currency-Converter/"

@@ -1,57 +1,61 @@
 import React from "react";
-import Image from "next/image";
+import { Briefcase, Code, Zap } from "lucide-react";
 import "./workwithme.css";
 
 export default function WorkWithMe() {
+  const services = [
+    {
+      icon: Code,
+      title: "Full Stack Development",
+      description:
+        "Building scalable web applications with modern technologies like React, Next.js, Node.js, and databases.",
+    },
+    {
+      icon: Zap,
+      title: "AI/ML Integration",
+      description:
+        "Implementing intelligent features using TensorFlow, Keras, and OpenCV for computer vision and NLP tasks.",
+    },
+    {
+      icon: Briefcase,
+      title: "Consulting & Collaboration",
+      description:
+        "Working with teams to architect solutions, optimize performance, and solve complex technical challenges.",
+    },
+  ];
+
   return (
-    <main className="workwithme-container">
-      <section className="workwithme-profile-section">
-        <Image
-          src="/profile.jpeg"
-          alt="Dinesh Bajgain portrait"
-          width={140}
-          height={140}
-          className="workwithme-profile-img"
-        />
-        <h1 className="workwithme-title">Work With Me</h1>
-        <h2 className="workwithme-subtitle">
-          Let's build something great together!
-        </h2>
-        <p className="workwithme-desc">
-          I’m Dinesh, a full stack developer and designer who loves
-          collaborating on creative projects and solving real-world problems. If
-          you’re looking for a reliable partner to help bring your ideas to
-          life, let’s connect!
-        </p>
-      </section>
+    <section className="work-section" id="WorkWithMe">
+      <div className="work-container">
+        <div className="work-header">
+          <h2 className="work-title">
+            What I <span className="text-gradient">Offer</span>
+          </h2>
+          <p className="work-description">
+            Bringing ideas to life with cutting-edge technology and clean code
+          </p>
+        </div>
 
-      <section className="workwithme-skills-section">
-        <h3 className="workwithme-skills-title">Skills</h3>
-        <ul className="workwithme-skills-list">
-          <li className="workwithme-skill-item">JavaScript / TypeScript</li>
-          <li className="workwithme-skill-item">React / Next.js</li>
-          <li className="workwithme-skill-item">Node.js / Express</li>
-          <li className="workwithme-skill-item">UI/UX Design</li>
-          <li className="workwithme-skill-item">Tailwind CSS</li>
-          <li className="workwithme-skill-item">Figma / Adobe XD</li>
-        </ul>
-      </section>
+        <div className="work-services">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <div key={index} className="service-card glass">
+                <Icon className="service-icon" size={40} />
+                <h3 className="service-title">{service.title}</h3>
+                <p className="service-description">{service.description}</p>
+              </div>
+            );
+          })}
+        </div>
 
-      <section className="workwithme-contact-section">
-        <h3 className="workwithme-contact-title">Contact</h3>
-        <p className="workwithme-contact-desc">
-          Interested in working together, collaborating, or just want to say
-          hello? I’m always open to new opportunities and creative partnerships.
-        </p>
-        <div className="workwithme-contact-btn-wrapper">
-          <a
-            href="mailto:dineshbajgain@gmail.com"
-            className="workwithme-contact-btn"
-          >
-            Email Me
+        <div className="work-cta">
+          <p>Ready to start a project or explore opportunities?</p>
+          <a href="#contact" className="btn-primary">
+            Let's Talk
           </a>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
   );
 }

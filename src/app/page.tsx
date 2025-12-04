@@ -1,11 +1,8 @@
-import Link from "next/link";
-import Image from "next/image";
-import Footer from "../components/layouts/Footer";
-import Navbar from "../components/layouts/Navbar";
+import Footer from "@/components/layouts/Footer";
+import Navbar from "@/components/layouts/Navbar";
 import HomePage from "./home/page";
 import WorkWithMe from "./workWithMe/page";
 import ContactPage from "./contact/page";
-
 import ProjectListPage from "./project/page";
 
 export default function Home() {

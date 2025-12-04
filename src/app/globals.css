@@ -1,31 +1,80 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  /* Soft, Elegant Theme - Inspired by neriakatz.com */
+  --background: #faf8f5;
+  /* Warm cream */
+  --foreground: #2d2d2d;
+  /* Soft charcoal */
+
+  --primary: #8b7ab8;
+  /* Soft purple/lavender */
+  --primary-foreground: #ffffff;
+
+  --secondary: #f0ede6;
+  /* Light warm gray */
+  --secondary-foreground: #5a5a5a;
+
+  --accent: #d4a5a5;
+  /* Soft dusty rose */
+  --accent-foreground: #2d2d2d;
+
+  --muted: #e8e4dd;
+  /* Muted beige */
+  --muted-foreground: #6b6b6b;
+
+  --card: #ffffff;
+  --card-foreground: #2d2d2d;
+
+  --border: #e0dcd3;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(139, 122, 184, 0.1);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
+
+  /* Light mode: Soft, warm palette */
   :root {
-    --background: #282727;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #2d2d2d;
+    --card: #faf8f5;
+    --card-foreground: #2d2d2d;
+    --secondary: #f5f2ed;
+    --border: #e8e4dd;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(139, 122, 184, 0.15);
   }
 }
+
 html {
   scroll-behavior: smooth;
 }
-section {
-  /* background-color: var(--background);
-  color: var(--foreground); */
-  scroll-margin-top: 80px;
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-body{
-  /* background-color: #676869; */
-  /* background-image: url("/grain.png"); */
-  background-repeat: repeat;
-  background-blend-mode: multiply;
+
+/* Utilities */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+section {
+  scroll-margin-top: 80px;
 }

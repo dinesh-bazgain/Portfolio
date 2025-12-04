@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   icons: {
     icon: "/icon.png",
   },
-  title: "Dinesh Bajgain",
+  title: "Dinesh Bajgain | Full Stack & AI/ML",
   description:
-    "Portfolio website of Dinesh Bajgain, showcasing projects and skills.",
+    "Portfolio of Dinesh Bajgain, a Full Stack Developer and AI/ML Enthusiast.",
 };
 
 export default function RootLayout({
@@ -17,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className={`${inter.variable} antialiased`}>{children}</body>
     </html>
   );
 }

@@ -1,0 +1,22 @@
+{
+    "name": "Dinesh Bazgain",
+    "role": "Full-Stack Developer & AI/ML Enthusiast",
+    "tagline": "Building exceptional digital experiences with modern technologies",
+    "bio": "I'm a passionate full-stack developer focused on creating scalable applications and exploring the intersection of AI and web development. With expertise in modern frameworks and a keen eye for design, I build solutions that are not only functional but also beautiful and user-centric.",
+    "detailedBio": "As a dedicated software engineer, I specialize in architecting robust web applications using cutting-edge technologies. My journey in tech has been driven by curiosity and a commitment to continuous learning. I thrive on solving complex problems and transforming ideas into elegant, performant solutions. Whether it's crafting intuitive user interfaces or optimizing backend systems, I approach every project with precision and creativity.",
+    "location": "Your City, Country",
+    "email": "your.email@example.com",
+    "social": {
+        "github": "https://github.com/yourusername",
+        "linkedin": "https://linkedin.com/in/yourusername",
+        "twitter": "https://twitter.com/yourusername"
+    },
+    "availability": "Open to opportunities",
+    "interests": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Web Development",
+        "System Design",
+        "Open Source"
+    ]
+}
