@@ -1,50 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  /* Soft, Elegant Theme - Inspired by neriakatz.com */
-  --background: #faf8f5;
-  /* Warm cream */
-  --foreground: #2d2d2d;
-  /* Soft charcoal */
+  /* Dark Elegant Theme - Match Neria Katz Reference */
+  --background: #1c1c1c;
+  /* Dark Charcoal */
+  --foreground: #e0e0e0;
+  /* Off-white */
 
-  --primary: #8b7ab8;
-  /* Soft purple/lavender */
-  --primary-foreground: #ffffff;
+  --primary: #ffffff;
+  /* White for contrast */
+  --primary-foreground: #1c1c1c;
 
-  --secondary: #f0ede6;
-  /* Light warm gray */
-  --secondary-foreground: #5a5a5a;
+  --secondary: #2d2d2d;
+  /* Slightly lighter charcoal */
+  --secondary-foreground: #b0b0b0;
 
-  --accent: #d4a5a5;
-  /* Soft dusty rose */
-  --accent-foreground: #2d2d2d;
+  --accent: #4a4a4a;
+  /* Dark gray accent */
+  --accent-foreground: #ffffff;
 
-  --muted: #e8e4dd;
-  /* Muted beige */
-  --muted-foreground: #6b6b6b;
+  --muted: #2a2a2a;
+  --muted-foreground: #888888;
 
-  --card: #ffffff;
-  --card-foreground: #2d2d2d;
+  --card: #252525;
+  --card-foreground: #e0e0e0;
 
-  --border: #e0dcd3;
+  --border: #333333;
 
   /* Glassmorphism */
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(139, 122, 184, 0.1);
+  --glass-bg: rgba(28, 28, 28, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.05);
+
+  /* Fonts */
+  --font-serif: "Times New Roman", Times, serif;
+  /* Fallback to system serif until Google Font is added */
 }
 
 @media (prefers-color-scheme: light) {
 
-  /* Light mode: Soft, warm palette */
+  /* Force dark mode even in light preference for this specific design request */
   :root {
-    --background: #ffffff;
-    --foreground: #2d2d2d;
-    --card: #faf8f5;
-    --card-foreground: #2d2d2d;
-    --secondary: #f5f2ed;
-    --border: #e8e4dd;
-    --glass-bg: rgba(255, 255, 255, 0.85);
-    --glass-border: rgba(139, 122, 184, 0.15);
+    --background: #1c1c1c;
+    --foreground: #e0e0e0;
+    --card: #252525;
+    --card-foreground: #e0e0e0;
+    --secondary: #2d2d2d;
+    --border: #333333;
+    --glass-bg: rgba(28, 28, 28, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.05);
   }
 }
 
