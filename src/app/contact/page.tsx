@@ -11,7 +11,8 @@ export default function ContactPage() {
             Let's <span className="text-gradient">Connect</span>
           </h2>
           <p className="contact-description">
-            Have a project in mind or just want to chat? I'd love to hear from you!
+            Have a project in mind or just want to chat? I'd love to hear from
+            you!
           </p>
         </div>
 
@@ -61,7 +62,10 @@ export default function ContactPage() {
             <div className="contact-direct-card glass">
               <Mail className="contact-icon" size={32} />
               <h3>Email Me Directly</h3>
-              <a href="mailto:dineshbajgain@gmail.com" className="contact-email">
+              <a
+                href="mailto:dineshbajgain@gmail.com"
+                className="contact-email"
+              >
                 dineshbajgain@gmail.com
               </a>
               <p className="contact-response-time">
