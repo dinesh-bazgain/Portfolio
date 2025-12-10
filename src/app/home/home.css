@@ -1,189 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
 .home-main {
   width: 100%;
   min-height: 100vh;
+  position: relative;
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
 }
 
-/* Hero Section */
+/* Hero Section Container */
 .hero-section {
   position: relative;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 1.5rem;
-  overflow: hidden;
-}
-
-.hero-content {
-  max-width: 1280px;
-  width: 100%;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Left text, Right nav */
+    align-items: flex-start;
+    padding: 3rem 4rem;
+  }
+}
+
+/* Left Content: Name & Intro */
+.hero-intro {
   z-index: 10;
-}
-
-@media (min-width: 1024px) {
-  .hero-content {
-    flex-direction: row;
-    gap: 4rem;
-  }
-}
-
-.hero-image-container {
-  flex-shrink: 0;
-}
-
-.hero-image-wrapper {
-  position: relative;
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid var(--primary);
-  box-shadow: 0 8px 32px rgba(139, 122, 184, 0.15);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.hero-image-wrapper:hover {
-  transform: scale(1.03);
-  box-shadow: 0 12px 48px rgba(139, 122, 184, 0.25);
-}
-
-.hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-text {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  text-align: center;
-}
-
-@media (min-width: 1024px) {
-  .hero-text {
-    text-align: left;
-  }
+  max-width: 600px;
 }
 
 .hero-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  line-height: 1.2;
-  color: var(--foreground);
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.hero-title span {
+  display: block;
+}
+
+.hero-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+}
+
+.hero-description {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #b0b0b0;
+  max-width: 500px;
+  font-weight: 300;
 }
 
 @media (min-width: 768px) {
   .hero-title {
-    font-size: 3.5rem;
+    font-size: 6rem;
   }
-}
 
-.hero-subtitle {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: var(--muted-foreground);
-  line-height: 1.4;
-}
-
-@media (min-width: 768px) {
   .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 4.5rem;
   }
 }
 
-.hero-description {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--muted-foreground);
-  max-width: 600px;
+/* Right Content: Vertical Navigation */
+.hero-nav {
+  display: none;
+  /* Hidden on mobile, usually */
 }
 
 @media (min-width: 1024px) {
-  .hero-description {
-    max-width: none;
+  .hero-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.5rem;
+    z-index: 10;
   }
 }
 
-.hero-cta {
+/* Lock scroll for the whole page */
+:global(body),
+:global(html) {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+.home-main {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow: hidden;
+}
+
+/* ... existing logic ... */
+
+/* Navigation Links with Hover Arrow */
+.nav-link {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 1.125rem;
+  color: #b0b0b0;
+  text-decoration: none;
+  font-weight: 300;
+  transition: color 0.3s ease;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.nav-link::after {
+  content: "←";
+  /* Arrow pointing left to the text since align is flex-end (right side) */
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.nav-link:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slide Overlay for Detail Views */
+.slide-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background);
+  z-index: 100;
+  transform: translateX(100%);
+  /* Start off-screen right */
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  /* Smooth slide */
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-overlay.active {
+  transform: translateX(0);
+}
+
+.slide-controls {
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: flex-end;
+  /* Arrows and Close on right? Or arrows center, close right. */
+  align-items: center;
+  gap: 2rem;
+}
+
+.slide-content {
+  flex: 1;
+  overflow-y: auto;
+  /* Allow content to scroll inside the slide if needed */
+  padding: 0 4rem 4rem 4rem;
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  color: var(--foreground);
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.control-btn:hover {
+  color: var(--primary);
+}
+
+.control-group {
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 1rem;
+  margin-right: auto;
+  /* Push arrows to left or keep close to X? User said "top when next page is selected" */
 }
 
-@media (min-width: 1024px) {
-  .hero-cta {
-    justify-content: flex-start;
-  }
-}
-
-.btn-primary,
-.btn-secondary {
-  padding: 0.875rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.btn-primary {
-  background: var(--primary);
-  color: var(--primary-foreground);
-  box-shadow: 0 4px 16px rgba(139, 122, 184, 0.25);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(139, 122, 184, 0.35);
-  background: #7a6aa5;
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--foreground);
-  border: 2px solid var(--primary);
-}
-
-.btn-secondary:hover {
-  background: var(--primary);
-  color: var(--primary-foreground);
-  transform: translateY(-2px);
-  border-color: var(--primary);
-}
-
-/* Animated Background Gradient */
-.hero-bg-gradient {
+/* Center Bottom Portrait */
+.hero-portrait-container {
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at 30% 50%,
-      rgba(139, 122, 184, 0.08) 0%,
-      transparent 50%),
-    radial-gradient(circle at 70% 50%,
-      rgba(212, 165, 165, 0.06) 0%,
-      transparent 50%);
-  animation: rotate 20s linear infinite;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: 60vh;
+  /* Adjust based on image aspect ratio */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   z-index: 1;
+  pointer-events: none;
+  /* Let clicks pass through if needed */
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
+.hero-portrait {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  /* Classic B&W look */
+  opacity: 0.9;
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+  /* Fades top slightly if needed */
+}
+
+/* Mobile Adjustments */
+@media (max-width: 1023px) {
+  .hero-section {
+    justify-content: flex-start;
+    padding-top: 6rem;
+    /* Space for top navbar if present */
   }
 
-  to {
-    transform: rotate(360deg);
+  .hero-portrait-container {
+    height: 50vh;
+    opacity: 0.3;
+    /* Fade it out on mobile so text is readable over it */
+    z-index: 0;
   }
+
+  .hero-intro {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+/* Top Right Social/Icons (Mocking the icons in screenshot) */
+.top-right-icons {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  gap: 1rem;
+  color: #b0b0b0;
+  z-index: 20;
+}
+
+.icon-link {
+  color: inherit;
+  transition: color 0.3s;
+}
+
+.icon-link:hover {
+  color: #ffffff;
 }
