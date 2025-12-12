@@ -1,3 +1,10 @@
+/* Hide Navbar on Desktop for this specific design layout */
+@media (min-width: 1024px) {
+  .navbar-container {
+    display: none;
+  }
+}
+
 .navbar-container {
   position: sticky;
   top: 0;
