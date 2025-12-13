@@ -21,10 +21,15 @@ const SECTIONS = NAV_ITEMS.filter((item) => !item.disabled).map(
 
 export default function HomePage() {
   const [currentSection, setCurrentSection] = useState("home");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Handle navigation
   const handleNavClick = (section: string) => {
     setCurrentSection(section);
+  };
+
+  const handleMenuToggle = (isOpen: boolean) => {
+    setIsMenuOpen(isOpen);
   };
 
   const handleClose = () => {
@@ -89,7 +94,7 @@ export default function HomePage() {
   return (
     <main className="home-main">
       {/* Background Home Grid (Visible when currentSection is home) */}
-      <section className="hero-section" id="home">
+      <section className={`hero-section ${isMenuOpen ? "pushed-back" : ""}`} id="home">
         {/* Top Right Theme/Social Bar */}
         <ThemeSocialBar />
 
@@ -112,6 +117,11 @@ export default function HomePage() {
           {/* Center Bottom Image */}
           <div className="hero-portrait-container">
             <img
+              src="/mark.png"
+              alt="Dinesh Bajgain Signature"
+              className="hero-mark"
+            />
+            <img
               src="/portrait.png"
               alt="Dinesh Bajgain Portrait"
               className="hero-portrait"
@@ -124,6 +134,7 @@ export default function HomePage() {
             <Navbar
               orientation="vertical"
               onNavClick={handleNavClick}
+              onMenuToggle={handleMenuToggle}
               className="hero-navbar-vertical"
             />
           </div>
