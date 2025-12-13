@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap");
 
 .home-main {
   width: 100%;
@@ -9,87 +9,76 @@
   overflow-x: hidden;
 }
 
-/* Hero Section Container */
+/* Hero Section Container - Global Grid */
 .hero-section {
   position: relative;
   min-height: 100vh;
   padding: 2rem;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
 }
 
+/* On very large screens, add more padding */
 @media (min-width: 1024px) {
   .hero-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* Left text, Right nav */
-    align-items: flex-start;
     padding: 3rem 4rem;
+    gap: 4rem;
   }
 }
 
 /* Left Content: Name & Intro */
 .hero-intro {
   z-index: 10;
-  max-width: 600px;
+  max-width: 100%;
 }
 
 .hero-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 4rem;
+  font-family: "Playfair Display", serif;
+  /* Responsive font size */
+  font-size: clamp(2.5rem, 8vw, 6rem);
   font-weight: 400;
   line-height: 1;
-  color: #ffffff;
+  color: silver;
   margin-bottom: 0.5rem;
+  white-space: nowrap;
+  /* Keep name on one line if possible, or let it wrap if too small */
 }
 
 .hero-title span {
-  display: block;
+  display: inline;
 }
 
 .hero-subtitle {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1rem, 3vw, 2rem);
+  /* Adjusted size */
   font-weight: 400;
   font-style: italic;
-  color: #ffffff;
-  margin-bottom: 2rem;
+  color: #acacac;
+  margin: 1rem 0 1.5rem 0;
   line-height: 1.1;
 }
 
 .hero-description {
   font-family: system-ui, -apple-system, sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.6;
-  color: #b0b0b0;
-  max-width: 500px;
+  font-size: clamp(0.875rem, 2vw, 1.125rem);
+  color: #acacac;
+  max-width: 600px;
+  /* Limit width */
   font-weight: 300;
+  line-height: 1.6;
 }
 
-@media (min-width: 768px) {
-  .hero-title {
-    font-size: 6rem;
-  }
-
-  .hero-subtitle {
-    font-size: 4.5rem;
-  }
+.hero-navbar {
+  margin-top: 5rem;
 }
 
-/* Right Content: Vertical Navigation */
-.hero-nav {
-  display: none;
-  /* Hidden on mobile, usually */
-}
-
-@media (min-width: 1024px) {
-  .hero-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 1.5rem;
-    z-index: 10;
-  }
+/* Right Content: Vertical Navigation Container */
+.right-container {
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
 }
 
 /* Lock scroll for the whole page */
@@ -111,38 +100,7 @@
 
 /* ... existing logic ... */
 
-/* Navigation Links with Hover Arrow */
-.nav-link {
-  font-family: system-ui, -apple-system, sans-serif;
-  font-size: 1.125rem;
-  color: #b0b0b0;
-  text-decoration: none;
-  font-weight: 300;
-  transition: color 0.3s ease;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.5rem;
-}
-
-.nav-link::after {
-  content: "←";
-  /* Arrow pointing left to the text since align is flex-end (right side) */
-  opacity: 0;
-  transform: translateX(10px);
-  transition: all 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #ffffff;
-}
-
-.nav-link:hover::after {
-  opacity: 1;
-  transform: translateX(0);
-}
+/* Navigation Links with Hover Arrow - Moved to navbar.css */
 
 /* Slide Overlay for Detail Views */
 .slide-overlay {
@@ -211,14 +169,12 @@
   left: 50%;
   transform: translateX(-50%);
   width: auto;
-  height: 60vh;
-  /* Adjust based on image aspect ratio */
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   z-index: 1;
   pointer-events: none;
-  /* Let clicks pass through if needed */
 }
 
 .hero-portrait {
@@ -228,8 +184,12 @@
   filter: grayscale(100%);
   /* Classic B&W look */
   opacity: 0.9;
-  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
-  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to top,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to top,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0) 100%);
   /* Fades top slightly if needed */
 }
 
@@ -252,6 +212,11 @@
     text-align: center;
     margin: 0 auto;
   }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* Top Right Social/Icons (Mocking the icons in screenshot) */
@@ -271,5 +236,85 @@
 }
 
 .icon-link:hover {
+  color: #ffffff;
+}
+
+.hero-title span {
+  display: inline;
+  /* Keep in one line */
+}
+
+/* Theme Social Bar (Top Right) */
+.theme-social-bar {
+  position: absolute;
+  top: 3rem;
+  right: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 20;
+}
+
+.social-links-row {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.social-separator {
+  width: 1px;
+  height: 20px;
+  background-color: transparent;
+  border-left: 2px dashed #b0b0b0;
+  opacity: 0.5;
+}
+
+/* Mobile: Bottom Left Column */
+@media (max-width: 1023px) {
+  .theme-social-bar {
+    top: auto;
+    right: auto;
+    bottom: 2rem;
+    /* Bottom Left */
+    left: 2rem;
+    flex-direction: column-reverse;
+    /* Theme toggle at bottom or top? User said "social media handles on bottom left corner in a column". Usually implies icons stacked. */
+    /* If column-reverse, icons will be above toggle if toggle is first in HTML? */
+    /* HTML: Toggle, Separator, LinksRow. */
+    /* If flex-direction: column-reverse -> LinksRow (top), Separator, Toggle (bottom). */
+    /* If flex-direction: column -> Toggle (top), Separator, LinksRow (bottom). */
+    /* Let's align with "bottom left corner". Usually toggle is separate. */
+    align-items: flex-start;
+    gap: 1.5rem;
+    position: fixed;
+    /* Keep it visible even if menu opens? */
+    z-index: 60;
+    /* Above navbar if needed, or navbar z-index is 51. */
+  }
+
+  .social-links-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .social-separator {
+    width: 20px;
+    height: 1px;
+    border-left: none;
+    border-top: 2px dashed #b0b0b0;
+    display: none;
+    /* Often cleaner to hide separator in vertical stack */
+  }
+}
+
+.social-icon-link {
+  color: #b0b0b0;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon-link:hover {
   color: #ffffff;
 }
