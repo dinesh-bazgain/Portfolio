@@ -166,7 +166,7 @@
 
 /* Center Bottom Portrait */
 .hero-portrait-container {
-  position: absolute;
+  position: absolute; /* positioned container so children can align to portrait */
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -179,6 +179,18 @@
   pointer-events: none;
 }
 
+.hero-mark {
+  position: relative;
+  bottom: 15vh;
+  right: -4rem;
+  transform: translateX(calc(-50% + 7rem)) rotate(-70deg);
+  width: auto;
+  height: 6vh;
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 1;
+}
+
 .hero-portrait {
   height: 100%;
   width: auto;
@@ -186,39 +198,17 @@
   filter: grayscale(100%);
   /* Classic B&W look */
   opacity: 0.9;
-  mask-image: linear-gradient(to top,
-      rgba(0, 0, 0, 1) 80%,
-      rgba(0, 0, 0, 0) 100%);
-  -webkit-mask-image: linear-gradient(to top,
-      rgba(0, 0, 0, 1) 80%,
-      rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0) 100%
+  );
   /* Fades top slightly if needed */
-}
-
-/* Mobile Adjustments */
-@media (max-width: 1023px) {
-  .hero-section {
-    justify-content: flex-start;
-    padding-top: 6rem;
-    /* Space for top navbar if present */
-  }
-
-  .hero-portrait-container {
-    height: 50vh;
-    opacity: 0.7;
-    /* Fade it out on mobile so text is readable over it */
-    z-index: 0;
-  }
-
-  .hero-intro {
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  .hero-description {
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 /* Top Right Social/Icons (Mocking the icons in screenshot) */
@@ -277,7 +267,6 @@
     top: auto;
     right: auto;
     bottom: 2rem;
-    /* Bottom Left */
     left: 2rem;
     flex-direction: column-reverse;
     /* Theme toggle at bottom or top? User said "social media handles on bottom left corner in a column". Usually implies icons stacked. */
@@ -306,6 +295,41 @@
     border-top: 2px dashed #b0b0b0;
     display: none;
     /* Often cleaner to hide separator in vertical stack */
+  }
+
+  .hero-section {
+    justify-content: flex-start;
+    /* padding-top: 6rem; */
+    /* Space for top navbar if present */
+  }
+
+  .hero-portrait-container {
+    height: 50vh;
+    opacity: 0.7;
+    z-index: 0;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    left: auto;
+    transform: none;
+    justify-content: flex-end;
+  }
+
+  .hero-intro {
+    text-align: center;
+    margin: auto;
+    text-align: justify;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-mark{
+    bottom: 10vh;
+    right: -2rem;
   }
 }
 
