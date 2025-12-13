@@ -140,12 +140,16 @@
 }
 
 .contact-direct-card h3 {
+  /* Theme styles */
+  color: var(--foreground);
   font-size: 1.25rem;
   font-weight: 700;
   margin: 0;
 }
 
 .contact-email {
+  /* Theme styles */
+  color: var(--primary);
   font-size: 1rem;
   color: var(--primary);
   text-decoration: none;
@@ -158,6 +162,8 @@
 }
 
 .contact-response-time {
+  /* Theme styles */
+  color: var(--muted-foreground);
   font-size: 0.875rem;
   color: var(--muted-foreground);
   margin: 0;

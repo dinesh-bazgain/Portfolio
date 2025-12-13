@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, MouseEvent } from "react";
 import { Mail, Send } from "lucide-react";
 import "./contact.css";
 
