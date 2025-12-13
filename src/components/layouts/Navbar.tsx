@@ -8,14 +8,19 @@ import { NAV_ITEMS } from "@/data/navigation";
 
 interface NavbarProps {
   onNavClick?: (id: string) => void;
+  onMenuToggle?: (isOpen: boolean) => void;
   orientation?: "horizontal" | "vertical";
   className?: string;
 }
 
-const Navbar = ({ onNavClick, orientation = "horizontal", className = "" }: NavbarProps) => {
+const Navbar = ({ onNavClick, onMenuToggle, orientation = "horizontal", className = "" }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => {
+    const newState = !isOpen;
+    setIsOpen(newState);
+    if (onMenuToggle) onMenuToggle(newState);
+  };
 
   const navLinks = orientation === "vertical"
     ? NAV_ITEMS
@@ -45,6 +50,7 @@ const Navbar = ({ onNavClick, orientation = "horizontal", className = "" }: Navb
                   : () => {
                     if (onNavClick) onNavClick(item.id);
                     setIsOpen(false); // Close menu on click
+                    if (onMenuToggle) onMenuToggle(false);
                   }
               }
               className="nav-link"

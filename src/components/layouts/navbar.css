@@ -81,7 +81,7 @@
     align-items: center;
     /* Center links on mobile menu */
     justify-content: center;
-    transform: translateY(-100%);
+    transform: translateX(100%);
     /* Hidden by default (slide up) */
     opacity: 0;
     pointer-events: none;
