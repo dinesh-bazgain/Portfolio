@@ -4,21 +4,63 @@ import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import "./navbar.css";
+import { NAV_ITEMS } from "@/data/navigation";
 
-const Navbar = () => {
+interface NavbarProps {
+  onNavClick?: (id: string) => void;
+  orientation?: "horizontal" | "vertical";
+  className?: string;
+}
+
+const Navbar = ({ onNavClick, orientation = "horizontal", className = "" }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#skills", label: "Skills" },
-    { href: "#projects", label: "Projects" },
-    { href: "#contact", label: "Contact" },
-  ];
+  const navLinks = orientation === "vertical"
+    ? NAV_ITEMS
+    : NAV_ITEMS.filter(item => !item.disabled && ['home', 'skills', 'projects', 'contact'].includes(item.id));
 
+  // Render Vertical Layout (Sidebar)
+  if (orientation === "vertical") {
+    return (
+      <>
+        {/* Mobile Hamburger (Visible only on mobile via CSS) */}
+        <button
+          className="navbar-vertical-toggle"
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          {isOpen ? <X size={32} /> : <Menu size={32} />}
+        </button>
+
+        {/* Vertical Nav (Always visible on desktop, toggled on mobile) */}
+        <nav className={`navbar-vertical ${className} ${isOpen ? 'open' : ''}`}>
+          {navLinks.map((item) => (
+            <span
+              key={item.id}
+              onClick={
+                item.disabled
+                  ? undefined
+                  : () => {
+                    if (onNavClick) onNavClick(item.id);
+                    setIsOpen(false); // Close menu on click
+                  }
+              }
+              className="nav-link"
+              style={item.disabled ? { opacity: 0.5, cursor: "not-allowed" } : {}}
+            >
+              {item.label}
+            </span>
+          ))}
+        </nav>
+      </>
+    );
+  }
+
+  // Render Horizontal Layout (Default Top Nav)
   return (
-    <nav className="navbar-container">
+    <nav className={`navbar-container ${className}`}>
       <div className="navbar-inner">
         <div className="navbar-logo">
           <Image src="/icon.png" alt="Logo" width={40} height={40} />
@@ -28,7 +70,7 @@ const Navbar = () => {
         {/* Desktop Links */}
         <div className="navbar-links">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="navbar-link">
+            <a key={link.id} href={link.href} className="navbar-link">
               {link.label}
             </a>
           ))}
@@ -45,7 +87,7 @@ const Navbar = () => {
         <div className="navbar-mobile-menu">
           {navLinks.map((link) => (
             <a
-              key={link.href}
+              key={link.id}
               href={link.href}
               className="navbar-mobile-link"
               onClick={toggleMenu}

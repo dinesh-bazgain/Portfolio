@@ -1,132 +1,101 @@
-/* Hide Navbar on Desktop for this specific design layout */
-@media (min-width: 1024px) {
-  .navbar-container {
-    display: none;
-  }
-}
-
-.navbar-container {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  width: 100%;
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--glass-border);
-}
-
-.navbar-inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1.5rem;
-}
-
-.navbar-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.navbar-title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  background: linear-gradient(to right, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.navbar-links {
-  display: none;
-  gap: 2rem;
-}
-
-@media (min-width: 768px) {
-  .navbar-links {
-    display: flex;
-  }
-}
-
-.navbar-link {
-  font-size: 0.9375rem;
-  font-weight: 500;
-  color: var(--foreground);
-  text-decoration: none;
-  transition: color 0.2s ease;
-  position: relative;
-}
-
-.navbar-link::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(to right, var(--primary), var(--accent));
-  transition: width 0.3s ease;
-}
-
-.navbar-link:hover::after {
-  width: 100%;
-}
-
-.navbar-link:hover {
-  color: var(--primary);
-}
-
-.navbar-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: none;
-  color: var(--foreground);
-  cursor: pointer;
-  padding: 0.5rem;
-  transition: color 0.2s ease;
-}
-
-.navbar-toggle:hover {
-  color: var(--primary);
-}
-
-@media (min-width: 768px) {
-  .navbar-toggle {
-    display: none;
-  }
-}
-
-.navbar-mobile-menu {
-  display: flex;
+/* Vertical Navbar (Sidebar) */
+.navbar-vertical {
+  display: flex !important;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 1rem 1.5rem;
-  background: var(--glass-bg);
-  border-top: 1px solid var(--glass-border);
+  align-items: flex-start;
+  right: 3rem;
+  gap: 1.5rem;
+  z-index: 10;
+  width: 100%;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-@media (min-width: 768px) {
-  .navbar-mobile-menu {
-    display: none;
-  }
+/* Mobile Toggle Button for Vertical Nav */
+.navbar-vertical-toggle {
+  display: none;
+  /* Hidden on Desktop */
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #b0b0b0;
+  /* Or inherit from theme */
+  position: absolute;
+  /* Fixed/Absolute depending on layout */
+  top: 2rem;
+  right: 2rem;
+  z-index: 51;
+  /* Above mobile menu */
 }
 
-.navbar-mobile-link {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--foreground);
+/* Responsive Font Sizing */
+.navbar-vertical .nav-link {
+  font-family: poppins, sans-serif;
+  font-size: clamp(1rem, 4vw, 2rem);
+  color: #b0b0b0;
   text-decoration: none;
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  white-space: nowrap;
+  /* Prevent wrapping */
 }
 
-.navbar-mobile-link:hover {
-  background-color: var(--muted);
-  color: var(--primary);
+.navbar-vertical .nav-link::after {
+  content: "←";
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+}
+
+.navbar-vertical .nav-link:hover {
+  color: #ffffff;
+}
+
+.navbar-vertical .nav-link:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Mobile Styles for Vertical Navbar */
+@media (max-width: 1023px) {
+  .navbar-vertical-toggle {
+    display: block;
+    /* Show hamburger on mobile */
+  }
+
+  .navbar-vertical {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--background);
+    /* Full screen background */
+    padding: 6rem 2rem;
+    /* Space for top toggle */
+    align-items: center;
+    /* Center links on mobile menu */
+    justify-content: center;
+    transform: translateY(-100%);
+    /* Hidden by default (slide up) */
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .navbar-vertical.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Reset font size for mobile menu to be larger/centered if desired */
+  .navbar-vertical .nav-link {
+    font-size: 2rem;
+    justify-content: center;
+  }
 }
