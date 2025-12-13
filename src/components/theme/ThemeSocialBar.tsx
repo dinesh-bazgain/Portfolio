@@ -10,23 +10,24 @@ import {
   Moon,
   Twitter,
 } from "lucide-react";
+import { useTheme } from "next-themes";
 import "../../app/home/home.css";
 
 const ThemeSocialBar = () => {
-  const [theme, setTheme] = useState("light");
+  const { theme, setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Check initial theme
-    if (document.body.classList.contains("dark-theme")) {
-      setTheme("dark");
-    }
+    setMounted(true);
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    document.body.classList.toggle("dark-theme");
+    setTheme(resolvedTheme === "light" ? "dark" : "light");
   };
+
+  if (!mounted) {
+    return null; // Avoid hydration mismatch
+  }
 
   return (
     <div className="theme-social-bar">
@@ -36,7 +37,7 @@ const ThemeSocialBar = () => {
         className="social-icon-btn"
         aria-label="Toggle Theme"
       >
-        {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+        {resolvedTheme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
       </button>
 
       {/* Separator */}
