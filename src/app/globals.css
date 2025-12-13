@@ -1,22 +1,46 @@
 @import "tailwindcss";
 
 :root {
+  /* Light Theme - Elegant & Minimal */
+  --background: #ffffff;
+  --foreground: #1c1c1c;
+
+  --primary: #1c1c1c;
+  --primary-foreground: #ffffff;
+
+  --secondary: #f3f3f3;
+  --secondary-foreground: #1c1c1c;
+
+  --accent: #e5e5e5;
+  --accent-foreground: #1c1c1c;
+
+  --muted: #f3f3f3;
+  --muted-foreground: #666666;
+
+  --card: #f9f9f9;
+  --card-foreground: #1c1c1c;
+
+  --border: #e5e5e5;
+
+  /* Glassmorphism Light */
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(0, 0, 0, 0.05);
+
+  --font-serif: "Times New Roman", Times, serif;
+}
+
+.dark {
   /* Dark Elegant Theme - Match Neria Katz Reference */
   --background: #1c1c1c;
-  /* Dark Charcoal */
   --foreground: #e0e0e0;
-  /* Off-white */
 
   --primary: #ffffff;
-  /* White for contrast */
   --primary-foreground: #1c1c1c;
 
   --secondary: #2d2d2d;
-  /* Slightly lighter charcoal */
   --secondary-foreground: #b0b0b0;
 
   --accent: #4a4a4a;
-  /* Dark gray accent */
   --accent-foreground: #ffffff;
 
   --muted: #2a2a2a;
@@ -27,28 +51,9 @@
 
   --border: #333333;
 
-  /* Glassmorphism */
+  /* Glassmorphism Dark */
   --glass-bg: rgba(28, 28, 28, 0.8);
   --glass-border: rgba(255, 255, 255, 0.05);
-
-  /* Fonts */
-  --font-serif: "Times New Roman", Times, serif;
-  /* Fallback to system serif until Google Font is added */
-}
-
-@media (prefers-color-scheme: light) {
-
-  /* Force dark mode even in light preference for this specific design request */
-  :root {
-    --background: #1c1c1c;
-    --foreground: #e0e0e0;
-    --card: #252525;
-    --card-foreground: #e0e0e0;
-    --secondary: #2d2d2d;
-    --border: #333333;
-    --glass-bg: rgba(28, 28, 28, 0.8);
-    --glass-border: rgba(255, 255, 255, 0.05);
-  }
 }
 
 html {
@@ -61,6 +66,9 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  /* Butter Smooth Transition */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 /* Utilities */
@@ -69,6 +77,7 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
 .text-gradient {
