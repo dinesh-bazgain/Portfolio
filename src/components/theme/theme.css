@@ -1,0 +1,18 @@
+.theme-toggle {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.theme-button {
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.theme-button:hover {
+  background: rgba(139, 122, 184, 0.1);
+}
