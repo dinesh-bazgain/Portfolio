@@ -269,12 +269,6 @@
     bottom: 2rem;
     left: 2rem;
     flex-direction: column-reverse;
-    /* Theme toggle at bottom or top? User said "social media handles on bottom left corner in a column". Usually implies icons stacked. */
-    /* If column-reverse, icons will be above toggle if toggle is first in HTML? */
-    /* HTML: Toggle, Separator, LinksRow. */
-    /* If flex-direction: column-reverse -> LinksRow (top), Separator, Toggle (bottom). */
-    /* If flex-direction: column -> Toggle (top), Separator, LinksRow (bottom). */
-    /* Let's align with "bottom left corner". Usually toggle is separate. */
     align-items: flex-start;
     gap: 1.5rem;
     position: fixed;
