@@ -62,7 +62,7 @@
 }
 
 /* Mobile Styles for Vertical Navbar */
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
   .navbar-vertical-toggle {
     display: block;
     /* Show hamburger on mobile */
