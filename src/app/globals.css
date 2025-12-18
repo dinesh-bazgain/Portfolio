@@ -2,13 +2,13 @@
 
 :root {
   /* Light Theme - Elegant & Minimal */
-  --background: #ffffff;
+  --background: #c1bfbf;
   --foreground: #1c1c1c;
 
   --primary: #1c1c1c;
   --primary-foreground: #ffffff;
 
-  --secondary: #f3f3f3;
+  --secondary: #2f2f2f;
   --secondary-foreground: #1c1c1c;
 
   --accent: #e5e5e5;
@@ -32,7 +32,7 @@
 .dark {
   /* Dark Elegant Theme - Match Neria Katz Reference */
   --background: #1c1c1c;
-  --foreground: #e0e0e0;
+  --foreground: rgb(131, 130, 130);
 
   --primary: #ffffff;
   --primary-foreground: #1c1c1c;
