@@ -182,7 +182,7 @@
 .hero-mark {
   position: relative;
   bottom: 15vh;
-  right: -2rem;
+  right: -10%;
   transform: translateX(calc(-50% + 7rem)) rotate(-70deg);
   width: auto;
   height: 6vh;
@@ -269,12 +269,12 @@
     bottom: 2rem;
     left: 2rem;
     flex-direction: column-reverse;
+    /* Icons top, toggle bottom */
     align-items: flex-start;
+    /* Align to left */
     gap: 1.5rem;
     position: fixed;
-    /* Keep it visible even if menu opens? */
     z-index: 60;
-    /* Above navbar if needed, or navbar z-index is 51. */
   }
 
   .social-links-row {
@@ -283,60 +283,95 @@
   }
 
   .social-separator {
-    width: 20px;
-    height: 1px;
-    border-left: none;
-    border-top: 2px dashed #b0b0b0;
     display: none;
-    /* Often cleaner to hide separator in vertical stack */
   }
 
   .hero-section {
+    display: block;
+    /* Remove grid to allow natural flow */
+    padding-top: 4rem;
+    /* Additional top space */
     justify-content: flex-start;
-    /* padding-top: 6rem; */
-    /* Space for top navbar if present */
+  }
+
+  .hero-intro {
+    text-align: left;
+    margin: 0;
+    /* Remove auto margin */
+    width: 100%;
+    position: relative;
+    z-index: 10;
+  }
+
+  .hero-title {
+    white-space: normal;
+    /* Allow wrapping on small screens */
+  }
+
+  .hero-description {
+    text-align: justify;
+    max-width: 90%;
+    /* prevent text from hitting the edge too hard */
   }
 
   .hero-portrait-container {
-    height: 60vh;
+    height: 65vh;
     opacity: 0.8;
     z-index: 0;
-    width: 100vw;
-    right: 0;
+    width: auto;
+    right: -4rem;
     bottom: 0;
     position: absolute;
     left: auto;
     transform: none;
     justify-content: flex-end;
-    margin-right: 0;
-    padding-right: 0;
+    align-items: flex-end;
+    pointer-events: none;
+    /* Ensure clicks pass through */
   }
 
   .hero-portrait {
-    margin-right: -2rem;
+    margin-right: 0;
     display: block;
+    height: 100%;
+    width: auto;
   }
 
-  .hero-intro {
-    text-align: center;
-    margin: auto;
-    text-align: justify;
-  }
   .hero-mark {
-    bottom: 10vh;
-    right: -1.5rem;
+    position: absolute;
+    bottom: 15vh;
+    right: 72%; /* Overlap by 1% for a sticking effect */
+    left: auto;
+    transform: rotate(-70deg);
+    transform-origin: center center;
+    height: 7vh;
+    opacity: 0.7;
   }
 }
+
 @media (max-width: 450px) {
   .hero-portrait-container {
-    height: 50vh;
+    height: 55vh;
+    right: -5rem;
   }
-}
-@media (max-width: 400px) {
+
   .hero-mark {
-    right: -1rem;
+    bottom: 12vh;
+    right: 72%;
+    height: 6vh;
   }
 }
+
+@media (max-width: 400px) {
+  .hero-portrait-container {
+    right: -6rem;
+  }
+
+  .hero-mark {
+    right: 72%;
+  }
+}
+
 .social-icon-link {
   color: #b0b0b0;
   transition: color 0.3s ease;
