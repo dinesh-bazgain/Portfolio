@@ -2,8 +2,9 @@
 .navbar-vertical {
   display: flex !important;
   flex-direction: column;
-  align-items: flex-start;
-  right: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 3rem;
   gap: 1.5rem;
   z-index: 10;
   width: 100%;
@@ -27,11 +28,22 @@
   /* Above mobile menu */
 }
 
+/* Arrow image at end of nav-link */
+.nav-link img {
+  height: 1.2em;
+  width: 1.2em;
+  margin-left: auto;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: transform 0.3s cubic-bezier(0.4, 2, 0.6, 1), opacity 0.2s;
+  display: inline-block;
+}
 /* Responsive Font Sizing */
+/* Updated nav-link for arrow at end */
 .navbar-vertical .nav-link {
   font-family: poppins, sans-serif;
   font-size: clamp(1rem, 4vw, 2rem);
-  color: #b0b0b0;
+  color: var(--foreground);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -39,26 +51,24 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   gap: 0.5rem;
   white-space: nowrap;
-  /* Prevent wrapping */
+  width: 100%;
+  position: relative;
 }
 
-.navbar-vertical .nav-link::after {
-  content: "←";
-  opacity: 0;
-  transform: translateX(10px);
-  transition: all 0.3s ease;
-}
+/* Always show the arrow at the end, animate on hover */
+/* Remove pseudo-element for image, use hover on img */
 
+/* On hover, animate arrow and color */
 .navbar-vertical .nav-link:hover {
-  color: #ffffff;
+  color: var(--secondary);
 }
 
-.navbar-vertical .nav-link:hover::after {
-  opacity: 1;
-  transform: translateX(0);
+.navbar-vertical .nav-link:hover img {
+  opacity: 0.65;
+  transform: translateX(50px) scale(1.1);
 }
 
 /* Mobile Styles for Vertical Navbar */
