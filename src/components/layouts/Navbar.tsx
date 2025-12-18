@@ -56,7 +56,7 @@ const Navbar = ({ onNavClick, onMenuToggle, orientation = "horizontal", classNam
               className="nav-link"
               style={item.disabled ? { opacity: 0.5, cursor: "not-allowed" } : {}}
             >
-              {item.label}
+              {item.label} <img src="/arrow.png" alt="arrow to point the nav items" />
             </span>
           ))}
         </nav>
