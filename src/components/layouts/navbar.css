@@ -27,16 +27,26 @@
   z-index: 51;
   /* Above mobile menu */
 }
-
+.nav-link-items{
+  padding-right: 4rem;
+}
 /* Arrow image at end of nav-link */
-.nav-link img {
+.nav-link svg {
   height: 1.2em;
   width: 1.2em;
   margin-left: auto;
   opacity: 0;
-  transform: translateX(50px);
+  filter: none;
+  color: var(--foreground);
+  /* Remove invalid transform property from CSS, handled inline in React */
   transition: transform 0.3s cubic-bezier(0.4, 2, 0.6, 1), opacity 0.2s;
   display: inline-block;
+}
+
+.navbar-vertical .nav-link:hover svg {
+  opacity: 1;
+  transform: translateX(50px) scale(1.1);
+  color: var(--secondary);
 }
 /* Responsive Font Sizing */
 /* Updated nav-link for arrow at end */
@@ -59,16 +69,11 @@
 }
 
 /* Always show the arrow at the end, animate on hover */
-/* Remove pseudo-element for image, use hover on img */
+/* Remove pseudo-element for image, use hover on svg */
 
 /* On hover, animate arrow and color */
 .navbar-vertical .nav-link:hover {
   color: var(--secondary);
-}
-
-.navbar-vertical .nav-link:hover img {
-  opacity: 0.5;
-  transform: translateX(50px) scale(1.1);
 }
 
 /* Mobile Styles for Vertical Navbar */
