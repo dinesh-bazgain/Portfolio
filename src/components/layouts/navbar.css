@@ -67,7 +67,7 @@
 }
 
 .navbar-vertical .nav-link:hover img {
-  opacity: 0.65;
+  opacity: 0.5;
   transform: translateX(50px) scale(1.1);
 }
 
