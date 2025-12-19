@@ -94,9 +94,12 @@ export default function HomePage() {
   return (
     <main className="home-main">
       {/* Background Home Grid (Visible when currentSection is home) */}
-      <section className={`hero-section ${isMenuOpen ? "pushed-back" : ""}`} id="home">
+      <section
+        className={`hero-section ${isMenuOpen ? "pushed-back" : ""}`}
+        id="home"
+      >
         {/* Top Right Theme/Social Bar */}
-        <ThemeSocialBar />
+        <ThemeSocialBar hideOnMobileMenu={isMenuOpen} />
 
         {/* Left Content: Intro */}
         <div className="left-container">
