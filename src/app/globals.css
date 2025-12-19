@@ -3,9 +3,9 @@
 :root {
   /* Light Theme - Elegant & Minimal */
   --background: #c1bfbf;
-  --foreground: #1c1c1c;
+  --foreground: #2d2d2d;
 
-  --primary: #1c1c1c;
+  --primary: #000000;
   --primary-foreground: #ffffff;
 
   --secondary: #2f2f2f;
@@ -15,10 +15,12 @@
   --accent-foreground: #1c1c1c;
 
   --muted: #f3f3f3;
-  --muted-foreground: #666666;
+  --muted-foreground: #767575;
 
   --card: #f9f9f9;
   --card-foreground: #1c1c1c;
+
+  --hover-foreground: #000000;
 
   --border: #e5e5e5;
 
@@ -34,20 +36,22 @@
   --background: #1c1c1c;
   --foreground: rgb(131, 130, 130);
 
-  --primary: #ffffff;
+  --primary: #919191;
   --primary-foreground: #1c1c1c;
 
-  --secondary: #ffffff;
+  --secondary: #cbc7c7;
   --secondary-foreground: #b0b0b0;
 
   --accent: #4a4a4a;
-  --accent-foreground: #ffffff;
+  --accent-foreground: #b4b1b1;
 
   --muted: #2a2a2a;
   --muted-foreground: #888888;
 
   --card: #252525;
   --card-foreground: #e0e0e0;
+
+  --hover-foreground: #ffffff;
 
   --border: #333333;
 
@@ -66,7 +70,7 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+
   /* Butter Smooth Transition */
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
