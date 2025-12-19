@@ -260,6 +260,13 @@
 
 /* Mobile: Bottom Left Column */
 @media (max-width: 1024px) {
+  .theme-social-bar.hide-on-mobile-menu {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s;
+    transition-delay: 0.15s;
+  }
+
   .theme-social-bar {
     top: auto;
     right: auto;
@@ -356,16 +363,6 @@
     bottom: 12vh;
     right: 72%;
     height: 6vh;
-  }
-}
-
-@media (max-width: 400px) {
-  .hero-portrait-container {
-    right: -6rem;
-  }
-
-  .hero-mark {
-    right: 72%;
   }
 }
 
