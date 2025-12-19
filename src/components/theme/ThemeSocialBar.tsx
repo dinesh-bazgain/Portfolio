@@ -13,7 +13,11 @@ import {
 import { useTheme } from "next-themes";
 import "../../app/home/home.css";
 
-const ThemeSocialBar = () => {
+type ThemeSocialBarProps = {
+  hideOnMobileMenu?: boolean;
+};
+
+const ThemeSocialBar = ({ hideOnMobileMenu = false }: ThemeSocialBarProps) => {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -30,7 +34,11 @@ const ThemeSocialBar = () => {
   }
 
   return (
-    <div className="theme-social-bar">
+    <div
+      className={`theme-social-bar ${
+        hideOnMobileMenu ? "hide-on-mobile-menu" : ""
+      }`}
+    >
       {/* Theme Toggle */}
       <button
         onClick={toggleTheme}
