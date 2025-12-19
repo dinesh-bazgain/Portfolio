@@ -23,6 +23,7 @@
 @media (min-width: 1024px) {
   .hero-section {
     padding: 3rem 4rem;
+    padding-right: 0;
     gap: 4rem;
   }
 }
@@ -367,7 +368,7 @@
 }
 
 .social-icon-link {
-  /* color: #b0b0b0; */
+  color: var(--muted-foreground);
   transition: color 0.3s ease;
   display: flex;
   align-items: center;
@@ -375,5 +376,21 @@
 }
 
 .social-icon-link:hover {
-  color: #ffffff;
+  color: var(--hover-foreground);
+}
+
+.social-icon-btn {
+  background: none;
+  border: none;
+  color: var(--muted-foreground);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.social-icon-btn:hover {
+  color: var(--hover-foreground);
 }
