@@ -36,13 +36,13 @@ export default function HomePage() {
     setCurrentSection("home");
   };
 
-  // Determine effective indices for content sections (skipping 'home' at index 0)
+  // Determine indices for content sections (About is first)
   const currentIndex = SECTIONS.indexOf(currentSection);
-  const firstContentIndex = 1; // 'about'
-  const lastContentIndex = SECTIONS.length - 1; // 'contact'
+  const firstContentIndex = 0; // 'about' is first
+  const lastContentIndex = SECTIONS.length - 1; // 'contact' is last
 
-  const isFirstSection = currentIndex <= firstContentIndex;
-  const isLastSection = currentIndex >= lastContentIndex;
+  const isFirstSection = currentIndex === firstContentIndex;
+  const isLastSection = currentIndex === lastContentIndex;
 
   const handleNext = () => {
     if (isLastSection) return;
