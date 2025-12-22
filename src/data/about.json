@@ -1,22 +1,18 @@
 {
-    "name": "Dinesh Bazgain",
-    "role": "Full-Stack Developer & AI/ML Enthusiast",
-    "tagline": "Building exceptional digital experiences with modern technologies",
-    "bio": "I'm a passionate full-stack developer focused on creating scalable applications and exploring the intersection of AI and web development. With expertise in modern frameworks and a keen eye for design, I build solutions that are not only functional but also beautiful and user-centric.",
-    "detailedBio": "As a dedicated software engineer, I specialize in architecting robust web applications using cutting-edge technologies. My journey in tech has been driven by curiosity and a commitment to continuous learning. I thrive on solving complex problems and transforming ideas into elegant, performant solutions. Whether it's crafting intuitive user interfaces or optimizing backend systems, I approach every project with precision and creativity.",
-    "location": "Your City, Country",
-    "email": "your.email@example.com",
-    "social": {
-        "github": "https://github.com/yourusername",
-        "linkedin": "https://linkedin.com/in/yourusername",
-        "twitter": "https://twitter.com/yourusername"
-    },
-    "availability": "Open to opportunities",
-    "interests": [
-        "Artificial Intelligence",
-        "Machine Learning",
-        "Web Development",
-        "System Design",
-        "Open Source"
-    ]
+  "name": "Dinesh Bajgain",
+  "role": "Full-Stack Developer & AI/ML Enthusiast",
+  "tagline": "Building intelligent, scalable digital experiences",
+  "bio": "I'm a passionate full-stack developer exploring the intersection of AI and web development. I enjoy building real-world applications with a deep focus on learning concepts from scratch and creating meaningful, user-centric solutions.",
+  "detailedBio": "I specialize in developing modern web applications while actively working on AI-driven projects such as face recognition systems and chatbots. Driven by curiosity and long-term impact, I continuously learn, experiment, and build technologies that solve real problems and push my skills forward.",
+  "location": "Lalitpur, Nepal",
+  "availability": "Open to opportunities",
+  "email": "dinesh.bajgain@gmail.com",
+  "interests": [
+    "Full Stack Development",
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Web Development",
+    "System Design",
+    "Open Source"
+  ]
 }
