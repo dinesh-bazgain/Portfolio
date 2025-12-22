@@ -8,7 +8,7 @@ import "./home.css";
 // Import Section Components
 import ProjectListPage from "../project/page";
 import ContactPage from "../contact/page";
-import WorkWithMe from "../workWithMe/page";
+import WorkWithMe from "../about/page";
 import Skills from "../skills/page";
 import ThemeSocialBar from "@/components/theme/ThemeSocialBar";
 import { NAV_ITEMS } from "@/data/navigation";
