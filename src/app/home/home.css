@@ -19,6 +19,103 @@
   gap: 2rem;
 }
 
+/* Animated subtle gradient background and centered minimal hero */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(0, 0, 0, 0.02),
+    rgba(255, 255, 255, 0.02)
+  );
+  background-size: 600% 600%;
+  animation: gradientBG 12s ease infinite;
+  pointer-events: none;
+  opacity: 0.12;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero-intro.minimal {
+  position: relative;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: auto;
+  text-align: left;
+  padding: 1.5rem;
+}
+
+.hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--accent),
+    var(--foreground)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: fadeInUp 0.8s ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-accent {
+  width: 72px;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), transparent);
+  opacity: 0.9;
+  animation: accentPulse 2.2s ease-in-out infinite;
+}
+
+@keyframes accentPulse {
+  0% {
+    transform: scaleX(0.7);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(0.7);
+    opacity: 0.6;
+  }
+}
+
 /* On very large screens, add more padding */
 @media (min-width: 1024px) {
   .hero-section {
@@ -41,10 +138,15 @@
   /* Responsive font size */
   font-size: clamp(2.5rem, 8vw, 6rem);
   font-weight: 400;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-  white-space: nowrap;
-  /* Keep name on one line if possible, or let it wrap if too small */
+  line-height: 2;
+  display: inline-block;
+  white-space: normal;
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    white-space: nowrap;
+  }
 }
 
 .hero-title span {

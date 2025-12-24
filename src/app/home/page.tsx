@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import { X, ArrowLeft, ArrowRight } from "lucide-react";
 import "./home.css";
 
@@ -101,34 +100,17 @@ export default function HomePage() {
         {/* Top Right Theme/Social Bar */}
         <ThemeSocialBar hideOnMobileMenu={isMenuOpen} />
 
-        {/* Left Content: Intro */}
+        {/* Left Content: Minimal Intro (with portrait preserved) */}
         <div className="left-container">
-          <div className="hero-intro">
+          <div className="hero-intro minimal">
             <h1 className="hero-title">Dinesh Bajgain</h1>
-            <h2 className="hero-subtitle">
-              Full Stack Developer | AI/ML Enthusiast
-            </h2>
-            <p className="hero-description">
-              Exceptional experiences are built on structure, empathy, and
-              vision. I architect scalable systems and intuitive flows that
-              connect people to technology with purpose. From global e-commerce
-              platforms to emerging AI products, I build frameworks that feel
-              seamless, human, and ready for the future.
-            </p>
+            <div className="hero-accent" aria-hidden="true" />
           </div>
 
-          {/* Center Bottom Image */}
+          {/* Center Bottom Image (kept as requested) */}
           <div className="hero-portrait-container">
-            <img
-              src="/mark.png"
-              alt="Dinesh Bajgain Signature"
-              className="hero-mark"
-            />
-            <img
-              src="/portrait.png"
-              alt="Dinesh Bajgain Portrait"
-              className="hero-portrait"
-            />
+            <img src="/mark.png" alt="Signature" className="hero-mark" />
+            <img src="/portrait.png" alt="Portrait" className="hero-portrait" />
           </div>
         </div>
         {/* Right Content: Vertical Navigation */}
