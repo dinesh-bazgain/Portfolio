@@ -30,11 +30,7 @@ const Navbar = ({
   const navLinks =
     orientation === "vertical"
       ? NAV_ITEMS
-      : NAV_ITEMS.filter(
-          (item) =>
-            !item.disabled &&
-            ["home", "skills", "projects", "contact"].includes(item.id)
-        );
+      : NAV_ITEMS.filter((item) => !item.disabled && item.id);
 
   // Render Vertical Layout (Sidebar)
   if (orientation === "vertical") {
