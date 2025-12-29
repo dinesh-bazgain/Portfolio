@@ -15,8 +15,11 @@
   min-height: 100vh;
   padding: 2rem;
   display: grid;
-  grid-template-columns: 1fr auto;
+  /* grid-template-columns: 1fr auto; */
   gap: 2rem;
+}
+.hero-navbar {
+  grid-template-columns: 1fr auto;
 }
 
 /* Animated subtle gradient background and centered minimal hero */
@@ -172,10 +175,6 @@
   line-height: 1.6;
 }
 
-.hero-navbar {
-  margin-top: 5rem;
-}
-
 /* Right Content: Vertical Navigation Container */
 .right-container {
   display: flex;
@@ -183,22 +182,7 @@
   height: 100%;
 }
 
-/* Lock scroll for the whole page */
-:global(body),
-:global(html) {
-  overflow: hidden;
-  height: 100vh;
-  width: 100vw;
-}
-
-.home-main {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  background-color: var(--background);
-  color: var(--foreground);
-  overflow: hidden;
-}
+/* Removed global scroll lock so pages can scroll naturally and the top navbar remains sticky. */
 
 /* ... existing logic ... */
 
