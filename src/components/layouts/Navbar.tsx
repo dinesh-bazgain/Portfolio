@@ -3,7 +3,10 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 import "./navbar.css";
+import ThemeSocialBar from "@/components/theme/ThemeSocialBar";
 import { NAV_ITEMS } from "@/data/navigation";
 
 interface NavbarProps {
@@ -62,7 +65,7 @@ const Navbar = ({
               className="nav-link"
             >
               <span className="nav-link-items">{item.label}</span>
-              <span className="nav-link-arrow">
+              {/* <span className="nav-link-arrow">
                 <svg
                   width="1.2em"
                   height="1.2em"
@@ -78,11 +81,66 @@ const Navbar = ({
                     transform="translate(-161, -38)"
                   />
                 </svg>
-              </span>
+              </span> */}
             </span>
           ))}
         </nav>
       </>
+    );
+  }
+
+  // Render Horizontal / Top Navbar
+  if (orientation === "horizontal") {
+    const router = useRouter();
+    const goHome = () => router.push("/");
+    return (
+      <nav className={`site-top-navbar ${className}`}>
+        <div className="site-navbar-inner">
+          <div className="site-navbar-left">
+            <div className="navbar-links">
+              {navLinks.map((link) => (
+                <Link key={link.id} href={link.href} className="navbar-link">
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="site-navbar-right">
+            <button
+              className="navbar-home-btn"
+              aria-label="Go to home"
+              onClick={() => router.push("/")}
+            >
+              <X size={18} />
+            </button>
+            <ThemeSocialBar />
+          </div>
+
+          <button
+            className="navbar-toggle"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
+          {isOpen && (
+            <div className="navbar-mobile-menu">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.id}
+                  href={link.href}
+                  className="navbar-mobile-link"
+                  onClick={toggleMenu}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      </nav>
     );
   }
 };
