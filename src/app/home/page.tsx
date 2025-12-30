@@ -9,9 +9,7 @@ import ProjectListPage from "../project/page";
 import ContactPage from "../contact/page";
 import WorkWithMe from "../about/page";
 import Skills from "../skills/page";
-import ThemeSocialBar from "@/components/theme/ThemeSocialBar";
 import { NAV_ITEMS } from "@/data/navigation";
-import Navbar from "@/components/layouts/Navbar";
 
 // Define the navigation order based on valid IDs
 const SECTIONS = NAV_ITEMS.filter((item) => !item.disabled).map(
@@ -97,9 +95,6 @@ export default function HomePage() {
         className={`hero-section ${isMenuOpen ? "pushed-back" : ""}`}
         id="home"
       >
-        {/* Top Right Theme/Social Bar */}
-        <ThemeSocialBar hideOnMobileMenu={isMenuOpen} />
-
         {/* Left Content: Minimal Intro (with portrait preserved) */}
         <div className="left-container">
           <div className="hero-intro minimal">
@@ -111,17 +106,6 @@ export default function HomePage() {
           <div className="hero-portrait-container">
             <img src="/mark.png" alt="Signature" className="hero-mark" />
             <img src="/portrait.png" alt="Portrait" className="hero-portrait" />
-          </div>
-        </div>
-        {/* Right Content: Vertical Navigation */}
-        <div className="right-container">
-          <div className="hero-navbar">
-            <Navbar
-              orientation="vertical"
-              onNavClick={handleNavClick}
-              onMenuToggle={handleMenuToggle}
-              className="hero-navbar-vertical"
-            />
           </div>
         </div>
       </section>
