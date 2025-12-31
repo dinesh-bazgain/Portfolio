@@ -1,14 +1,137 @@
 /* Vertical Navbar (Sidebar) */
 .navbar-vertical {
   display: flex !important;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   font-size: 3rem;
+  height: fit-content;
   gap: 1.5rem;
   z-index: 10;
   width: 100%;
   transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Top / Site Navbar styles (renamed classes) */
+.site-top-navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--background);
+  z-index: 60;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+.site-navbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+}
+
+.site-navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 0 0 80%;
+}
+
+.site-navbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  flex: 0 0 20%;
+}
+
+.site-navbar-right .theme-social-bar {
+  position: static;
+  top: auto;
+  right: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.navbar-link {
+  color: var(--foreground);
+  text-decoration: none;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.navbar-link:hover {
+  color: var(--secondary);
+}
+
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+}
+
+.navbar-mobile-link {
+  color: var(--foreground);
+  text-decoration: none;
+  padding: 0.5rem 0;
+}
+
+/* Home button in navbar */
+.navbar-home-btn {
+  background: none;
+  border: none;
+  color: var(--foreground);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem;
+  margin-right: 0.25rem;
+}
+
+.navbar-home-btn:hover {
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .site-navbar-left {
+    flex: 1 1 auto;
+  }
+
+  .site-navbar-right {
+    flex: 0 0 auto;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-mobile-menu {
+    display: flex;
+  }
 }
 
 /* Mobile Toggle Button for Vertical Nav */
@@ -31,14 +154,13 @@
   padding-right: 4rem;
 }
 /* Arrow image at end of nav-link */
-.nav-link svg {
+/* .nav-link svg {
   height: 1.2em;
   width: 1.2em;
   margin-left: auto;
   opacity: 0;
   filter: none;
   color: var(--foreground);
-  /* Remove invalid transform property from CSS, handled inline in React */
   transition: transform 0.3s cubic-bezier(0.4, 2, 0.6, 1), opacity 0.2s;
   display: inline-block;
 }
@@ -47,7 +169,7 @@
   opacity: 1;
   transform: translateX(50px) scale(1.1);
   color: var(--secondary);
-}
+} */
 /* Responsive Font Sizing */
 /* Updated nav-link for arrow at end */
 .navbar-vertical .nav-link {
