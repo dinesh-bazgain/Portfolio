@@ -2,24 +2,24 @@
 
 .home-main {
   width: 100%;
-  min-height: 100vh;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   position: relative;
   background-color: var(--background);
   color: var(--foreground);
-  overflow-x: hidden;
+  overflow: hidden; /* Prevent scroll for single-page content */
 }
 
 /* Hero Section Container - Global Grid */
 .hero-section {
   position: relative;
-  min-height: 100vh;
+  flex: 1;
   padding: 2rem;
   display: grid;
   /* grid-template-columns: 1fr auto; */
   gap: 2rem;
-}
-.hero-navbar {
-  grid-template-columns: 1fr auto;
+  overflow: hidden;
 }
 
 /* Animated subtle gradient background and centered minimal hero */
