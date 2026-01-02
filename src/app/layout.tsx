@@ -30,7 +30,7 @@ export default function RootLayout({
           disableTransitionOnChange={false}
         >
           <Navbar orientation="horizontal" />
-          {children}
+          <main className="page-content">{children}</main>
         </ThemeProvider>
       </body>
     </html>
