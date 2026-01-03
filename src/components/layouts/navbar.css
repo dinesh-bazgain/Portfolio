@@ -4,11 +4,9 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  font-size: 3rem;
   height: fit-content;
   gap: 1.5rem;
   z-index: 10;
-  width: 100%;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -31,6 +29,7 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 0.75rem 1rem;
+  min-height: 8vh;
 }
 
 .site-navbar-left {
@@ -89,25 +88,6 @@
   padding: 0.75rem 1.25rem;
 }
 
-.navbar-mobile-link {
-  color: var(--foreground);
-  text-decoration: none;
-  padding: 0.5rem 0;
-}
-
-/* Home button in navbar */
-.navbar-home-btn {
-  background: none;
-  border: none;
-  color: var(--foreground);
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.35rem;
-  margin-right: 0.25rem;
-}
-
 .navbar-home-btn:hover {
   color: var(--primary);
 }
@@ -131,108 +111,5 @@
 
   .navbar-mobile-menu {
     display: flex;
-  }
-}
-
-/* Mobile Toggle Button for Vertical Nav */
-.navbar-vertical-toggle {
-  display: none;
-  /* Hidden on Desktop */
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--foreground);
-  /* Or inherit from theme */
-  position: absolute;
-  /* Fixed/Absolute depending on layout */
-  top: 2rem;
-  right: 2rem;
-  z-index: 51;
-  /* Above mobile menu */
-}
-.nav-link-items {
-  padding-right: 4rem;
-}
-/* Arrow image at end of nav-link */
-/* .nav-link svg {
-  height: 1.2em;
-  width: 1.2em;
-  margin-left: auto;
-  opacity: 0;
-  filter: none;
-  color: var(--foreground);
-  transition: transform 0.3s cubic-bezier(0.4, 2, 0.6, 1), opacity 0.2s;
-  display: inline-block;
-}
-
-.navbar-vertical .nav-link:hover svg {
-  opacity: 1;
-  transform: translateX(50px) scale(1.1);
-  color: var(--secondary);
-} */
-/* Responsive Font Sizing */
-/* Updated nav-link for arrow at end */
-.navbar-vertical .nav-link {
-  font-family: poppins, sans-serif;
-  font-size: clamp(1rem, 4vw, 2rem);
-  color: var(--foreground);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-  white-space: nowrap;
-  width: 100%;
-  position: relative;
-}
-
-/* Always show the arrow at the end, animate on hover */
-/* Remove pseudo-element for image, use hover on svg */
-
-/* On hover, animate arrow and color */
-.navbar-vertical .nav-link:hover {
-  color: var(--secondary);
-}
-
-/* Mobile Styles for Vertical Navbar */
-@media (max-width: 1024px) {
-  .navbar-vertical-toggle {
-    display: block;
-    /* Show hamburger on mobile */
-  }
-
-  .navbar-vertical {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: var(--background);
-    /* Full screen background */
-    padding: 6rem 2rem;
-    /* Space for top toggle */
-    align-items: center;
-    /* Center links on mobile menu */
-    justify-content: center;
-    transform: translateX(100%);
-    /* Hidden by default (slide up) */
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .navbar-vertical.open {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  /* Reset font size for mobile menu to be larger/centered if desired */
-  .navbar-vertical .nav-link {
-    font-size: 2rem;
-    justify-content: center;
   }
 }

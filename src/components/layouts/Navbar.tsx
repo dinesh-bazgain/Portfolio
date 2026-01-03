@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -23,6 +23,7 @@ const Navbar = ({
   className = "",
 }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const navRef = useRef<HTMLElement | null>(null);
 
   const toggleMenu = () => {
     const newState = !isOpen;
@@ -49,7 +50,10 @@ const Navbar = ({
         </button>
 
         {/* Vertical Nav (Always visible on desktop, toggled on mobile) */}
-        <nav className={`navbar-vertical ${className} ${isOpen ? "open" : ""}`}>
+        <nav
+          ref={navRef}
+          className={`navbar-vertical ${className} ${isOpen ? "open" : ""}`}
+        >
           {navLinks.map((item) => (
             <span
               key={item.id}
@@ -94,7 +98,7 @@ const Navbar = ({
     const router = useRouter();
     const goHome = () => router.push("/");
     return (
-      <nav className={`site-top-navbar ${className}`}>
+      <nav ref={navRef} className={`site-top-navbar ${className}`}>
         <div className="site-navbar-inner">
           <div className="site-navbar-left">
             <div className="navbar-links">
@@ -111,9 +115,7 @@ const Navbar = ({
               className="navbar-home-btn"
               aria-label="Go to home"
               onClick={() => router.push("/")}
-            >
-              <X size={18} />
-            </button>
+            ></button>
             <ThemeSocialBar />
           </div>
 
