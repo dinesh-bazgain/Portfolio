@@ -17,13 +17,11 @@
   left: 0;
   width: 100%;
   background: var(--background);
-  z-index: 60;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
 }
 
 .site-navbar-inner {
-  max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -68,6 +66,12 @@
   padding: 0.35rem 0.5rem;
   border-radius: 6px;
   transition: background 0.15s ease, color 0.15s ease;
+}
+
+/* Horizontal / top navbar link sizing (responsive) */
+.site-navbar-left .navbar-link {
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  font-weight: 500;
 }
 
 .navbar-link:hover {
