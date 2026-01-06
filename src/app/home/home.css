@@ -182,12 +182,6 @@
   height: 100%;
 }
 
-/* Removed global scroll lock so pages can scroll naturally and the top navbar remains sticky. */
-
-/* ... existing logic ... */
-
-/* Navigation Links with Hover Arrow - Moved to navbar.css */
-
 /* Slide Overlay for Detail Views */
 .slide-overlay {
   position: fixed;
@@ -263,7 +257,7 @@
   pointer-events: none;
 }
 
-.hero-mark {
+/* .hero-mark {
   position: relative;
   bottom: 15vh;
   right: -10%;
@@ -273,7 +267,7 @@
   opacity: 0.7;
   pointer-events: none;
   z-index: 1;
-}
+} */
 
 .hero-portrait {
   height: 100%;
@@ -367,6 +361,31 @@
     position: fixed;
     z-index: 60;
   }
+}
+
+/* Force white left panel for social links on small screens <= 769px */
+@media (max-width: 769px) {
+  .theme-social-bar {
+    left: 0 !important;
+    bottom: 1.25rem !important;
+    background: var(--secondary);
+    padding: 0.5rem 0.625rem !important;
+    border-radius: 0 8px 8px 0 !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12) !important;
+    min-width: 56px !important;
+    z-index: 9999 !important;
+  }
+
+  .theme-social-bar .social-links-row {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    align-items: center !important;
+  }
+
+  .theme-social-bar .social-icon-link,
+  .theme-social-bar .social-icon-btn {
+    color: var(--foreground) !important;
+  }
 
   .social-links-row {
     flex-direction: column;
@@ -428,16 +447,16 @@
     width: auto;
   }
 
-  .hero-mark {
+  /* .hero-mark {
     position: absolute;
     bottom: 15vh;
-    right: 72%; /* Overlap by 1% for a sticking effect */
+    right: 72%;
     left: auto;
     transform: rotate(-70deg);
     transform-origin: center center;
     height: 7vh;
     opacity: 0.7;
-  }
+  } */
 }
 
 @media (max-width: 450px) {
@@ -446,11 +465,11 @@
     right: -5rem;
   }
 
-  .hero-mark {
+  /* .hero-mark {
     bottom: 12vh;
     right: 72%;
     height: 6vh;
-  }
+  } */
 }
 
 .social-icon-link {
@@ -479,4 +498,10 @@
 
 .social-icon-btn:hover {
   color: var(--hover-foreground);
+}
+
+@media (max-width: 700px) {
+  .hero-section {
+    padding-left: 0;
+  }
 }
