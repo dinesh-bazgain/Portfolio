@@ -17,7 +17,7 @@ export default function HomePage() {
 
           {/* Center Bottom Image (kept as requested) */}
           <div className="hero-portrait-container">
-            <img src="/mark.png" alt="Signature" className="hero-mark" />
+            {/* <img src="/mark.png" alt="Signature" className="hero-mark" /> */}
             <img src="/portrait.png" alt="Portrait" className="hero-portrait" />
           </div>
         </div>
