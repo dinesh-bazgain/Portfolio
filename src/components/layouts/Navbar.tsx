@@ -8,6 +8,7 @@ import Link from "next/link";
 import "./navbar.css";
 import ThemeSocialBar from "@/components/theme/ThemeSocialBar";
 import { NAV_ITEMS } from "@/data/navigation";
+// removed incorrect imports
 
 interface NavbarProps {
   onNavClick?: (id: string) => void;
@@ -100,6 +101,9 @@ const Navbar = ({
     return (
       <nav ref={navRef} className={`site-top-navbar ${className}`}>
         <div className="site-navbar-inner">
+          <div className="site-navbar-logo">
+            <img src="/mark.png" alt="Logo" onClick={() => router.push("/")} />
+          </div>
           <div className="site-navbar-left">
             <div className="navbar-links">
               {navLinks.map((link) => (
