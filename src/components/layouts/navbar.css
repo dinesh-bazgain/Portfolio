@@ -157,7 +157,7 @@
 }
 
 /* Mobile breakpoint - switch to hamburger menu */
-@media (max-width: 700px) {
+@media (max-width: 769px) {
   .site-navbar-inner {
     margin: 0 1rem;
     padding: 0.75rem 0.5rem;
