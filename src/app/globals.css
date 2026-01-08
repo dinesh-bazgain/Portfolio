@@ -20,9 +20,12 @@
   --card: #f9f9f9;
   --card-foreground: #1c1c1c;
 
+  --hover-background: #a09f9f;
   --hover-foreground: #000000;
 
   --border: #e5e5e5;
+
+  --shadow: 0 2px 0px rgba(0, 0, 0, 0.12);
 
   /* Glassmorphism Light */
   --glass-bg: rgba(255, 255, 255, 0.8);
@@ -51,9 +54,12 @@
   --card: #252525;
   --card-foreground: #e0e0e0;
 
+  --hover-background: #333333;
   --hover-foreground: #ffffff;
 
   --border: #333333;
+
+  --shadow: 0 2px 0px rgba(253, 250, 250, 0.12);
 
   /* Glassmorphism Dark */
   --glass-bg: rgba(28, 28, 28, 0.8);
