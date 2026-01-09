@@ -1,5 +1,6 @@
 import React from "react";
 import { Code2, Cpu, Database, Globe, Sparkles, Terminal } from "lucide-react";
+import PageNavigation from "@/components/navigation/PageNavigation";
 import "./Skills.css";
 
 export default function Skills() {
@@ -37,38 +38,42 @@ export default function Skills() {
     ];
 
     return (
-        <section className="skills-section" id="skills">
-            <div className="skills-container">
-                <div className="skills-header">
-                    <h2 className="skills-title">
-                        Technical <span className="text-gradient">Arsenal</span>
-                    </h2>
-                    <p className="skills-description">
-                        A comprehensive toolkit for building intelligent, scalable applications
-                    </p>
-                </div>
+        <>
+            <section className="skills-section" id="skills">
+                <div className="skills-container">
+                    <div className="skills-header">
+                        <h2 className="skills-title">
+                            Technical <span className="text-gradient">Arsenal</span>
+                        </h2>
+                        <p className="skills-description">
+                            A comprehensive toolkit for building intelligent, scalable applications
+                        </p>
+                    </div>
 
-                <div className="skills-grid">
-                    {skillCategories.map((category, index) => {
-                        const Icon = category.icon;
-                        return (
-                            <div key={index} className="skill-card glass">
-                                <div className="skill-card-header">
-                                    <Icon className="skill-icon" size={28} />
-                                    <h3 className="skill-category-title">{category.title}</h3>
+                    <div className="skills-grid">
+                        {skillCategories.map((category, index) => {
+                            const Icon = category.icon;
+                            return (
+                                <div key={index} className="skill-card glass">
+                                    <div className="skill-card-header">
+                                        <Icon className="skill-icon" size={28} />
+                                        <h3 className="skill-category-title">{category.title}</h3>
+                                    </div>
+                                    <ul className="skill-list">
+                                        {category.skills.map((skill, idx) => (
+                                            <li key={idx} className="skill-item">
+                                                {skill}
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </div>
-                                <ul className="skill-list">
-                                    {category.skills.map((skill, idx) => (
-                                        <li key={idx} className="skill-item">
-                                            {skill}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        );
-                    })}
+                            );
+                        })}
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            <PageNavigation currentPage="/skills" />
+        </>
     );
 }
