@@ -19,7 +19,7 @@ body {
   border-radius: var(--radius);
 }
 .hero-content .hero-greeting {
-  font-size: 14px;
+  font-size: 20px;
   display: block;
   margin-bottom: 6px;
 }
