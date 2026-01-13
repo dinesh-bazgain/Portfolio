@@ -32,7 +32,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
       <PageNavigation currentPage="/about" />
     </main>
   );
