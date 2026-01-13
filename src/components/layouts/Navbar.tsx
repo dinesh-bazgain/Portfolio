@@ -62,10 +62,10 @@ const Navbar = ({
                 item.disabled
                   ? undefined
                   : () => {
-                      if (onNavClick) onNavClick(item.id);
-                      setIsOpen(false); // Close menu on click
-                      if (onMenuToggle) onMenuToggle(false);
-                    }
+                    if (onNavClick) onNavClick(item.id);
+                    setIsOpen(false); // Close menu on click
+                    if (onMenuToggle) onMenuToggle(false);
+                  }
               }
               className="nav-link"
             >
@@ -107,9 +107,21 @@ const Navbar = ({
           <div className="site-navbar-left">
             <div className="navbar-links">
               {navLinks.map((link) => (
-                <Link key={link.id} href={link.href} className="navbar-link">
-                  {link.label}
-                </Link>
+                link.isButton ? (
+                  <a
+                    key={link.id}
+                    href={link.href}
+                    className="navbar-button"
+                    target={link.external ? "_blank" : undefined}
+                    rel={link.external ? "noopener noreferrer" : undefined}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link key={link.id} href={link.href} className="navbar-link">
+                    {link.label}
+                  </Link>
+                )
               ))}
             </div>
           </div>
@@ -129,14 +141,27 @@ const Navbar = ({
           {isOpen && (
             <div className="navbar-mobile-menu">
               {navLinks.map((link) => (
-                <Link
-                  key={link.id}
-                  href={link.href}
-                  className="navbar-mobile-link"
-                  onClick={toggleMenu}
-                >
-                  {link.label}
-                </Link>
+                link.isButton ? (
+                  <a
+                    key={link.id}
+                    href={link.href}
+                    className="navbar-mobile-button"
+                    onClick={toggleMenu}
+                    target={link.external ? "_blank" : undefined}
+                    rel={link.external ? "noopener noreferrer" : undefined}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.id}
+                    href={link.href}
+                    className="navbar-mobile-link"
+                    onClick={toggleMenu}
+                  >
+                    {link.label}
+                  </Link>
+                )
               ))}
             </div>
           )}
