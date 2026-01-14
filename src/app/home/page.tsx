@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import PageNavigation from "@/components/navigation/PageNavigation";
 import "./home.css";
 
 export default function HomePage() {
