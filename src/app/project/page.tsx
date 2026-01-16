@@ -1,10 +1,12 @@
-import React from "react";
-import { ExternalLink, ArrowRight } from "lucide-react";
-import Link from "next/link";
-import PageNavigation from "@/components/navigation/PageNavigation";
-import "./project.css";
+'use client';
 
-import projectsData from "@/data/projects.json";
+import React, { useState } from 'react';
+import { Github, ExternalLink } from 'lucide-react';
+import PageNavigation from '@/components/navigation/PageNavigation';
+import ProjectModal from '@/components/modals/ProjectModal';
+import './project.css';
+
+import projectsData from '@/data/projects.json';
 
 type Project = {
   title: string;
@@ -15,32 +17,60 @@ type Project = {
   slug: string;
   external: string | null;
   tags: string[];
+  period: string;
+  codeUrl: string | null;
+  liveUrl: string | null;
 };
 
 const projects = projectsData as Project[];
 
 export default function ProjectListPage() {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = (project: Project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => setSelectedProject(null), 200);
+  };
+
   return (
-    <>
+    <main className="project-page">
       <section className="projects-section" id="projects">
         <div className="projects-container">
           <div className="projects-header">
-            <h2 className="projects-title">
-              Featured <span className="text-gradient">Projects</span>
-            </h2>
-            <p className="projects-description">
-              A showcase of my work in full-stack development and AI/ML
-            </p>
+            <h2 className="projects-title">Projects</h2>
           </div>
 
           <div className="projects-grid">
             {projects.map((project) => (
-              <div key={project.slug} className="project-card glass">
-                <div className="project-card-content">
-                  <h3 className="project-card-title">{project.title}</h3>
-                  <p className="project-card-description">{project.description}</p>
+              <div key={project.slug} className="project-card">
+                <div className="project-card-header">
+                  <div className="project-card-title-section">
+                    <h3 className="project-card-title">{project.title}</h3>
+                    <p className="project-card-period">Period: {project.period}</p>
+                  </div>
+                  <button
+                    className="project-details-button"
+                    onClick={() => openModal(project)}
+                    aria-label={`View details for ${project.title}`}
+                  >
+                    <span className="details-indicator"></span>
+                    Details
+                  </button>
+                </div>
 
-                  {/* Tags */}
+                <div className="project-card-content">
+                  <ul className="project-features">
+                    {project.features.map((feature, idx) => (
+                      <li key={idx}>{feature}</li>
+                    ))}
+                  </ul>
+
                   <div className="project-tags">
                     {project.tags.map((tag, idx) => (
                       <span key={idx} className="project-tag">
@@ -49,24 +79,29 @@ export default function ProjectListPage() {
                     ))}
                   </div>
 
-                  {/* Links */}
                   <div className="project-card-actions">
-                    <a
-                      href={project.external || `/project/${project.slug}`}
-                      target={project.external ? "_blank" : undefined}
-                      rel={project.external ? "noopener noreferrer" : undefined}
-                      className="project-card-link"
-                    >
-                      {project.external ? (
-                        <>
-                          Live Demo <ExternalLink size={16} />
-                        </>
-                      ) : (
-                        <>
-                          View Details <ArrowRight size={16} />
-                        </>
-                      )}
-                    </a>
+                    {project.codeUrl && (
+                      <a
+                        href={project.codeUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-action-button project-action-code"
+                      >
+                        <Github size={16} />
+                        View Code
+                      </a>
+                    )}
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-action-button project-action-demo"
+                      >
+                        <ExternalLink size={16} />
+                        Live Demo
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -76,6 +111,12 @@ export default function ProjectListPage() {
       </section>
 
       <PageNavigation currentPage="/project" />
-    </>
+
+      <ProjectModal
+        project={selectedProject}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
+    </main>
   );
 }
