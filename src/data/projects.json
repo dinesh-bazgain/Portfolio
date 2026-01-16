@@ -4,6 +4,7 @@
         "slug": "veda-samvaad",
         "description": "A platform for Vedic discussions and resources.",
         "subTitle": "A community-driven platform for Vedic knowledge sharing",
+        "period": "January 2023 - Present",
         "features": [
             "Community discussions",
             "Resource sharing",
@@ -17,13 +18,16 @@
             "Express"
         ],
         "external": "https://vedasamvaad-frontend.onrender.com/",
-        "demo": "https://vedasamvaad-frontend.onrender.com/"
+        "demo": "https://vedasamvaad-frontend.onrender.com/",
+        "codeUrl": null,
+        "liveUrl": "https://vedasamvaad-frontend.onrender.com/"
     },
     {
         "title": "BMI Calculator",
         "slug": "bmi-calculator",
         "description": "A simple BMI calculator web app.",
         "subTitle": "A simple BMI calculator built with React",
+        "period": "December 2022 - January 2023",
         "features": [
             "Easy BMI calculation",
             "Clean interface",
@@ -36,13 +40,16 @@
             "CSS"
         ],
         "external": null,
-        "demo": "https://bmi-calculator-by-mrbajgain.netlify.app/"
+        "demo": "https://bmi-calculator-by-mrbajgain.netlify.app/",
+        "codeUrl": null,
+        "liveUrl": "https://bmi-calculator-by-mrbajgain.netlify.app/"
     },
     {
         "title": "Currency Converter",
         "slug": "currency-converter",
         "description": "A simple and intuitive web application for real-time currency conversion.",
         "subTitle": "A simple currency converter built with React",
+        "period": "November 2022 - December 2022",
         "features": [
             "Real-time conversion",
             "User-friendly design",
@@ -55,6 +62,8 @@
             "JavaScript"
         ],
         "external": null,
-        "demo": "https://dinesh-bazgain.github.io/Currency-Converter/"
+        "demo": "https://dinesh-bazgain.github.io/Currency-Converter/",
+        "codeUrl": "https://github.com/dinesh-bazgain/Currency-Converter",
+        "liveUrl": "https://dinesh-bazgain.github.io/Currency-Converter/"
     }
 ]
