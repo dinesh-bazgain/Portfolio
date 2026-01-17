@@ -1,243 +1,35 @@
 {
-    "categories": [
-        {
-            "id": 1,
-            "name": "Frontend Development",
-            "icon": "code",
-            "skills": [
-                {
-                    "name": "React",
-                    "level": 95,
-                    "yearsOfExperience": 5
-                },
-                {
-                    "name": "Next.js",
-                    "level": 90,
-                    "yearsOfExperience": 3
-                },
-                {
-                    "name": "TypeScript",
-                    "level": 88,
-                    "yearsOfExperience": 4
-                },
-                {
-                    "name": "JavaScript",
-                    "level": 95,
-                    "yearsOfExperience": 7
-                },
-                {
-                    "name": "HTML5",
-                    "level": 98,
-                    "yearsOfExperience": 8
-                },
-                {
-                    "name": "CSS3/SCSS",
-                    "level": 92,
-                    "yearsOfExperience": 8
-                },
-                {
-                    "name": "Tailwind CSS",
-                    "level": 85,
-                    "yearsOfExperience": 2
-                },
-                {
-                    "name": "Redux",
-                    "level": 80,
-                    "yearsOfExperience": 4
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "name": "Backend Development",
-            "icon": "server",
-            "skills": [
-                {
-                    "name": "Node.js",
-                    "level": 90,
-                    "yearsOfExperience": 5
-                },
-                {
-                    "name": "Express.js",
-                    "level": 88,
-                    "yearsOfExperience": 5
-                },
-                {
-                    "name": "Python",
-                    "level": 75,
-                    "yearsOfExperience": 3
-                },
-                {
-                    "name": "RESTful APIs",
-                    "level": 92,
-                    "yearsOfExperience": 6
-                },
-                {
-                    "name": "GraphQL",
-                    "level": 78,
-                    "yearsOfExperience": 2
-                },
-                {
-                    "name": "JWT/OAuth",
-                    "level": 82,
-                    "yearsOfExperience": 4
-                }
-            ]
-        },
-        {
-            "id": 3,
-            "name": "Databases",
-            "icon": "database",
-            "skills": [
-                {
-                    "name": "MongoDB",
-                    "level": 88,
-                    "yearsOfExperience": 5
-                },
-                {
-                    "name": "PostgreSQL",
-                    "level": 82,
-                    "yearsOfExperience": 4
-                },
-                {
-                    "name": "MySQL",
-                    "level": 78,
-                    "yearsOfExperience": 3
-                },
-                {
-                    "name": "Redis",
-                    "level": 70,
-                    "yearsOfExperience": 2
-                },
-                {
-                    "name": "Firebase",
-                    "level": 75,
-                    "yearsOfExperience": 3
-                }
-            ]
-        },
-        {
-            "id": 4,
-            "name": "AI/ML & Data Science",
-            "icon": "brain",
-            "skills": [
-                {
-                    "name": "TensorFlow",
-                    "level": 72,
-                    "yearsOfExperience": 2
-                },
-                {
-                    "name": "PyTorch",
-                    "level": 68,
-                    "yearsOfExperience": 2
-                },
-                {
-                    "name": "scikit-learn",
-                    "level": 75,
-                    "yearsOfExperience": 3
-                },
-                {
-                    "name": "Pandas",
-                    "level": 78,
-                    "yearsOfExperience": 3
-                },
-                {
-                    "name": "NumPy",
-                    "level": 80,
-                    "yearsOfExperience": 3
-                },
-                {
-                    "name": "Natural Language Processing",
-                    "level": 65,
-                    "yearsOfExperience": 1
-                }
-            ]
-        },
-        {
-            "id": 5,
-            "name": "DevOps & Cloud",
-            "icon": "cloud",
-            "skills": [
-                {
-                    "name": "Docker",
-                    "level": 85,
-                    "yearsOfExperience": 4
-                },
-                {
-                    "name": "AWS",
-                    "level": 80,
-                    "yearsOfExperience": 3
-                },
-                {
-                    "name": "Google Cloud",
-                    "level": 75,
-                    "yearsOfExperience": 2
-                },
-                {
-                    "name": "CI/CD",
-                    "level": 78,
-                    "yearsOfExperience": 3
-                },
-                {
-                    "name": "Nginx",
-                    "level": 72,
-                    "yearsOfExperience": 3
-                },
-                {
-                    "name": "Kubernetes",
-                    "level": 65,
-                    "yearsOfExperience": 1
-                }
-            ]
-        },
-        {
-            "id": 6,
-            "name": "Tools & Others",
-            "icon": "tool",
-            "skills": [
-                {
-                    "name": "Git/GitHub",
-                    "level": 95,
-                    "yearsOfExperience": 8
-                },
-                {
-                    "name": "VS Code",
-                    "level": 98,
-                    "yearsOfExperience": 7
-                },
-                {
-                    "name": "Figma",
-                    "level": 70,
-                    "yearsOfExperience": 3
-                },
-                {
-                    "name": "Postman",
-                    "level": 88,
-                    "yearsOfExperience": 5
-                },
-                {
-                    "name": "Jest/Testing",
-                    "level": 75,
-                    "yearsOfExperience": 3
-                },
-                {
-                    "name": "Webpack",
-                    "level": 72,
-                    "yearsOfExperience": 4
-                },
-                {
-                    "name": "Agile/Scrum",
-                    "level": 85,
-                    "yearsOfExperience": 6
-                }
-            ]
-        }
+    "Programming Languages": [
+      { "name": "JavaScript", "icon": "/icons/javascript.svg" },
+      { "name": "Java", "icon": "/icons/java.svg" },
+      { "name": "TypeScript", "icon": "/icons/typescript.svg" },
+      { "name": "SQL", "icon"   : "/icons/sql.svg" }
     ],
-    "highlights": [
-        "Full-stack development with modern JavaScript frameworks",
-        "Building scalable microservices architectures",
-        "Machine learning model integration and deployment",
-        "Cloud infrastructure and DevOps automation",
-        "Responsive and accessible UI/UX implementation"
+    "Backend Technologies": [
+      { "name": "Node.js", "icon": "/icons/nodejs.svg" },
+      { "name": "Spring", "icon": "/icons/spring.svg" },
+      { "name": "Spring Boot", "icon": "/icons/springboot.svg" },
+      { "name": "PostgreSQL", "icon": "/icons/postgresql.svg" },
+      { "name": "MongoDB", "icon": "/icons/mongodb.svg" },
+      { "name": "Hibernate", "icon": "/icons/hibernate.svg" },
+      { "name": "REST API", "icon": "/icons/rest.svg" },
+      { "name": "GraphQL", "icon": "/icons/graphql.svg" },
+      { "name": "Express", "icon": "/icons/express.svg" }
+    ],
+    "Frontend Technologies": [
+      { "name": "React", "icon": "/icons/react.svg" },
+      { "name": "Vue", "icon": "/icons/vue.svg" },
+      { "name": "HTML5", "icon": "/icons/html5.svg" },
+      { "name": "CSS3", "icon": "/icons/css3.svg" },
+      { "name": "Redux", "icon": "/icons/redux.svg" },
+      { "name": "Jest", "icon": "/icons/jest.svg" }
+    ],
+    "Developer Tools": [
+      { "name": "Git", "icon": "/icons/git.svg" },
+      { "name": "GitHub", "icon": "/icons/github.svg" },
+      { "name": "Azure DevOps", "icon": "/icons/azure.svg" },
+      { "name": "AWS", "icon": "/icons/aws.svg" },
+      { "name": "VS Code", "icon": "/icons/vscode.svg" },
+      { "name": "IntelliJ", "icon": "/icons/intellij.svg" }
     ]
-}
+  }
