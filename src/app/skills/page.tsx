@@ -5,7 +5,6 @@ import skills from "@/data/skills.json";
 import "./Skills.css";
 
 export default function Skills() {
-
   return (
     <>
       <section className="skills-section" id="skills">
@@ -39,9 +38,8 @@ export default function Skills() {
             ))}
           </div>
         </div>
+        <PageNavigation currentPage="/skills" />
       </section>
-
-      <PageNavigation currentPage="/skills" />
     </>
   );
 }
