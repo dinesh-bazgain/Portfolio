@@ -7,7 +7,9 @@
   height: fit-content;
   gap: 1.5rem;
   z-index: 10;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 /* Top / Site Navbar styles (renamed classes) */
@@ -17,44 +19,42 @@
   left: 0;
   width: 100%;
   background: var(--background);
-  /* remove full-width shadow so the logo can have a side-only shadow */
-  box-shadow: var(--shadow);
+  border-bottom: 1px solid var(--border);
   z-index: 100;
 }
 
 .site-navbar-inner {
   margin: 0 clamp(0.75rem, 3vw, 4rem);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: clamp(0.5rem, 1.5vw, 2rem);
-  padding: clamp(0.5rem, 1vw, 0.75rem) 0;
-  min-height: 60px;
+  padding: 0.75rem 0;
+  min-height: 50px;
   position: relative;
 }
 
 .site-navbar-logo {
   flex: 0 0 auto;
   display: flex;
-  align-items: center;
-}
-
-.site-navbar-logo img {
-  height: clamp(45px, 8vw, 120px);
-  width: auto;
-  cursor: pointer;
+  align-items: flex-start;
   position: relative;
-  background-color: var(--background);
-  transition: transform 200ms cubic-bezier(0.2, 0.9, 0.2, 1), filter 200ms ease,
-    box-shadow 200ms ease;
-  will-change: transform, filter, box-shadow;
   z-index: 101;
 }
 
+.site-navbar-logo img {
+  height: 12vh;
+  width: 20vw;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  margin-top: -1rem;
+  margin-bottom: -2rem;
+}
+
 .site-navbar-logo img:hover {
-  transform: translateY(-2px);
-  filter: drop-shadow(var(--shadow));
-  box-shadow: var(--shadow);
+  transform: scale(1.2);
+  transition: transform 0.4s ease;
 }
 
 .site-navbar-left {
@@ -64,6 +64,7 @@
   flex: 1 1 auto;
   min-width: 0;
   gap: clamp(0.5rem, 1.5vw, 2rem);
+  padding-top: 0.5rem;
 }
 
 .site-navbar-right {
@@ -71,6 +72,7 @@
   align-items: center;
   justify-content: flex-end;
   flex: 0 0 auto;
+  padding-top: 0.5rem;
 }
 
 .theme-social-bar .social-separator {
@@ -134,10 +136,31 @@
   text-decoration: none;
   padding: clamp(0.2rem, 0.3vw, 0.3rem) clamp(0.3rem, 0.4vw, 0.5rem);
   border-radius: 6px;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
   white-space: nowrap;
   font-size: clamp(0.75rem, 0.95vw, 1.1rem);
   font-weight: 500;
+  position: relative;
+}
+
+.navbar-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition:
+    width 0.3s ease,
+    left 0.3s ease;
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 .navbar-link:hover {
@@ -150,7 +173,10 @@
   padding: clamp(0.3rem, 0.4vw, 0.4rem) clamp(0.5rem, 0.8vw, 0.9rem);
   border: 1px solid var(--foreground);
   border-radius: 6px;
-  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
   white-space: nowrap;
   font-size: clamp(0.75rem, 0.95vw, 1.1rem);
   font-weight: 500;
@@ -247,6 +273,25 @@
     width: 100%;
     text-align: center;
     font-size: 1.5rem;
+    position: relative;
+  }
+
+  .navbar-mobile-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition:
+      width 0.3s ease,
+      left 0.3s ease;
+  }
+
+  .navbar-mobile-link:hover::after {
+    width: 100%;
+    left: 0;
   }
 
   .navbar-mobile-button {
@@ -259,7 +304,9 @@
     border-radius: 6px;
     text-decoration: none;
     color: var(--foreground);
-    transition: background 0.15s ease, color 0.15s ease;
+    transition:
+      background 0.15s ease,
+      color 0.15s ease;
   }
 
   .navbar-mobile-button:hover {
@@ -277,7 +324,9 @@
     border-radius: 6px;
     text-decoration: none;
     color: var(--foreground);
-    transition: background 0.15s ease, color 0.15s ease;
+    transition:
+      background 0.15s ease,
+      color 0.15s ease;
   }
 
   .navbar-mobile-button:hover {
