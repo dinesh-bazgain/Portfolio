@@ -1,35 +1,28 @@
 {
-    "Programming Languages": [
-      { "name": "JavaScript", "icon": "/icons/javascript.svg" },
-      { "name": "Java", "icon": "/icons/java.svg" },
-      { "name": "TypeScript", "icon": "/icons/typescript.svg" },
-      { "name": "SQL", "icon"   : "/icons/sql.svg" }
-    ],
-    "Backend Technologies": [
-      { "name": "Node.js", "icon": "/icons/nodejs.svg" },
-      { "name": "Spring", "icon": "/icons/spring.svg" },
-      { "name": "Spring Boot", "icon": "/icons/springboot.svg" },
-      { "name": "PostgreSQL", "icon": "/icons/postgresql.svg" },
-      { "name": "MongoDB", "icon": "/icons/mongodb.svg" },
-      { "name": "Hibernate", "icon": "/icons/hibernate.svg" },
-      { "name": "REST API", "icon": "/icons/rest.svg" },
-      { "name": "GraphQL", "icon": "/icons/graphql.svg" },
-      { "name": "Express", "icon": "/icons/express.svg" }
-    ],
-    "Frontend Technologies": [
-      { "name": "React", "icon": "/icons/react.svg" },
-      { "name": "Vue", "icon": "/icons/vue.svg" },
-      { "name": "HTML5", "icon": "/icons/html5.svg" },
-      { "name": "CSS3", "icon": "/icons/css3.svg" },
-      { "name": "Redux", "icon": "/icons/redux.svg" },
-      { "name": "Jest", "icon": "/icons/jest.svg" }
-    ],
-    "Developer Tools": [
-      { "name": "Git", "icon": "/icons/git.svg" },
-      { "name": "GitHub", "icon": "/icons/github.svg" },
-      { "name": "Azure DevOps", "icon": "/icons/azure.svg" },
-      { "name": "AWS", "icon": "/icons/aws.svg" },
-      { "name": "VS Code", "icon": "/icons/vscode.svg" },
-      { "name": "IntelliJ", "icon": "/icons/intellij.svg" }
-    ]
-  }
+  "Programming Languages": [
+    { "name": "JavaScript", "icon": "/icons/javascript.svg" },
+    { "name": "TypeScript", "icon": "/icons/typescript.svg" },
+    { "name": "SQL", "icon": "/icons/sql.svg" }
+  ],
+  "Backend Technologies": [
+    {"name": "nest.js", "icon": "/icons/nestjs.svg" },
+    { "name": "Node.js", "icon": "/icons/nodejs.svg" },
+    { "name": "PostgreSQL", "icon": "/icons/postgresql.svg" },
+    { "name": "MongoDB", "icon": "/icons/mongodb.svg" },
+    { "name": "REST API", "icon": "/icons/rest.svg" },
+    { "name": "GraphQL", "icon": "/icons/graphql.svg" },
+    { "name": "Express", "icon": "/icons/express.svg" }
+  ],
+  "Frontend Technologies": [
+    { "name": "Next.js", "icon": "/icons/nextjs.svg" },
+    { "name": "React", "icon": "/icons/react.svg" },
+    { "name": "HTML5", "icon": "/icons/html5.svg" },
+    { "name": "CSS3", "icon": "/icons/css3.svg" }
+  ],
+  "Developer Tools": [
+    { "name": "Git", "icon": "/icons/git.svg" },
+    { "name": "GitHub", "icon": "/icons/github.svg" },
+    { "name": "Docker", "icon": "/icons/docker.svg" },
+    { "name": "VS Code", "icon": "/icons/vscode.svg" }
+  ]
+}
