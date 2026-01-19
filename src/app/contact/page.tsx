@@ -109,7 +109,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="social-link"
                 >
-                  <Github size={35} />
+                  <Github size={28} strokeWidth={1} />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/mr-bajgain/"
@@ -117,7 +117,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="social-link"
                 >
-                  <Linkedin size={35} />
+                  <Linkedin size={28} strokeWidth={1} />
                 </a>
                 <a
                   href="https://x.com/Mr_Bajgain"
@@ -125,7 +125,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="social-link"
                 >
-                  <Twitter size={35} />
+                  <Twitter size={28} strokeWidth={1} />
                 </a>
                 <a
                   href="https://instagram.com/mr.bajgain"
@@ -133,7 +133,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="social-link"
                 >
-                  <Instagram size={35} />
+                  <Instagram size={28} strokeWidth={1} />
                 </a>
                 <a
                   href="https://facebook.com/mr.bajgain"
@@ -141,7 +141,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="social-link"
                 >
-                  <Facebook size={35} />
+                  <Facebook size={28} strokeWidth={1} />
                 </a>
               </div>
 
