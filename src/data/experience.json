@@ -1,127 +1,27 @@
 [
-    {
-        "id": 1,
-        "company": "Tech Innovations Inc.",
-        "position": "Senior Full-Stack Developer",
-        "location": "San Francisco, CA",
-        "startDate": "2022-06",
-        "endDate": null,
-        "current": true,
-        "description": "Leading development of enterprise-scale web applications using modern tech stacks.",
-        "responsibilities": [
-            "Architected and implemented microservices-based applications using Node.js and React",
-            "Led a team of 5 developers in agile sprint planning and code reviews",
-            "Reduced application load time by 40% through performance optimization",
-            "Integrated AI/ML models for predictive analytics features",
-            "Mentored junior developers and conducted technical training sessions"
-        ],
-        "technologies": [
-            "React",
-            "Node.js",
-            "TypeScript",
-            "PostgreSQL",
-            "AWS",
-            "Docker",
-            "TensorFlow"
-        ]
-    },
-    {
-        "id": 2,
-        "company": "Digital Solutions Group",
-        "position": "Full-Stack Developer",
-        "location": "Remote",
-        "startDate": "2020-03",
-        "endDate": "2022-05",
-        "current": false,
-        "description": "Developed and maintained multiple client-facing web applications.",
-        "responsibilities": [
-            "Built responsive web applications using React, Next.js, and Express",
-            "Implemented RESTful APIs and GraphQL endpoints for mobile applications",
-            "Collaborated with UX designers to create intuitive user interfaces",
-            "Managed database migrations and optimized query performance",
-            "Participated in Agile ceremonies and sprint retrospectives"
-        ],
-        "technologies": [
-            "React",
-            "Next.js",
-            "Express",
-            "MongoDB",
-            "GraphQL",
-            "Git"
-        ]
-    },
-    {
-        "id": 3,
-        "company": "StartupHub Technologies",
-        "position": "Frontend Developer",
-        "location": "New York, NY",
-        "startDate": "2018-08",
-        "endDate": "2020-02",
-        "current": false,
-        "description": "Focused on creating engaging user interfaces for SaaS products.",
-        "responsibilities": [
-            "Developed reusable React components for the design system",
-            "Implemented pixel-perfect designs from Figma mockups",
-            "Conducted A/B testing to improve user engagement metrics",
-            "Integrated payment gateways and third-party APIs",
-            "Optimized applications for maximum speed and scalability"
-        ],
-        "technologies": [
-            "React",
-            "JavaScript",
-            "CSS3",
-            "HTML5",
-            "Redux",
-            "Webpack"
-        ]
-    },
-    {
-        "id": 4,
-        "company": "Creative Web Studio",
-        "position": "Junior Developer",
-        "location": "Boston, MA",
-        "startDate": "2017-01",
-        "endDate": "2018-07",
-        "current": false,
-        "description": "Entry-level position focusing on web development fundamentals.",
-        "responsibilities": [
-            "Assisted in developing client websites using HTML, CSS, and JavaScript",
-            "Fixed bugs and implemented feature requests",
-            "Collaborated with designers to ensure visual consistency",
-            "Learned version control with Git and team collaboration practices",
-            "Participated in code reviews and team knowledge-sharing sessions"
-        ],
-        "technologies": [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "jQuery",
-            "Bootstrap",
-            "PHP"
-        ]
-    },
-    {
-        "id": 5,
-        "company": "Freelance Projects",
-        "position": "Web Developer",
-        "location": "Remote",
-        "startDate": "2016-06",
-        "endDate": "2016-12",
-        "current": false,
-        "description": "Provided web development services to small businesses and startups.",
-        "responsibilities": [
-            "Built custom websites for local businesses and entrepreneurs",
-            "Created responsive landing pages with conversion optimization",
-            "Managed client communication and project timelines",
-            "Delivered projects on time and within budget constraints",
-            "Provided ongoing maintenance and support"
-        ],
-        "technologies": [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "WordPress",
-            "PHP"
-        ]
-    }
+  {
+    "id": 1,
+    "company": "Ninja Infosys",
+    "position": "Full-Stack Developer Intern",
+    "location": "Baneshwor-10, Kathmandu, Nepal",
+    "startDate": "2025-09-07",
+    "endDate": "2025-12-25",
+    "current": false,
+    "description": "This is the test ",
+    "responsibilities": [
+      "Developed end-to-end web features using Next.js for the frontend and NestJS for the backend",
+      "Built responsive, SEO-friendly UI components and optimized rendering performance",
+      "Designed and consumed RESTful APIs, handling authentication, validation, and business logic",
+      "Debugged issues, improved performance, and refactored code for maintainability",
+      "Collaborated with senior developers using Git, code conflict reviews, and Agile workflows"
+    ],
+    "technologies": [
+      "React",
+      "NextJS",
+      "NestJS",
+      "TypeScript",
+      "PostgreSQL",
+      "Docker"
+    ]
+  }
 ]
