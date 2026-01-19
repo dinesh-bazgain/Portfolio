@@ -165,10 +165,6 @@
   box-shadow: var(--shadow);
 }
 
-.info-card.clickable:hover {
-  border-color: var(--primary);
-}
-
 .info-icon {
   color: var(--primary);
   flex-shrink: 0;
