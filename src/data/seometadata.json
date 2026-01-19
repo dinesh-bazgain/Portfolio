@@ -1,0 +1,322 @@
+{
+  "siteUrl": "https://www.dinesh-bajgain.com.np",
+  "siteName": "Dinesh Bajgain | Portfolio",
+  "siteAuthor": "Dinesh Bajgain",
+  "siteLocale": "en_US",
+  "twitterHandle": "@Mr_Bajgain",
+  "portraitImage": "/portrait.png",
+  "iconImage": "/icon.png",
+  "defaultKeywords": [
+    "Dinesh Bajgain",
+    "Full Stack Developer Nepal",
+    "AI ML Developer",
+    "React Developer Lalitpur",
+    "Next.js Developer Nepal",
+    "MERN Stack Developer",
+    "Software Engineer Nepal",
+    "Web Developer Portfolio",
+    "JavaScript Expert",
+    "Python Developer Nepal",
+    "Freelance Developer Nepal",
+    "Hire Full Stack Developer",
+    "Remote Developer Nepal",
+    "Frontend Developer",
+    "Backend Developer",
+    "Machine Learning Engineer"
+  ],
+  "pages": {
+    "home": {
+      "title": "Dinesh Bajgain | Full Stack Developer & AI/ML Engineer from Nepal",
+      "description": "Hi, I'm Dinesh Bajgain — a Full Stack Developer & AI/ML Enthusiast from Nepal. I build scalable web apps with React, Next.js, Node.js & Python. Open for remote work & freelance projects.",
+      "keywords": [
+        "Dinesh Bajgain",
+        "Dinesh Bajgain Developer",
+        "Full Stack Developer Nepal",
+        "AI ML Engineer Nepal",
+        "React Next.js Developer",
+        "Hire Developer Nepal",
+        "Web Developer Lalitpur",
+        "MERN Stack Developer",
+        "Remote Developer Nepal"
+      ],
+      "canonical": "/"
+    },
+    "about": {
+      "title": "About Dinesh Bajgain | Full Stack Developer & AI/ML Enthusiast",
+      "description": "Learn about Dinesh Bajgain's journey — a passionate Full Stack Developer from Lalitpur, Nepal. Skilled in React, Next.js, Node.js, Python & Machine Learning. Building intelligent web solutions.",
+      "keywords": [
+        "About Dinesh Bajgain",
+        "Dinesh Bajgain Biography",
+        "Full Stack Developer Story",
+        "AI ML Developer Nepal",
+        "Software Engineer Background",
+        "Developer Journey Nepal",
+        "Lalitpur Developer",
+        "Nepal Tech Talent"
+      ],
+      "canonical": "/about"
+    },
+    "projects": {
+      "title": "Projects by Dinesh Bajgain | Web Apps, AI/ML & Full Stack Work",
+      "description": "Explore 10+ projects by Dinesh Bajgain including React web apps, AI/ML solutions & full-stack applications. View live demos, source code on GitHub & detailed case studies.",
+      "keywords": [
+        "Dinesh Bajgain Projects",
+        "React Projects Portfolio",
+        "Full Stack Projects",
+        "AI ML Projects",
+        "Web Development Portfolio",
+        "GitHub Projects Nepal",
+        "Open Source Developer",
+        "Project Case Studies"
+      ],
+      "canonical": "/project"
+    },
+    "skills": {
+      "title": "Technical Skills | Dinesh Bajgain - React, Node.js, Python & AI/ML",
+      "description": "Discover Dinesh Bajgain's technical expertise: React, Next.js, Node.js, Express, Python, TensorFlow, MongoDB, PostgreSQL, AWS & more. 3+ years of hands-on development experience.",
+      "keywords": [
+        "Dinesh Bajgain Skills",
+        "React Developer Skills",
+        "Node.js Expert",
+        "Python Developer",
+        "AI ML Skills",
+        "MERN Stack Skills",
+        "TensorFlow Developer",
+        "Cloud Developer AWS",
+        "Full Stack Technologies"
+      ],
+      "canonical": "/skills"
+    },
+    "experience": {
+      "title": "Work Experience | Dinesh Bajgain - Full Stack & AI/ML Developer",
+      "description": "View Dinesh Bajgain's professional experience — Full Stack Developer with hands-on work in React, Node.js, Python & AI/ML projects. Real-world impact at startups & tech companies.",
+      "keywords": [
+        "Dinesh Bajgain Experience",
+        "Full Stack Developer Resume",
+        "Software Engineer Work History",
+        "Developer Career Nepal",
+        "Tech Industry Experience",
+        "AI ML Developer Experience",
+        "Startup Developer Experience",
+        "Remote Work Experience"
+      ],
+      "canonical": "/experience"
+    },
+    "contact": {
+      "title": "Contact Dinesh Bajgain | Hire a Full Stack Developer from Nepal",
+      "description": "Get in touch with Dinesh Bajgain for freelance projects, remote work, or collaboration. Available for React, Next.js, Node.js & AI/ML development. Quick response within 24 hours.",
+      "keywords": [
+        "Contact Dinesh Bajgain",
+        "Hire Full Stack Developer",
+        "Hire React Developer Nepal",
+        "Freelance Developer Nepal",
+        "Remote Developer for Hire",
+        "AI ML Developer for Hire",
+        "Web Development Services",
+        "Outsource Developer Nepal"
+      ],
+      "canonical": "/contact"
+    }
+  },
+  "structuredData": {
+    "person": {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://www.dinesh-bajgain.com.np/#person",
+      "name": "Dinesh Bajgain",
+      "alternateName": ["Mr. Bajgain", "Dinesh B.", "dinesh-bazgain"],
+      "description": "Full Stack Developer and AI/ML Enthusiast from Lalitpur, Nepal. Specializing in React, Next.js, Node.js, Python, and Machine Learning. Building intelligent, scalable digital experiences.",
+      "url": "https://www.dinesh-bajgain.com.np",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.dinesh-bajgain.com.np/portrait.png",
+        "width": 400,
+        "height": 400
+      },
+      "email": "mailto:dinesh.bazgain@gmail.com",
+      "telephone": null,
+      "jobTitle": "Full Stack Developer & AI/ML Enthusiast",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance / Open to Opportunities"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Nepal"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lalitpur",
+        "addressRegion": "Bagmati",
+        "addressCountry": "NP"
+      },
+      "nationality": {
+        "@type": "Country",
+        "name": "Nepal"
+      },
+      "sameAs": [
+        "https://github.com/dinesh-bazgain",
+        "https://www.linkedin.com/in/mr-bajgain/",
+        "https://x.com/Mr_Bajgain",
+        "https://instagram.com/mr.bajgain",
+        "https://facebook.com/mr.bajgain"
+      ],
+      "knowsAbout": [
+        "Full Stack Web Development",
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "Express.js",
+        "Python",
+        "JavaScript",
+        "TypeScript",
+        "Artificial Intelligence",
+        "Machine Learning",
+        "TensorFlow",
+        "MongoDB",
+        "PostgreSQL",
+        "REST APIs",
+        "GraphQL",
+        "Git",
+        "AWS",
+        "Docker"
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Full Stack Developer",
+        "occupationLocation": {
+          "@type": "Country",
+          "name": "Nepal"
+        },
+        "skills": "React, Next.js, Node.js, Python, AI/ML, MongoDB, PostgreSQL"
+      }
+    },
+    "website": {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://www.dinesh-bajgain.com.np/#website",
+      "name": "Dinesh Bajgain Portfolio",
+      "alternateName": "Dinesh Bajgain | Full Stack Developer & AI/ML",
+      "url": "https://www.dinesh-bajgain.com.np",
+      "description": "Official portfolio website of Dinesh Bajgain - Full Stack Developer and AI/ML Enthusiast from Nepal",
+      "inLanguage": "en-US",
+      "author": {
+        "@id": "https://www.dinesh-bajgain.com.np/#person"
+      },
+      "publisher": {
+        "@id": "https://www.dinesh-bajgain.com.np/#person"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.dinesh-bajgain.com.np/project?search={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    "profilePage": {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "@id": "https://www.dinesh-bajgain.com.np/about#profilepage",
+      "name": "About Dinesh Bajgain",
+      "mainEntity": {
+        "@id": "https://www.dinesh-bajgain.com.np/#person"
+      },
+      "dateCreated": "2024-01-01",
+      "dateModified": "2026-01-20"
+    },
+    "breadcrumb": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.dinesh-bajgain.com.np"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": "https://www.dinesh-bajgain.com.np/about"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Projects",
+          "item": "https://www.dinesh-bajgain.com.np/project"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Skills",
+          "item": "https://www.dinesh-bajgain.com.np/skills"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Experience",
+          "item": "https://www.dinesh-bajgain.com.np/experience"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Contact",
+          "item": "https://www.dinesh-bajgain.com.np/contact"
+        }
+      ]
+    },
+    "faq": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who is Dinesh Bajgain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dinesh Bajgain is a Full Stack Developer and AI/ML Enthusiast from Lalitpur, Nepal. He specializes in building scalable web applications using React, Next.js, Node.js, and Python, with a focus on intelligent digital experiences."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What technologies does Dinesh Bajgain work with?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dinesh works with modern web technologies including React, Next.js, Node.js, Express.js, Python, TypeScript, MongoDB, PostgreSQL, TensorFlow, and cloud platforms like AWS. He also has experience with AI/ML development."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Dinesh Bajgain available for freelance work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Dinesh Bajgain is available for freelance projects and remote work opportunities worldwide. You can contact him through the contact page or via email at dinesh.bazgain@gmail.com."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is Dinesh Bajgain located?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dinesh Bajgain is based in Lalitpur, Nepal, and is available for remote work with clients worldwide across different time zones."
+          }
+        }
+      ]
+    }
+  },
+  "social": {
+    "github": "https://github.com/dinesh-bazgain",
+    "linkedin": "https://www.linkedin.com/in/mr-bajgain/",
+    "twitter": "https://x.com/Mr_Bajgain",
+    "instagram": "https://instagram.com/mr.bajgain",
+    "facebook": "https://facebook.com/mr.bajgain"
+  },
+  "verification": {
+    "google": "",
+    "bing": "",
+    "yandex": ""
+  }
+}

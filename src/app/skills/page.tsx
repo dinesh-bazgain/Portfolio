@@ -1,8 +1,37 @@
 import React from "react";
+import { Metadata } from "next";
 import Image from "next/image";
 import PageNavigation from "@/components/navigation/PageNavigation";
 import skills from "@/data/skills.json";
+import seoMetadata from "@/data/seometadata.json";
 import "./Skills.css";
+
+export const metadata: Metadata = {
+  title: seoMetadata.pages.skills.title,
+  description: seoMetadata.pages.skills.description,
+  keywords: seoMetadata.pages.skills.keywords,
+  alternates: {
+    canonical: seoMetadata.pages.skills.canonical,
+  },
+  openGraph: {
+    title: seoMetadata.pages.skills.title,
+    description: seoMetadata.pages.skills.description,
+    url: seoMetadata.siteUrl + seoMetadata.pages.skills.canonical,
+    images: [
+      {
+        url: seoMetadata.portraitImage,
+        width: 1200,
+        height: 630,
+        alt: "Skills - Dinesh Bajgain",
+      },
+    ],
+  },
+  twitter: {
+    title: seoMetadata.pages.skills.title,
+    description: seoMetadata.pages.skills.description,
+    images: [seoMetadata.portraitImage],
+  },
+};
 
 export default function Skills() {
   return (

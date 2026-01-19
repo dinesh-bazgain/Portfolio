@@ -1,4 +1,5 @@
 import React from "react";
+import { Metadata } from "next";
 import {
   Mail,
   Send,
@@ -10,7 +11,35 @@ import {
   Twitter,
 } from "lucide-react";
 import PageNavigation from "@/components/navigation/PageNavigation";
+import seoMetadata from "@/data/seometadata.json";
 import "./contact.css";
+
+export const metadata: Metadata = {
+  title: seoMetadata.pages.contact.title,
+  description: seoMetadata.pages.contact.description,
+  keywords: seoMetadata.pages.contact.keywords,
+  alternates: {
+    canonical: seoMetadata.pages.contact.canonical,
+  },
+  openGraph: {
+    title: seoMetadata.pages.contact.title,
+    description: seoMetadata.pages.contact.description,
+    url: seoMetadata.siteUrl + seoMetadata.pages.contact.canonical,
+    images: [
+      {
+        url: seoMetadata.portraitImage,
+        width: 1200,
+        height: 630,
+        alt: "Contact Dinesh Bajgain",
+      },
+    ],
+  },
+  twitter: {
+    title: seoMetadata.pages.contact.title,
+    description: seoMetadata.pages.contact.description,
+    images: [seoMetadata.portraitImage],
+  },
+};
 
 export default function ContactPage() {
   return (

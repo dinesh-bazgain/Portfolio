@@ -1,6 +1,35 @@
+import { Metadata } from "next";
 import PageNavigation from "@/components/navigation/PageNavigation";
 import experienceData from "@/data/experience.json";
+import seoMetadata from "@/data/seometadata.json";
 import "./experience.css";
+
+export const metadata: Metadata = {
+  title: seoMetadata.pages.experience.title,
+  description: seoMetadata.pages.experience.description,
+  keywords: seoMetadata.pages.experience.keywords,
+  alternates: {
+    canonical: seoMetadata.pages.experience.canonical,
+  },
+  openGraph: {
+    title: seoMetadata.pages.experience.title,
+    description: seoMetadata.pages.experience.description,
+    url: seoMetadata.siteUrl + seoMetadata.pages.experience.canonical,
+    images: [
+      {
+        url: seoMetadata.portraitImage,
+        width: 1200,
+        height: 630,
+        alt: "Experience - Dinesh Bajgain",
+      },
+    ],
+  },
+  twitter: {
+    title: seoMetadata.pages.experience.title,
+    description: seoMetadata.pages.experience.description,
+    images: [seoMetadata.portraitImage],
+  },
+};
 
 interface Experience {
   id: number;
