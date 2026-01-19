@@ -27,6 +27,7 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="system"
           enableSystem
+          storageKey="portfolio-theme"
           disableTransitionOnChange={false}
         >
           <Navbar orientation="horizontal" />
