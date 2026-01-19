@@ -22,15 +22,18 @@ export default function ContactPage() {
             <span className="contact-greeting">Get in Touch</span>
             <h1 className="contact-title">Let's Work Together</h1>
             <p className="contact-subtitle">
-              Have a project in mind or just want to connect?
-              Let’s talk.
+              Have a project in mind or just want to connect? Let’s talk.
             </p>
           </div>
 
           <div className="contact-content">
             {/* Contact Form */}
             <div className="contact-form-wrapper">
-              <form className="contact-form">
+              <form
+                className="contact-form"
+                action="https://formspree.io/f/mgooyajl"
+                method="POST"
+              >
                 <div className="form-row">
                   <div className="form-group">
                     <label htmlFor="name">Name</label>
