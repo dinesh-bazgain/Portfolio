@@ -11,8 +11,10 @@
   border-radius: 0.5rem;
   cursor: pointer;
   transition: background 0.3s ease;
+  background: var(--card);
+  color: var(--primary);
 }
 
 .theme-button:hover {
-  background: rgba(184, 133, 122, 0.1);
+  background: var(--hover-background);
 }
