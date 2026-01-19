@@ -52,7 +52,6 @@ export default function ProjectListPage() {
                 <div className="project-card-header">
                   <div className="project-card-title-section">
                     <h3 className="project-card-title">{project.title}</h3>
-                    <p className="project-card-period">Period: {project.period}</p>
                   </div>
                   <button
                     className="project-details-button"
