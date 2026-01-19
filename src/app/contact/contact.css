@@ -106,7 +106,7 @@
 .form-group textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 0 2px var(--glass-border);
 }
 
 .form-group textarea {
@@ -129,7 +129,6 @@
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
-  align-self: flex-start;
 }
 
 .btn-submit:hover {
