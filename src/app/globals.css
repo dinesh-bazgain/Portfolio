@@ -1,70 +1,111 @@
 @import "tailwindcss";
 
 :root {
-  /* Light Theme - Elegant & Minimal */
-  --background: #c1bfbf;
-  --foreground: #6e6d6d;
+  --background: #dedede;
+  --foreground: #2b2a29;
 
-  --primary: #000000;
-  --primary-foreground: #ffffff;
+  --primary: #1c1b1a;
+  --primary-foreground: #a6a4a4;
 
-  --secondary: #2f2f2f;
-  --secondary-foreground: #1c1c1c;
-  
+  --secondary: #3a3938;
+  --secondary-foreground: #555352;
 
-  --accent: #414040;
-  --accent-foreground: #1c1c1c;
+  --accent: #5a5452; /* warm gray */
+  --accent-foreground: #1f1e1d;
 
-  --muted: #f3f3f3;
-  --muted-foreground: #767575;
+  --muted: #efeeed;
+  --muted-foreground: #7a7674;
 
-  --card: #f9f9f9;
-  --card-foreground: #1c1c1c;
+  --card: #b6b5b4;
+  --card-foreground: #1f1e1d;
 
-  --hover-background: #a09f9f;
-  --hover-foreground: #000000;
+  --hover-background: #bdbdbc;
+  --hover-foreground: #1c1b1a;
 
-  --border: #e5e5e5;
+  --border: #1f1e1e;
 
-  --shadow: 0 2px 0px rgba(0, 0, 0, 0.12);
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 28px rgba(0, 0, 0, 0.12);
 
-  /* Glassmorphism Light */
-  --glass-bg: rgba(255, 255, 255, 0.8);
+  /* Glassmorphism – Light */
+  --glass-bg: rgba(251, 250, 249, 0.85);
   --glass-border: rgba(0, 0, 0, 0.05);
+
+  --card-border: rgba(0, 0, 0, 0.08);
+  --card-hover-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+
+  /* Text */
+  --text-secondary: rgba(43, 42, 41, 0.7);
+  --text-muted: rgba(43, 42, 41, 0.5);
+
+  /* Accent (keep cool for contrast) */
+  --accent-blue: #2563eb;
+  --accent-blue-hover: #1d4ed8;
+  --indicator-dot: #2563eb;
+
+  /* Scrollbar */
+  --scrollbar-thumb: rgba(0, 0, 0, 0.2);
+  --scrollbar-thumb-hover: rgba(0, 0, 0, 0.35);
+
+  --backdrop-bg: rgba(0, 0, 0, 0.55);
 
   --font-serif: "Times New Roman", Times, serif;
 }
 
 .dark {
-  /* Dark Elegant Theme - Match Neria Katz Reference */
-  --background: #1c1c1c;
-  --foreground: #686767;
+  /* Core */
+  --background: #141212; /* near-black with tiny red warmth */
+  --foreground: #bab9b9;
 
   --primary: #ffffff;
-  --primary-foreground: #1c1c1c;
+  --primary-foreground: #141212;
 
-  --secondary: #cbc7c7;
-  --secondary-foreground: #b0b0b0;
+  /* Surfaces */
+  --card: #1b1919;
+  --card-foreground: #f0f0f0;
 
-  --accent: #b1b1b1;
-  --accent-foreground: #b4b1b1;
+  --muted: #1f1d1d;
+  --muted-foreground: #a1a1a1;
 
-  --muted: #2a2a2a;
-  --muted-foreground: #888888;
+  /* Accents (very restrained) */
+  --accent: #6e4a4a; /* muted warm gray-red */
+  --accent-foreground: #f2eeee;
 
-  --card: #252525;
-  --card-foreground: #e0e0e0;
-
-  --hover-background: #333333;
+  --hover-background: #262323;
   --hover-foreground: #ffffff;
 
-  --border: #333333;
+  /* Borders & depth */
+  --border: #a9a8a8;
 
-  --shadow: 0 2px 0px rgba(253, 250, 250, 0.12);
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
 
-  /* Glassmorphism Dark */
-  --glass-bg: rgba(28, 28, 28, 0.8);
+  /* Glassmorphism */
+  --glass-bg: rgba(27, 25, 25, 0.75);
   --glass-border: rgba(255, 255, 255, 0.05);
+
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-hover-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+
+  /* Text opacity */
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(255, 255, 255, 0.5);
+
+  /* Tiny red hint (only for highlights) */
+  --accent-red: #a24a4a;
+  --accent-red-hover: #b85a5a;
+
+  /* Keep blue for links if needed */
+  --accent-blue: #3b82f6;
+  --accent-blue-hover: #2563eb;
+
+  --indicator-dot: #a24a4a;
+
+  /* Scrollbar */
+  --scrollbar-thumb: rgba(255, 255, 255, 0.2);
+  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.3);
+
+  --backdrop-bg: rgba(0, 0, 0, 0.85);
 }
 
 html {
@@ -89,7 +130,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   /* Butter Smooth Transition */
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition:
+    background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out;
 }
 
 /* Main content wrapper - fills remaining space after navbar */
@@ -117,7 +160,9 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
-  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  transition:
+    background-color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
 }
 
 .text-gradient {
