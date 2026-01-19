@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: seoMetadata.siteUrl + seoMetadata.pages.home.canonical,
     images: [
       {
-        url: seoMetadata.portraitImage,
+        url: seoMetadata.ogImage,
         width: 1200,
         height: 630,
         alt: "Dinesh Bajgain - Full Stack Developer & AI/ML Enthusiast",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     title: seoMetadata.pages.home.title,
     description: seoMetadata.pages.home.description,
-    images: [seoMetadata.portraitImage],
+    images: [seoMetadata.ogImage],
   },
 };
 

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     url: seoMetadata.siteUrl + seoMetadata.pages.contact.canonical,
     images: [
       {
-        url: seoMetadata.portraitImage,
+        url: seoMetadata.ogImage,
         width: 1200,
         height: 630,
         alt: "Contact Dinesh Bajgain",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   twitter: {
     title: seoMetadata.pages.contact.title,
     description: seoMetadata.pages.contact.description,
-    images: [seoMetadata.portraitImage],
+    images: [seoMetadata.ogImage],
   },
 };
 

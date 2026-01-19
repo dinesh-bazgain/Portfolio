@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: seoMetadata.siteUrl + seoMetadata.pages.experience.canonical,
     images: [
       {
-        url: seoMetadata.portraitImage,
+        url: seoMetadata.ogImage,
         width: 1200,
         height: 630,
         alt: "Experience - Dinesh Bajgain",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     title: seoMetadata.pages.experience.title,
     description: seoMetadata.pages.experience.description,
-    images: [seoMetadata.portraitImage],
+    images: [seoMetadata.ogImage],
   },
 };
 

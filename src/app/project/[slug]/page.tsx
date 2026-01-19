@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       images: [
         {
-          url: seoMetadata.portraitImage,
+          url: seoMetadata.ogImage,
           width: 1200,
           height: 630,
           alt: `${project.title} - Dinesh Bajgain`,
@@ -71,7 +71,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title,
       description,
-      images: [seoMetadata.portraitImage],
+      images: [seoMetadata.ogImage],
     },
   };
 }

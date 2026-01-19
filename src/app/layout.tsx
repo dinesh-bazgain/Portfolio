@@ -66,10 +66,10 @@ export const metadata: Metadata = {
     description: seoMetadata.pages.home.description,
     images: [
       {
-        url: `${seoMetadata.siteUrl}${seoMetadata.portraitImage}`,
+        url: `${seoMetadata.siteUrl}${seoMetadata.ogImage}`,
         width: 1200,
         height: 630,
-        alt: `${seoMetadata.siteAuthor} - Full Stack Developer & AI/ML Enthusiast from Nepal`,
+        alt: `${seoMetadata.siteAuthor} - Full Stack Developer & AI/ML`,
         type: "image/png",
       },
     ],
@@ -81,8 +81,8 @@ export const metadata: Metadata = {
     creator: seoMetadata.twitterHandle,
     site: seoMetadata.twitterHandle,
     images: {
-      url: `${seoMetadata.siteUrl}${seoMetadata.portraitImage}`,
-      alt: `${seoMetadata.siteAuthor} - Full Stack Developer & AI/ML Enthusiast`,
+      url: `${seoMetadata.siteUrl}${seoMetadata.ogImage}`,
+      alt: `${seoMetadata.siteAuthor} - Full Stack Developer & AI/ML`,
     },
   },
   alternates: {

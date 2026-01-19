@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     url: seoMetadata.siteUrl + seoMetadata.pages.skills.canonical,
     images: [
       {
-        url: seoMetadata.portraitImage,
+        url: seoMetadata.ogImage,
         width: 1200,
         height: 630,
         alt: "Skills - Dinesh Bajgain",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   twitter: {
     title: seoMetadata.pages.skills.title,
     description: seoMetadata.pages.skills.description,
-    images: [seoMetadata.portraitImage],
+    images: [seoMetadata.ogImage],
   },
 };
 

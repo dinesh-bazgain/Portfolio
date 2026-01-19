@@ -5,6 +5,7 @@
   "siteLocale": "en_US",
   "twitterHandle": "@Mr_Bajgain",
   "portraitImage": "/portrait.png",
+  "ogImage": "/og-image.png",
   "iconImage": "/icon.png",
   "defaultKeywords": [
     "Dinesh Bajgain",
@@ -26,8 +27,8 @@
   ],
   "pages": {
     "home": {
-      "title": "Dinesh Bajgain | Full Stack Developer & AI/ML Engineer from Nepal",
-      "description": "Hi, I'm Dinesh Bajgain — a Full Stack Developer & AI/ML Enthusiast from Nepal. I build scalable web apps with React, Next.js, Node.js & Python. Open for remote work & freelance projects.",
+      "title": "Dinesh Bajgain | Full Stack Developer & AI/ML",
+      "description": "Full Stack Developer & AI/ML Enthusiast from Nepal. Building scalable web apps with React, Next.js & Python. Open for remote work.",
       "keywords": [
         "Dinesh Bajgain",
         "Dinesh Bajgain Developer",
@@ -42,8 +43,8 @@
       "canonical": "/"
     },
     "about": {
-      "title": "About Dinesh Bajgain | Full Stack Developer & AI/ML Enthusiast",
-      "description": "Learn about Dinesh Bajgain's journey — a passionate Full Stack Developer from Lalitpur, Nepal. Skilled in React, Next.js, Node.js, Python & Machine Learning. Building intelligent web solutions.",
+      "title": "About | Dinesh Bajgain - Developer from Nepal",
+      "description": "Learn about Dinesh Bajgain — Full Stack Developer from Nepal. Skilled in React, Next.js, Node.js, Python & ML.",
       "keywords": [
         "About Dinesh Bajgain",
         "Dinesh Bajgain Biography",
