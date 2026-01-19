@@ -215,7 +215,7 @@
   /* align to right */
   left: auto;
   background: var(--background);
-  box-shadow: 0 6px 18px rgba(59, 59, 59, 0.12);
+  box-shadow: var(--shadow-lg);
   border-radius: 8px;
   min-width: max-content;
   width: auto;
@@ -352,7 +352,7 @@
     background: var(--secondary-foreground) !important;
     padding: 0.5rem 0.625rem !important;
     border-radius: 0 8px 8px 0 !important;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12) !important;
+    box-shadow: var(--shadow-lg) !important;
     min-width: 56px !important;
     width: auto !important;
   }
