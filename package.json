@@ -9,7 +9,8 @@
     "start": "next start",
     "export": "next export",
     "lint": "eslint",
-    "pages:build": "npx @cloudflare/next-on-pages"
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "generate:og": "npx tsx scripts/generate-og-image.tsx"
   },
   "dependencies": {
     "lucide-react": "^0.555.0",
@@ -21,12 +22,14 @@
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.13.16",
     "@eslint/eslintrc": "^3",
+    "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
+    "satori": "^0.19.1",
     "tailwindcss": "^4",
     "typescript": "^5.9.3"
   }
