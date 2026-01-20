@@ -47,114 +47,96 @@ async function generateOGImage() {
         width: "100%",
         display: "flex",
         position: "relative",
-        backgroundColor: "#1a1a1a",
+        backgroundColor: "#0f0f0f",
       }}
     >
-      {/* Background Portrait Image */}
-      <img
-        src={portraitBase64}
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          objectPosition: "center top",
-          filter: "grayscale(100%)",
-        }}
-      />
-
-      {/* Dark Overlay */}
+      {/* Left Side - Text Content */}
       <div
         style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          background:
-            "linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.8) 100%)",
-          display: "flex",
-        }}
-      />
-
-      {/* Content */}
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
+          width: "55%",
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
+          alignItems: "flex-start",
           justifyContent: "center",
-          padding: "60px",
+          padding: "60px 70px",
+          background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)",
         }}
       >
         {/* Domain Badge */}
         <div
           style={{
             display: "flex",
-            padding: "10px 24px",
-            backgroundColor: "rgba(255,255,255,0.15)",
+            padding: "8px 20px",
+            backgroundColor: "rgba(255,255,255,0.1)",
             borderRadius: "9999px",
-            fontSize: "20px",
-            color: "#ffffff",
+            fontSize: "16px",
+            color: "rgba(255,255,255,0.8)",
             marginBottom: "32px",
-            backdropFilter: "blur(10px)",
           }}
         >
           {siteUrl}
         </div>
 
-        {/* Title */}
+        {/* Name */}
         <div
           style={{
-            fontSize: "48px",
+            fontSize: "60px",
             fontWeight: 700,
             color: "#ffffff",
-            marginBottom: "20px",
-            textAlign: "center",
-            textShadow: "0 2px 10px rgba(0,0,0,0.5)",
+            lineHeight: 1.1,
+            marginBottom: "8px",
           }}
         >
-          {title}
+          Dinesh Bajgain
         </div>
 
-        {/* Description */}
+        {/* Title */}
         <div
           style={{
             fontSize: "24px",
             fontWeight: 400,
-            color: "rgba(255,255,255,0.9)",
-            marginBottom: "36px",
-            textAlign: "center",
-            maxWidth: "800px",
+            color: "rgba(255,255,255,0.7)",
             lineHeight: 1.4,
-            textShadow: "0 1px 5px rgba(0,0,0,0.5)",
           }}
         >
-          {description}
+          Full Stack Developer & AI/ML Enthusiast
         </div>
+      </div>
 
-        {/* Read More Button */}
+      {/* Right Side - Portrait */}
+      <div
+        style={{
+          width: "45%",
+          height: "100%",
+          display: "flex",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <img
+          src={portraitBase64}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center top",
+            filter: "grayscale(100%)",
+          }}
+        />
+        {/* Gradient overlay for smooth blend */}
         <div
           style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100px",
+            height: "100%",
+            background:
+              "linear-gradient(to right, #1a1a1a 0%, transparent 100%)",
             display: "flex",
-            padding: "16px 40px",
-            backgroundColor: "#2563eb",
-            borderRadius: "9999px",
-            fontSize: "22px",
-            fontWeight: 700,
-            color: "#ffffff",
-            boxShadow: "0 4px 20px rgba(37, 99, 235, 0.5)",
           }}
-        >
-          Read more
-        </div>
+        />
       </div>
     </div>,
     {
