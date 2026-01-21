@@ -7,10 +7,21 @@ import satori from "satori";
 import { writeFileSync, readFileSync } from "fs";
 import { join } from "path";
 
-const siteUrl = "dinesh-bajgain.com.np";
-const title = "Dinesh Bajgain | Full Stack Developer & AI/ML";
-const description =
-  "Full Stack Developer & AI/ML Enthusiast from Nepal. Building scalable web apps with React, Next.js & Python. Open for remote work.";
+// Load dynamic data from JSON files
+const seoMetadata = JSON.parse(
+  readFileSync(join(process.cwd(), "src/data/seometadata.json"), "utf-8"),
+);
+const aboutData = JSON.parse(
+  readFileSync(join(process.cwd(), "src/data/about.json"), "utf-8"),
+);
+
+// Dynamic content from data files
+const siteUrl = seoMetadata.siteUrl
+  .replace("https://www.", "")
+  .replace("https://", "");
+const name = aboutData.name;
+const role = aboutData.role;
+const portraitImagePath = seoMetadata.portraitImage;
 
 async function generateOGImage() {
   // Fetch fonts
@@ -28,17 +39,25 @@ async function generateOGImage() {
 
   // Load portrait image as base64
   console.log("Loading portrait image...");
-  const portraitPath = join(process.cwd(), "public/portrait.png");
+  const portraitPath = join(
+    process.cwd(),
+    "public",
+    portraitImagePath.replace(/^\//, ""),
+  );
   let portraitBase64: string;
   try {
     const portraitBuffer = readFileSync(portraitPath);
-    portraitBase64 = `data:image/png;base64,${portraitBuffer.toString("base64")}`;
+    const ext = portraitPath.split(".").pop()?.toLowerCase();
+    const mimeType = ext === "png" ? "image/png" : "image/jpeg";
+    portraitBase64 = `data:${mimeType};base64,${portraitBuffer.toString("base64")}`;
   } catch {
-    // Try jpeg if png doesn't exist
+    // Fallback to profile.jpeg if portrait image doesn't exist
     const jpegPath = join(process.cwd(), "public/profile.jpeg");
     const portraitBuffer = readFileSync(jpegPath);
     portraitBase64 = `data:image/jpeg;base64,${portraitBuffer.toString("base64")}`;
   }
+
+  console.log(`Generating OG image for: ${name} - ${role}`);
 
   const svg = await satori(
     <div
@@ -88,10 +107,10 @@ async function generateOGImage() {
             marginBottom: "8px",
           }}
         >
-          Dinesh Bajgain
+          {name}
         </div>
 
-        {/* Title */}
+        {/* Role/Title */}
         <div
           style={{
             fontSize: "24px",
@@ -100,7 +119,7 @@ async function generateOGImage() {
             lineHeight: 1.4,
           }}
         >
-          Full Stack Developer & AI/ML Enthusiast
+          {role}
         </div>
       </div>
 
