@@ -20,6 +20,7 @@
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
   gap: 1.5rem;
 }
 
@@ -29,9 +30,11 @@
   border-radius: 8px;
   padding: 2rem;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   transition: all 0.3s ease;
-  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .skill-category-card:hover {
@@ -44,6 +47,7 @@
   margin-bottom: 1.5rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
 }
 
 .category-title {
@@ -59,9 +63,11 @@
 
 .skills-items-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
   gap: 1.5rem;
-  row-gap: 2rem;
+  row-gap: 1.5rem;
+  flex: 1;
+  align-content: start;
 }
 
 .skill-item {
@@ -77,15 +83,18 @@
 }
 
 .skill-icon-wrapper {
-  width: 60px;
-  height: 60px;
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  min-height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--muted);
   border-radius: 8px;
-  padding: 0.5rem;
+  padding: 10px;
   transition: all 0.3s ease;
+  overflow: visible;
 }
 
 .skill-item:hover .skill-icon-wrapper {
@@ -96,6 +105,7 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 .skill-name {
@@ -108,6 +118,7 @@
 @media (max-width: 1024px) {
   .skills-grid {
     grid-template-columns: 1fr;
+    grid-auto-rows: auto;
     gap: 1.5rem;
   }
 
@@ -117,12 +128,17 @@
 
   .skill-category-card {
     padding: 1.75rem;
+    height: auto;
+  }
+
+  .skills-items-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media (max-width: 768px) {
   .skills-section {
-    padding: 5rem 1rem 3rem;
+    margin: 2rem;
   }
 
   .skills-main-title {
@@ -135,13 +151,16 @@
   }
 
   .skills-items-grid {
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-    gap: 1.25rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
   }
 
   .skill-icon-wrapper {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    padding: 8px;
   }
 
   .skill-name {
