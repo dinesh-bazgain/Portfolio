@@ -47,13 +47,10 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [
-      { url: seoMetadata.iconImage, sizes: "32x32", type: "image/png" },
-      { url: seoMetadata.iconImage, sizes: "16x16", type: "image/png" },
-    ],
+    icon: [{ url: seoMetadata.iconImage, sizes: "any", type: "image/svg+xml" }],
     shortcut: seoMetadata.iconImage,
     apple: [
-      { url: seoMetadata.iconImage, sizes: "180x180", type: "image/png" },
+      { url: seoMetadata.iconImage, sizes: "180x180", type: "image/svg+xml" },
     ],
   },
   manifest: "/manifest.json",
