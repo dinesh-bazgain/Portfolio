@@ -4,6 +4,11 @@ import Image from "next/image";
 import PageNavigation from "@/components/navigation/PageNavigation";
 import skills from "@/data/skills.json";
 import seoMetadata from "@/data/seometadata.json";
+import {
+  JsonLd,
+  generateSkillsPageSchema,
+  generateServiceSchema,
+} from "@/components/seo/JsonLd";
 import "./Skills.css";
 
 export const metadata: Metadata = {
@@ -34,8 +39,28 @@ export const metadata: Metadata = {
 };
 
 export default function Skills() {
+  // Extract all skill names for schema
+  const allSkillNames = Object.values(skills)
+    .flat()
+    .map((skill) => skill.name);
+
+  const skillsPageSchema = generateSkillsPageSchema({
+    siteUrl: seoMetadata.siteUrl,
+    skills: allSkillNames,
+  });
+
+  const serviceSchema = generateServiceSchema({
+    serviceName: "Full Stack Web Development",
+    description:
+      "Professional web development services using React, Next.js, Node.js, and modern technologies",
+    provider: seoMetadata.siteAuthor,
+    siteUrl: seoMetadata.siteUrl,
+  });
+
   return (
     <>
+      <JsonLd data={skillsPageSchema} />
+      <JsonLd data={serviceSchema} />
       <section className="skills-section" id="skills">
         <div className="skills-container">
           <h1 className="skills-main-title">Technical Skills</h1>
