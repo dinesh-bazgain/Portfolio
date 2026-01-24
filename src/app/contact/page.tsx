@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import PageNavigation from "@/components/navigation/PageNavigation";
 import seoMetadata from "@/data/seometadata.json";
+import { JsonLd, generateContactPageSchema } from "@/components/seo/JsonLd";
 import "./contact.css";
 
 export const metadata: Metadata = {
@@ -42,8 +43,13 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const contactPageSchema = generateContactPageSchema({
+    siteUrl: seoMetadata.siteUrl,
+  });
+
   return (
     <main className="contact-main">
+      <JsonLd data={contactPageSchema} />
       <section className="contact-section" id="contact">
         <div className="contact-container">
           {/* Header */}
