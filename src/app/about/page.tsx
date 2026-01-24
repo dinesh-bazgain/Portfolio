@@ -3,6 +3,7 @@ import about from "../../data/about.json";
 import seoMetadata from "@/data/seometadata.json";
 import { MapPin, Heart } from "lucide-react";
 import PageNavigation from "@/components/navigation/PageNavigation";
+import { JsonLd, generateAboutPageSchema } from "@/components/seo/JsonLd";
 import "./about.css";
 
 export const metadata: Metadata = {
@@ -33,8 +34,16 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+  const aboutPageSchema = generateAboutPageSchema({
+    siteUrl: seoMetadata.siteUrl,
+    personName: about.name,
+    jobTitle: about.role,
+    description: seoMetadata.pages.about.description,
+  });
+
   return (
     <main className="about-page">
+      <JsonLd data={aboutPageSchema} />
       {/* Hero Section */}
       <section className="about-hero">
         <div className="hero-content">
