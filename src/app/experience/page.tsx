@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import PageNavigation from "@/components/navigation/PageNavigation";
 import experienceData from "@/data/experience.json";
 import seoMetadata from "@/data/seometadata.json";
+import { JsonLd } from "@/components/seo/JsonLd";
 import "./experience.css";
 
 export const metadata: Metadata = {
@@ -58,8 +59,37 @@ function getDateRange(experience: Experience): string {
 export default function ExperiencePage() {
   const experiences: Experience[] = experienceData;
 
+  // Generate structured data for work experience
+  const experienceSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    name: "Work Experience - Dinesh Bajgain",
+    description: seoMetadata.pages.experience.description,
+    url: `${seoMetadata.siteUrl}/experience`,
+    mainEntity: {
+      "@type": "Person",
+      "@id": `${seoMetadata.siteUrl}/#person`,
+      name: "Dinesh Bajgain",
+      hasOccupation: experiences.map((exp) => ({
+        "@type": "Occupation",
+        name: exp.position,
+        occupationLocation: {
+          "@type": "Place",
+          name: exp.location,
+        },
+        description: exp.description,
+        skills: exp.technologies.join(", "),
+        estimatedSalary: {
+          "@type": "MonetaryAmountDistribution",
+          currency: "NPR",
+        },
+      })),
+    },
+  };
+
   return (
     <main className="experience-main">
+      <JsonLd data={experienceSchema} />
       <section className="experience-section" id="experience">
         <div className="experience-content">
           <h1 className="experience-title">Work Experience</h1>
