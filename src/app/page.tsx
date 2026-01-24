@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import HomePage from "./home/page";
 import seoMetadata from "@/data/seometadata.json";
+import { JsonLd, generateHowToHireSchema } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: seoMetadata.pages.home.title,
@@ -30,8 +31,13 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const howToSchema = generateHowToHireSchema({
+    siteUrl: seoMetadata.siteUrl,
+  });
+
   return (
     <>
+      <JsonLd data={howToSchema} />
       <HomePage />
     </>
   );
