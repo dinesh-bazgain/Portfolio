@@ -6,6 +6,8 @@ import { NAV_ITEMS } from "@/data/navigation";
 type Project = {
   slug: string;
   title: string;
+  description?: string;
+  tags?: string[];
 };
 
 // Page priority configuration - add new pages here to customize their priority
@@ -16,12 +18,30 @@ const PAGE_PRIORITIES: Record<
     changeFrequency: MetadataRoute.Sitemap[0]["changeFrequency"];
   }
 > = {
-  "/": { priority: 1.0, changeFrequency: "weekly" },
-  "/about": { priority: 0.9, changeFrequency: "monthly" },
-  "/project": { priority: 0.9, changeFrequency: "weekly" },
-  "/skills": { priority: 0.8, changeFrequency: "monthly" },
-  "/experience": { priority: 0.8, changeFrequency: "monthly" },
-  "/contact": { priority: 0.7, changeFrequency: "yearly" },
+  "/": {
+    priority: 1.0,
+    changeFrequency: "weekly",
+  },
+  "/about": {
+    priority: 0.9,
+    changeFrequency: "monthly",
+  },
+  "/project": {
+    priority: 0.9,
+    changeFrequency: "weekly",
+  },
+  "/skills": {
+    priority: 0.8,
+    changeFrequency: "monthly",
+  },
+  "/experience": {
+    priority: 0.8,
+    changeFrequency: "monthly",
+  },
+  "/contact": {
+    priority: 0.7,
+    changeFrequency: "yearly",
+  },
 };
 
 // Default values for pages not in the config
