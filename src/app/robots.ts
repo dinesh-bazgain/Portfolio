@@ -9,15 +9,55 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/_next/", "/private/"],
+        disallow: ["/api/", "/_next/", "/private/", "/*.json$", "/scripts/"],
       },
       {
         userAgent: "Googlebot",
+        allow: "/",
+        crawlDelay: 1,
+      },
+      {
+        userAgent: "Googlebot-Image",
         allow: "/",
       },
       {
         userAgent: "Bingbot",
         allow: "/",
+        crawlDelay: 1,
+      },
+      {
+        userAgent: "Slurp",
+        allow: "/",
+        crawlDelay: 2,
+      },
+      {
+        userAgent: "DuckDuckBot",
+        allow: "/",
+      },
+      {
+        userAgent: "facebookexternalhit",
+        allow: "/",
+      },
+      {
+        userAgent: "LinkedInBot",
+        allow: "/",
+      },
+      {
+        userAgent: "Twitterbot",
+        allow: "/",
+      },
+      // Block AI training bots (optional - remove if you want AI indexing)
+      {
+        userAgent: "GPTBot",
+        disallow: "/",
+      },
+      {
+        userAgent: "CCBot",
+        disallow: "/",
+      },
+      {
+        userAgent: "anthropic-ai",
+        disallow: "/",
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
