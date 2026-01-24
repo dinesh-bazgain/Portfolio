@@ -2,6 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import seoMetadata from "@/data/seometadata.json";
+import { JsonLd, generateProjectSchema } from "@/components/seo/JsonLd";
 import "../project.css";
 
 import projectsData from "../../../data/projects.json";
@@ -84,8 +85,17 @@ export default async function Page({ params }: Props) {
     notFound(); // Show 404 if project not found
   }
 
+  const projectSchema = generateProjectSchema({
+    title: project.title,
+    description: project.description,
+    slug: project.slug,
+    tags: project.features,
+    siteUrl: seoMetadata.siteUrl,
+  });
+
   return (
     <main className="project-details-container">
+      <JsonLd data={projectSchema} />
       <h1 className="project-title">{project.title}</h1>
       <h2 className="project-subtitle">{project.subTitle}</h2>
       <p className="project-description">{project.description}</p>
