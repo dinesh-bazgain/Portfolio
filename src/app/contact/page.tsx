@@ -55,7 +55,7 @@ export default function ContactPage() {
           {/* Header */}
           <div className="contact-header">
             <span className="contact-greeting">Get in Touch</span>
-            <h1 className="contact-title">Let's Work Together</h1>
+            <h1 className="contact-title">Let&apos;s Work Together</h1>
             <p className="contact-subtitle">
               Have a project in mind or just want to connect? Let’s talk.
             </p>
