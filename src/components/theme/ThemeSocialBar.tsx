@@ -18,7 +18,7 @@ type ThemeSocialBarProps = {
 };
 
 const ThemeSocialBar = ({ hideOnMobileMenu = false }: ThemeSocialBarProps) => {
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
