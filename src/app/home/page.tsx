@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import "./home.css";
 
 export default function HomePage() {
@@ -15,12 +16,18 @@ export default function HomePage() {
 
           {/* Center Bottom Image (kept as requested) */}
           <div className="hero-portrait-container">
-            {/* <img src="/mark.png" alt="Signature" className="hero-mark" /> */}
-            <img src="/portrait.png" alt="Portrait" className="hero-portrait" />
+            {/* <Image src="/mark.png" alt="Signature" className="hero-mark" width={200} height={200} /> */}
+            <Image
+              src="/portrait.png"
+              alt="Portrait of Dinesh Bajgain"
+              className="hero-portrait"
+              width={400}
+              height={400}
+              priority
+            />
           </div>
         </div>
       </section>
-
     </main>
   );
 }
