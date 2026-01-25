@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { useState, useRef } from "react";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -25,6 +25,7 @@ const Navbar = ({
 }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef<HTMLElement | null>(null);
+  const router = useRouter();
 
   const toggleMenu = () => {
     const newState = !isOpen;
@@ -62,10 +63,10 @@ const Navbar = ({
                 item.disabled
                   ? undefined
                   : () => {
-                    if (onNavClick) onNavClick(item.id);
-                    setIsOpen(false); // Close menu on click
-                    if (onMenuToggle) onMenuToggle(false);
-                  }
+                      if (onNavClick) onNavClick(item.id);
+                      setIsOpen(false); // Close menu on click
+                      if (onMenuToggle) onMenuToggle(false);
+                    }
               }
               className="nav-link"
             >
@@ -96,17 +97,22 @@ const Navbar = ({
 
   // Render Horizontal / Top Navbar
   if (orientation === "horizontal") {
-    const router = useRouter();
-    const goHome = () => router.push("/");
     return (
       <nav ref={navRef} className={`site-top-navbar ${className}`}>
         <div className="site-navbar-inner">
           <div className="site-navbar-logo">
-            <img src="/mark.png" alt="Logo" onClick={() => router.push("/")} />
+            <Image
+              src="/mark.png"
+              alt="Logo"
+              width={40}
+              height={40}
+              onClick={() => router.push("/")}
+              style={{ cursor: "pointer" }}
+            />
           </div>
           <div className="site-navbar-left">
             <div className="navbar-links">
-              {navLinks.map((link) => (
+              {navLinks.map((link) =>
                 link.isButton ? (
                   <a
                     key={link.id}
@@ -121,8 +127,8 @@ const Navbar = ({
                   <Link key={link.id} href={link.href} className="navbar-link">
                     {link.label}
                   </Link>
-                )
-              ))}
+                ),
+              )}
             </div>
           </div>
 
@@ -140,7 +146,7 @@ const Navbar = ({
 
           {isOpen && (
             <div className="navbar-mobile-menu">
-              {navLinks.map((link) => (
+              {navLinks.map((link) =>
                 link.isButton ? (
                   <a
                     key={link.id}
@@ -161,8 +167,8 @@ const Navbar = ({
                   >
                     {link.label}
                   </Link>
-                )
-              ))}
+                ),
+              )}
             </div>
           )}
         </div>
