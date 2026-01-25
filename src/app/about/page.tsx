@@ -47,7 +47,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="about-hero">
         <div className="hero-content">
-          <span className="hero-greeting">Hello, I'm</span>
+          <span className="hero-greeting">Hello, I&apos;m</span>
           <h1 className="hero-name">{about.name}</h1>
           <p className="hero-role">{about.role}</p>
           <p className="hero-tagline">{about.tagline}</p>
