@@ -11,8 +11,20 @@ body {
 }
 
 .project-page {
-  margin: 4rem;
+  margin: clamp(1.5rem, 4vw, 4rem);
   color: var(--primary);
+  animation: fadeInPage 0.5s ease forwards;
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .projects-section {
@@ -29,11 +41,11 @@ body {
 
 .projects-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
 .projects-title {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
   color: var(--primary);
   margin: 0;
@@ -41,21 +53,53 @@ body {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+  gap: 1.5rem;
 }
 
 .project-card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: clamp(1.25rem, 3vw, 1.5rem);
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+.project-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.project-card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.project-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.project-card:nth-child(4) {
+  animation-delay: 0.25s;
+}
+.project-card:nth-child(5) {
+  animation-delay: 0.3s;
+}
+.project-card:nth-child(6) {
+  animation-delay: 0.35s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .project-card:hover {
@@ -193,20 +237,52 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
   .project-page {
-    margin: 2rem 1rem;
+    margin: 1.5rem 1rem;
   }
 
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 
   .project-card-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.75rem;
   }
 
   .project-details-button {
     align-self: flex-end;
+  }
+
+  .project-card-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .project-action-button {
+    flex: 1;
+    min-width: 130px;
+    justify-content: center;
+  }
+
+  .project-features {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-page {
+    margin: 1rem;
+  }
+
+  .project-card {
+    padding: 1rem;
+  }
+
+  .project-card-title {
+    font-size: 1.25rem;
   }
 
   .project-card-actions {
@@ -215,6 +291,15 @@ body {
 
   .project-action-button {
     width: 100%;
-    justify-content: center;
+    min-width: auto;
+  }
+
+  .project-tags {
+    gap: 0.4rem;
+  }
+
+  .project-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
   }
 }
