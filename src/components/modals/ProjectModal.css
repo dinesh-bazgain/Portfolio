@@ -200,13 +200,41 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .modal-backdrop {
+    align-items: flex-end;
+    padding: 0;
+  }
+
   .modal-content {
     padding: 1.5rem;
-    max-height: 90vh;
+    padding-bottom: 2rem;
+    max-height: 85vh;
+    width: 100%;
+    border-radius: 1.5rem 1.5rem 0 0;
+    animation: slideUpMobile 0.3s ease-out;
+  }
+
+  @keyframes slideUpMobile {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
   .modal-title {
     font-size: 1.5rem;
+  }
+
+  .modal-description {
+    font-size: 0.95rem;
+  }
+
+  .modal-features-list {
+    font-size: 0.9rem;
   }
 
   .modal-actions {
@@ -216,5 +244,30 @@
   .modal-button {
     width: 100%;
     justify-content: center;
+    padding: 0.875rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 1.25rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .modal-header {
+    margin-bottom: 1rem;
+  }
+
+  .modal-title {
+    font-size: 1.25rem;
+  }
+
+  .modal-section {
+    margin-bottom: 1rem;
+  }
+
+  .modal-tag {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
   }
 }
