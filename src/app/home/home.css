@@ -9,6 +9,21 @@
   background-color: var(--background);
   color: var(--foreground);
   overflow: hidden; /* Prevent scroll for single-page content */
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.home-main.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.home-main.loading {
+  opacity: 0;
+  transform: translateY(10px);
 }
 
 /* Hero Section Container - Global Grid */
@@ -126,7 +141,6 @@
     padding-right: 0;
     gap: 4rem;
   }
-
 
   .hero-title {
     white-space: nowrap;
