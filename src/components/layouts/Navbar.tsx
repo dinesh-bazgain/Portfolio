@@ -140,37 +140,47 @@ const Navbar = ({
             className="navbar-toggle"
             onClick={toggleMenu}
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
           >
-            {isOpen ? <X size={35} /> : <Menu size={35} />}
+            {isOpen ? <X size={32} /> : <Menu size={32} />}
           </button>
 
+          {/* Mobile menu backdrop */}
           {isOpen && (
-            <div className="navbar-mobile-menu">
-              {navLinks.map((link) =>
-                link.isButton ? (
-                  <a
-                    key={link.id}
-                    href={link.href}
-                    className="navbar-mobile-button"
-                    onClick={toggleMenu}
-                    target={link.external ? "_blank" : undefined}
-                    rel={link.external ? "noopener noreferrer" : undefined}
-                  >
-                    {link.label}
-                  </a>
-                ) : (
-                  <Link
-                    key={link.id}
-                    href={link.href}
-                    className="navbar-mobile-link"
-                    onClick={toggleMenu}
-                  >
-                    {link.label}
-                  </Link>
-                ),
-              )}
-            </div>
+            <div
+              className="navbar-mobile-backdrop"
+              onClick={toggleMenu}
+              aria-hidden="true"
+            />
           )}
+
+          <div className={`navbar-mobile-menu ${isOpen ? "open" : ""}`}>
+            {navLinks.map((link, index) =>
+              link.isButton ? (
+                <a
+                  key={link.id}
+                  href={link.href}
+                  className="navbar-mobile-button"
+                  onClick={toggleMenu}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
+                  style={{ animationDelay: `${index * 0.05}s` }}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.id}
+                  href={link.href}
+                  className="navbar-mobile-link"
+                  onClick={toggleMenu}
+                  style={{ animationDelay: `${index * 0.05}s` }}
+                >
+                  {link.label}
+                </Link>
+              ),
+            )}
+          </div>
         </div>
       </nav>
     );
