@@ -144,6 +144,25 @@ body {
   /* Needed for flex children to shrink properly */
   overflow: auto;
   /* Allow scrolling only when content exceeds available space */
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling */
+.page-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.page-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.page-content::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+
+.page-content::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
 }
 
 /* Single-page content that should fill viewport without scroll */
@@ -172,8 +191,37 @@ body {
   background-clip: text;
 }
 
+/* Smooth page transitions */
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-content > * {
+  animation: pageEnter 0.4s ease forwards;
+}
+
 section {
   scroll-margin-top: 80px;
+}
+
+/* Focus visible styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Selection styling */
+::selection {
+  background: var(--accent);
+  color: var(--background);
 }
 
 /* Mobile: Social Bar at Bottom Left (Global) */
@@ -196,5 +244,17 @@ section {
   .theme-social-bar .social-links-row {
     flex-direction: column !important;
     gap: 1.25rem !important;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
