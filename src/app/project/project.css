@@ -174,12 +174,14 @@ body {
   color: var(--foreground);
   line-height: 1.8;
   font-size: 0.95rem;
+  flex-grow: 1;
 }
 
 .project-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  margin-top: auto;
 }
 
 .project-tag {
