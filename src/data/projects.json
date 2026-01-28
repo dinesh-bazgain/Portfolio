@@ -1,63 +1,43 @@
 [
-    {
-        "title": "Veda Samvaad",
-        "slug": "veda-samvaad",
-        "description": "A platform for Vedic discussions and resources.",
-        "subTitle": "A community-driven platform for Vedic knowledge sharing",
-        "features": [
-            "Community discussions",
-            "Resource sharing",
-            "Modern UI",
-            "User authentication"
-        ],
-        "tags": [
-            "React",
-            "Node.js",
-            "MongoDB",
-            "Express"
-        ],
-        "external": null,
-        "codeUrl": null,
-        "liveUrl": "https://vedasamvaad-frontend.onrender.com/"
-    },
-    {
-        "title": "BMI Calculator",
-        "slug": "bmi-calculator",
-        "description": "A simple BMI calculator web app.",
-        "subTitle": "A simple BMI calculator built with React",
-        "features": [
-            "Easy BMI calculation",
-            "Clean interface",
-            "Mobile friendly",
-            "Health recommendations"
-        ],
-        "tags": [
-            "React",
-            "JavaScript",
-            "CSS"
-        ],
-        "external": null,
-        "codeUrl": null,
-        "liveUrl": "https://bmi-calculator-by-mrbajgain.netlify.app/"
-    },
-    {
-        "title": "Currency Converter",
-        "slug": "currency-converter",
-        "description": "A simple and intuitive web application for real-time currency conversion.",
-        "subTitle": "A simple currency converter built with React",
-        "features": [
-            "Real-time conversion",
-            "User-friendly design",
-            "Responsive layout",
-            "Powered by public exchange rate APIs"
-        ],
-        "tags": [
-            "React",
-            "API Integration",
-            "JavaScript"
-        ],
-        "external": null,
-        "codeUrl": "https://github.com/dinesh-bazgain/Currency-Converter",
-        "liveUrl": "https://dinesh-bazgain.github.io/Currency-Converter/"
-    }
+  {
+    "title": "Veda Samvaad",
+    "slug": "veda-samvaad",
+    "description": "A platform for Vedic discussions and resources.",
+    "subTitle": "A community-driven platform for Vedic knowledge sharing",
+    "features": [
+      "Community discussions",
+      "Resource sharing",
+      "Modern UI",
+      "User authentication"
+    ],
+    "tags": ["React", "Node.js", "MongoDB", "Express"],
+    "codeUrl": "https://github.com/dinesh-bazgain/VedaSamvaad",
+    "liveUrl": "https://vedasamvaad-frontend.onrender.com/"
+  },
+  {
+    "title": "Kanban System",
+    "slug": "kanban-system",
+    "description": "A simple Kanban system web app.",
+    "subTitle": "A simple Kanban system built with React",
+    "features": ["Easy task management", "Clean interface", "Mobile friendly"],
+    "tags": ["NextJs", "NestJS", "TypeScript", "Tailwind CSS"],
+    "codeUrl": "https://github.com/dinesh-bazgain/Kanban-System",
+    "liveUrl": "https://kanban-system-one.vercel.app/"
+  },
+  {
+    "title": "Currency Converter",
+    "slug": "currency-converter",
+    "description": "A simple and intuitive web application for real-time currency conversion.",
+    "subTitle": "A simple currency converter built with React",
+    "features": [
+      "Real-time conversion",
+      "User-friendly design",
+      "Responsive layout",
+      "Powered by public exchange rate APIs"
+    ],
+    "tags": ["React", "API Integration", "JavaScript"],
+    "external": null,
+    "codeUrl": "https://github.com/dinesh-bazgain/Currency-Converter",
+    "liveUrl": "https://dinesh-bazgain.github.io/Currency-Converter/"
+  }
 ]
