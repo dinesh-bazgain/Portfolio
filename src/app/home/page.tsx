@@ -6,10 +6,22 @@ import LoadingScreen from "@/components/ui/LoadingScreen";
 import "./home.css";
 
 export default function HomePage() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(() => {
+    // Check if loading screen has already been shown this session
+    if (typeof window !== "undefined") {
+      return !sessionStorage.getItem("hasVisited");
+    }
+    return true;
+  });
   const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
+    // If already visited, skip loading
+    if (sessionStorage.getItem("hasVisited")) {
+      setIsLoading(false);
+      return;
+    }
+
     // Preload the portrait image
     const img = new window.Image();
     img.src = "/portrait.png";
@@ -24,6 +36,8 @@ export default function HomePage() {
   const handleLoadingComplete = () => {
     if (imageLoaded) {
       setIsLoading(false);
+      // Mark as visited for this session
+      sessionStorage.setItem("hasVisited", "true");
     }
   };
 
