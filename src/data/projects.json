@@ -11,7 +11,7 @@
       "User authentication"
     ],
     "tags": ["React", "Node.js", "MongoDB", "Express"],
-    "codeUrl": "https://github.com/dinesh-bazgain/VedaSamvaad",
+    "codeUrl": "https://github.com/dinesh-bajgain-dev/VedaSamvaad",
     "liveUrl": "https://vedasamvaad-frontend.onrender.com/"
   },
   {
@@ -21,7 +21,7 @@
     "subTitle": "A simple Kanban system built with React",
     "features": ["Easy task management", "Clean interface", "Mobile friendly"],
     "tags": ["NextJs", "NestJS", "TypeScript", "Tailwind CSS"],
-    "codeUrl": "https://github.com/dinesh-bazgain/Kanban-System",
+    "codeUrl": "https://github.com/dinesh-bajgain-dev/Kanban-System",
     "liveUrl": "https://kanban-system-one.vercel.app/"
   },
   {
@@ -37,7 +37,7 @@
     ],
     "tags": ["React", "API Integration", "JavaScript"],
     "external": null,
-    "codeUrl": "https://github.com/dinesh-bazgain/Currency-Converter",
-    "liveUrl": "https://dinesh-bazgain.github.io/Currency-Converter/"
+    "codeUrl": "https://github.com/dinesh-bajgain-dev/Currency-Converter",
+    "liveUrl": "https://dinesh-bajgain-dev.github.io/Currency-Converter/"
   }
 ]
