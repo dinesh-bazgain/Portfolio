@@ -139,44 +139,58 @@ export default function ContactPage() {
 
               <div className="social-links">
                 <a
-                  href="https://github.com/dinesh-bazgain"
+                  href="https://github.com/dinesh-bajgain-dev"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer me"
                   className="social-link"
+                  aria-label="Dinesh Bajgain GitHub Profile"
                 >
                   <Github size={28} strokeWidth={1} />
+                  <span className="sr-only">Dinesh Bajgain GitHub</span>
                 </a>
+
                 <a
-                  href="https://www.linkedin.com/in/mr-bajgain/"
+                  href="https://www.linkedin.com/in/dinesh-bajgain"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer me"
                   className="social-link"
+                  aria-label="Dinesh Bajgain LinkedIn Profile"
                 >
                   <Linkedin size={28} strokeWidth={1} />
+                  <span className="sr-only">Dinesh Bajgain LinkedIn</span>
                 </a>
+
                 <a
-                  href="https://x.com/Mr_Bajgain"
+                  href="https://x.com/dinesh__bajgain"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer me"
                   className="social-link"
+                  aria-label="Dinesh Bajgain Twitter Profile"
                 >
                   <Twitter size={28} strokeWidth={1} />
+                  <span className="sr-only">Dinesh Bajgain Twitter</span>
                 </a>
+
                 <a
                   href="https://instagram.com/mr.bajgain"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer me"
                   className="social-link"
+                  aria-label="Dinesh Bajgain Instagram Profile"
                 >
                   <Instagram size={28} strokeWidth={1} />
+                  <span className="sr-only">Dinesh Bajgain Instagram</span>
                 </a>
+
                 <a
                   href="https://facebook.com/mr.bajgain"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer me"
                   className="social-link"
+                  aria-label="Dinesh Bajgain Facebook Profile"
                 >
                   <Facebook size={28} strokeWidth={1} />
+                  <span className="sr-only">Dinesh Bajgain Facebook</span>
                 </a>
               </div>
 
