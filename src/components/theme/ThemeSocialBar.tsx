@@ -54,44 +54,58 @@ const ThemeSocialBar = ({ hideOnMobileMenu = false }: ThemeSocialBarProps) => {
       {/* Social Links */}
       <div className="social-links-row">
         <a
-          href="https://github.com/dinesh-bazgain"
+          href="https://github.com/dinesh-bajgain-dev"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener noreferrer me"
           className="social-icon-link"
+          aria-label="Dinesh Bajgain GitHub Profile"
         >
           <Github size={35} />
+          <span className="sr-only">Dinesh Bajgain GitHub</span>
         </a>
+
         <a
           href="https://instagram.com/mr.bajgain"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener noreferrer me"
           className="social-icon-link"
+          aria-label="Dinesh Bajgain Instagram Profile"
         >
           <Instagram size={35} />
+          <span className="sr-only">Dinesh Bajgain Instagram</span>
         </a>
+
         <a
-          href="https://www.linkedin.com/in/mr-bajgain/"
+          href="https://www.linkedin.com/in/dinesh-bajgain"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener noreferrer me"
           className="social-icon-link"
+          aria-label="Dinesh Bajgain LinkedIn Profile"
         >
           <Linkedin size={35} />
+          <span className="sr-only">Dinesh Bajgain LinkedIn</span>
         </a>
+
         <a
           href="https://facebook.com/mr.bajgain"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener noreferrer me"
           className="social-icon-link"
+          aria-label="Dinesh Bajgain Facebook Profile"
         >
           <Facebook size={35} />
+          <span className="sr-only">Dinesh Bajgain Facebook</span>
         </a>
+
         <a
-          href="https://x.com/Mr_Bajgain"
+          href="https://x.com/dinesh__bajgain"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener noreferrer me"
           className="social-icon-link"
+          aria-label="Dinesh Bajgain Twitter Profile"
         >
           <Twitter size={35} />
+          <span className="sr-only">Dinesh Bajgain Twitter</span>
         </a>
       </div>
     </div>
