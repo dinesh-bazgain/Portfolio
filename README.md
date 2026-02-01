@@ -1,26 +1,33 @@
-# Personal Portfolio 🚧
+# Portfolio
 
-> **Status:** Under Construction / In Development
-
-Welcome to my personal portfolio project! This site is currently being built to showcase my work, skills, and projects.
-
-## Features Planned
-
-- Interactive project gallery
-- About Me section
-- Contact form
-- Responsive design
+A minimal personal portfolio built with Next.js and Tailwind CSS.
 
 ## Tech Stack
 
-- Next.js
+- Next.js 14
+- React 18
+- Tailwind CSS 4
 - TypeScript
-- Tailwind CSS / PostCSS
 
 ## Getting Started
 
-This project is still in development. Please check back soon for updates!
+```bash
+# Install dependencies
+pnpm install
 
----
+# Run development server
+pnpm dev
 
-Feel free to reach out if you have any questions or suggestions.
+# Build for production
+pnpm build
+```
+
+## Project Structure
+
+```
+src/
+├── app/          # Pages (home, about, contact, experience, projects, skills)
+├── components/   # Reusable UI components
+└── data/         # JSON content files
+```
+
