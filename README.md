@@ -30,4 +30,3 @@ src/
 ├── components/   # Reusable UI components
 └── data/         # JSON content files
 ```
-
