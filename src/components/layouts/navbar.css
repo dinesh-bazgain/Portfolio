@@ -18,8 +18,10 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: var(--background);
-  border-bottom: 1px solid var(--border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
   z-index: 100;
 }
 
@@ -400,84 +402,35 @@
     color: var(--background);
   }
 
-  /* Social bar positioning on mobile */
+  /* On mobile: hide social links but keep theme toggle visible in navbar */
   .theme-social-bar {
-    position: fixed !important;
-    bottom: 1.5rem !important;
-    left: 0 !important;
-    /* stick to left window edge */
-    top: auto !important;
-    right: auto !important;
-    display: flex !important;
-    flex-direction: column-reverse !important;
-    align-items: center !important;
-    gap: 1rem !important;
-    z-index: 9999 !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    background: var(--secondary-foreground) !important;
-    padding: 0.5rem 0.625rem !important;
-    border-radius: 0 8px 8px 0 !important;
-    box-shadow: var(--shadow-lg) !important;
-    min-width: 56px !important;
-    width: auto !important;
+    display: none !important;
   }
 
-  .theme-social-bar .social-links-row {
-    flex-direction: column !important;
-    /* enforce gap with high specificity to override other styles */
-    gap: 2.5rem !important;
-    align-items: center !important;
-    justify-content: center !important;
+  /* Mobile theme toggle next to hamburger */
+  .mobile-theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: var(--foreground);
+    transition:
+      opacity 0.2s,
+      transform 0.2s;
+    z-index: 10001;
   }
 
-  /* Reinstate a compact horizontal separator on mobile between icon groups */
-  .theme-social-bar .social-separator {
-    display: block !important;
-    width: 22px !important;
-    height: 1px !important;
-    border-left: none !important;
-    border-top: 2px dashed var(--primary-foreground) !important;
-    margin: 0.35rem 0 !important;
-    opacity: 0.6 !important;
-    align-self: center !important;
+  .mobile-theme-toggle:hover {
+    opacity: 0.7;
+    transform: scale(1.05);
   }
 
-  .theme-social-bar {
-    padding: 1.5rem 0.75rem !important;
-    overflow: visible !important;
-  }
-
-  .theme-social-bar .social-icon-link svg,
-  .theme-social-bar .social-icon-btn svg {
-    width: 30px !important;
-    height: 30px !important;
-    display: block !important;
-  }
-
-  /* Additional vertical margins directly on the anchors so spacing is preserved
-     even if parent height or flex behaviors interfere with `gap`. */
-  .theme-social-bar .social-links-row .social-icon-link,
-  .theme-social-bar .social-links-row .social-icon-btn {
-    display: block !important;
-    margin: 0.8rem 0 !important;
-    padding: 0 !important;
-  }
-
-  /* If another global rule is constraining height, allow the social bar to expand */
-  .theme-social-bar {
-    min-height: auto !important;
-    height: auto !important;
-  }
-
-  /* icons sit on top of white background and use dark color for contrast */
-  .theme-social-bar .social-icon-link,
-  .theme-social-bar .social-icon-btn {
-    color: var(--primary-foreground) !important;
-    background: transparent !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+  .mobile-theme-toggle svg {
+    width: 24px;
+    height: 24px;
   }
 
   /* Make the logo take available space in the navbar on mobile */
@@ -497,5 +450,12 @@
     object-fit: contain;
     position: relative;
     margin-top: 0;
+  }
+}
+
+/* Desktop: hide mobile theme toggle */
+@media (min-width: 770px) {
+  .mobile-theme-toggle {
+    display: none;
   }
 }

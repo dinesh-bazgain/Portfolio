@@ -1,14 +1,14 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useTheme } from "next-themes";
 import Link from "next/link";
 import "./navbar.css";
 import ThemeSocialBar from "@/components/theme/ThemeSocialBar";
 import { NAV_ITEMS } from "@/data/navigation";
-// removed incorrect imports
 
 interface NavbarProps {
   onNavClick?: (id: string) => void;
@@ -24,13 +24,23 @@ const Navbar = ({
   className = "",
 }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const navRef = useRef<HTMLElement | null>(null);
   const router = useRouter();
+  const { setTheme, resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const toggleMenu = () => {
     const newState = !isOpen;
     setIsOpen(newState);
     if (onMenuToggle) onMenuToggle(newState);
+  };
+
+  const toggleTheme = () => {
+    setTheme(resolvedTheme === "light" ? "dark" : "light");
   };
 
   const navLinks =
@@ -135,6 +145,21 @@ const Navbar = ({
           <div className="site-navbar-right">
             <ThemeSocialBar />
           </div>
+
+          {/* Mobile theme toggle - visible only on mobile next to hamburger */}
+          {mounted && (
+            <button
+              className="mobile-theme-toggle"
+              onClick={toggleTheme}
+              aria-label="Toggle Theme"
+            >
+              {resolvedTheme === "dark" ? (
+                <Sun size={24} />
+              ) : (
+                <Moon size={24} />
+              )}
+            </button>
+          )}
 
           <button
             className="navbar-toggle"
