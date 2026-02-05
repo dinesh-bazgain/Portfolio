@@ -1,84 +1,100 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import LoadingScreen from "@/components/ui/LoadingScreen";
+import experienceData from "@/data/experience.json";
+import Footer from "@/components/layouts/Footer";
 import "./home.css";
+import AboutPage from "../about/page";
+import Skills from "../skills/page";
+import ProjectPage from "../project/page";
+import ExperiencePage from "../experience/page";
+import ContactPage from "../contact/page";
+
+// Types
+interface Experience {
+  id: number;
+  company: string;
+  position: string;
+  location: string;
+  startDate: string;
+  endDate: string | null;
+  current: boolean;
+  description: string;
+  responsibilities: string[];
+  technologies: string[];
+}
+
+// Helpers
+function formatDate(dateString: string): string {
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+}
+
+function getDateRange(experience: Experience): string {
+  const start = formatDate(experience.startDate);
+  const end = experience.current ? "Present" : formatDate(experience.endDate!);
+  return `${start} - ${end}`;
+}
+
+// Sort experiences by startDate descending (newest first - FIFO)
+function sortExperiencesByDate(experiences: Experience[]): Experience[] {
+  return [...experiences].sort((a, b) => {
+    return new Date(b.startDate).getTime() - new Date(a.startDate).getTime();
+  });
+}
 
 export default function HomePage() {
-  const [isLoading, setIsLoading] = useState(() => {
-    // Check if loading screen has already been shown this session
-    if (typeof window !== "undefined") {
-      return !sessionStorage.getItem("hasVisited");
-    }
-    return true;
-  });
-  const [imageLoaded, setImageLoaded] = useState(false);
-
-  useEffect(() => {
-    // If already visited, skip loading
-    if (sessionStorage.getItem("hasVisited")) {
-      setIsLoading(false);
-      return;
-    }
-
-    // Preload the portrait image
-    const img = new window.Image();
-    img.src = "/portrait.png";
-    img.onload = () => setImageLoaded(true);
-
-    // If image is already cached, it will load immediately
-    if (img.complete) {
-      setImageLoaded(true);
-    }
-  }, []);
-
-  const handleLoadingComplete = () => {
-    if (imageLoaded) {
-      setIsLoading(false);
-      // Mark as visited for this session
-      sessionStorage.setItem("hasVisited", "true");
-    }
-  };
-
-  // If image loads before minimum duration, loading screen handles it
-  // If image takes longer, wait for both
-  useEffect(() => {
-    if (imageLoaded && !isLoading) {
-      // Everything is ready
-    }
-  }, [imageLoaded, isLoading]);
+  const experiences = sortExperiencesByDate(experienceData as Experience[]);
 
   return (
-    <>
-      {isLoading && (
-        <LoadingScreen onComplete={handleLoadingComplete} minDuration={2500} />
-      )}
-      <main className={`home-main ${isLoading ? "loading" : "loaded"}`}>
-        {/* Background Home Grid (Visible when currentSection is home) */}
-        <section className="hero-section" id="home">
-          {/* Left Content: Minimal Intro (with portrait preserved) */}
-          <div className="left-container">
-            <div className="hero-intro minimal">
-              <h1 className="hero-title">Dinesh Bajgain</h1>
-              <div className="hero-accent" aria-hidden="true" />
-            </div>
-
-            {/* Center Bottom Image (kept as requested) */}
-            <div className="hero-portrait-container">
-              <Image
-                src="/portrait.png"
-                alt="Portrait of Dinesh Bajgain"
-                className="hero-portrait"
-                width={400}
-                height={400}
-                priority
-                onLoad={() => setImageLoaded(true)}
-              />
-            </div>
+    <main className="spa-main">
+      {/* ========== HERO SECTION ========== */}
+      <section className="hero-section" id="home">
+        <div className="left-container">
+          <div className="hero-intro minimal">
+            <h1 className="hero-title">Dinesh Bajgain</h1>
+            <div className="hero-accent" aria-hidden="true" />
           </div>
-        </section>
-      </main>
-    </>
+
+          {/* Portrait at bottom */}
+          <div className="hero-portrait-container">
+            <Image
+              src="/portrait.png"
+              alt="Portrait of Dinesh Bajgain"
+              className="hero-portrait"
+              width={400}
+              height={400}
+              priority
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ========== ABOUT SECTION ========== */}
+      {/* <section className="spa-section about-section" id="about"> */}
+        <AboutPage />
+      {/* </section> */}
+
+      {/* ========== SKILLS SECTION ========== */}
+      {/* <section className="spa-section skills-section" id="skills"> */}
+        <Skills />
+      {/* </section> */}
+
+      {/* ========== PROJECTS SECTION (Carousel with Modal) ========== */}
+      {/* <section className="spa-section projects-section" id="projects"> */}
+        <ProjectPage />
+      {/* </section> */}
+
+      {/* ========== EXPERIENCE SECTION ========== */}
+      {/* <section className="spa-section experience-section" id="experience"> */}
+        <ExperiencePage />
+      {/* </section> */}
+
+      {/* ========== CONTACT SECTION ========== */}
+      {/* <section className="spa-section contact-section" id="contact"> */}
+        <ContactPage />
+      {/* </section> */}
+
+      {/* ========== FOOTER ========== */}
+      <Footer />
+    </main>
   );
 }
