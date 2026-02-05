@@ -1,0 +1,100 @@
+/* Footer Styles */
+.site-footer {
+  width: 100%;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 0;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 4rem);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copyright p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.footer-tagline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-tagline p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.footer-tagline .heart-icon {
+  color: #e25555;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  color: var(--foreground);
+  background: var(--muted);
+  transition: all 0.2s ease;
+}
+
+.footer-social-link:hover {
+  color: var(--primary);
+  background: var(--hover-background);
+  transform: translateY(-2px);
+}
+
+/* Hide social icons on mobile */
+@media (max-width: 768px) {
+  .footer-socials {
+    display: none;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-copyright,
+  .footer-tagline {
+    width: 100%;
+    justify-content: center;
+  }
+}
