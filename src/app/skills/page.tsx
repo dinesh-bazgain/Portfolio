@@ -1,7 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
 import Image from "next/image";
-import PageNavigation from "@/components/navigation/PageNavigation";
 import skills from "@/data/skills.json";
 import seoMetadata from "@/data/seometadata.json";
 import {
@@ -92,7 +91,6 @@ export default function Skills() {
             ))}
           </div>
         </div>
-        <PageNavigation currentPage="/skills" />
       </section>
     </>
   );
