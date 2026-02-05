@@ -52,12 +52,49 @@ body {
 }
 
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+  display: flex;
   gap: 1.5rem;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--muted);
+}
+
+.projects-grid.scrollable {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0.5rem 2rem 1rem;
+  margin: 0 -2rem;
+}
+
+.projects-grid.centered {
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0.5rem 0 1rem;
+}
+
+.projects-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.projects-grid::-webkit-scrollbar-track {
+  background: var(--muted);
+  border-radius: 4px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
 }
 
 .project-card {
+  flex: 0 0 calc((100% - 3rem) / 3 - 40px);
+  min-width: 280px;
+  scroll-snap-align: center;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -237,14 +274,25 @@ body {
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  .project-card {
+    flex: 0 0 calc((100% - 1.5rem) / 2 - 30px);
+    min-width: 260px;
+  }
+}
+
 @media (max-width: 768px) {
   .project-page {
     margin: 1.5rem 1rem;
   }
 
   .projects-grid {
-    grid-template-columns: 1fr;
     gap: 1.25rem;
+  }
+
+  .project-card {
+    flex: 0 0 80%;
+    min-width: 240px;
   }
 
   .project-card-header {
