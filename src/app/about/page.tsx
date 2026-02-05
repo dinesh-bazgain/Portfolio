@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import about from "../../data/about.json";
 import seoMetadata from "@/data/seometadata.json";
 import { MapPin, Heart } from "lucide-react";
-import PageNavigation from "@/components/navigation/PageNavigation";
+
 import { JsonLd, generateAboutPageSchema } from "@/components/seo/JsonLd";
 import "./about.css";
 
@@ -42,7 +42,7 @@ export default function AboutPage() {
   });
 
   return (
-    <main className="about-page">
+    <main className="about-page" id="about">
       <JsonLd data={aboutPageSchema} />
       {/* Hero Section */}
       <section className="about-hero">
@@ -70,7 +70,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <PageNavigation currentPage="/about" />
     </main>
   );
 }
