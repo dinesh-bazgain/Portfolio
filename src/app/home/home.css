@@ -1,5 +1,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap");
 
+/* ========== SPA MAIN CONTAINER ========== */
+.spa-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--background);
+  color: var(--foreground);
+  scroll-behavior: smooth;
+}
+
+/* ========== SHARED SECTION STYLES ========== */
+.spa-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeInSection 0.6s ease forwards;
+}
+
+@keyframes fadeInSection {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-content {
+  max-width: 1200px;
+  width: 100%;
+  /* margin: 0 auto; */
+}
+
+.section-heading {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0 0 clamp(2rem, 4vw, 3rem) 0;
+}
+
+.section-heading.center {
+  text-align: center;
+}
+
 .home-main {
   width: 100%;
   flex: 1;
@@ -8,7 +55,7 @@
   position: relative;
   background-color: var(--background);
   color: var(--foreground);
-  overflow: hidden; /* Prevent scroll for single-page content */
+  overflow: hidden;
   opacity: 0;
   transform: translateY(10px);
   transition:
@@ -29,10 +76,9 @@
 /* Hero Section Container - Global Grid */
 .hero-section {
   position: relative;
-  flex: 1;
+  min-height: 100vh;
   padding: 2rem;
   display: grid;
-  /* grid-template-columns: 1fr auto; */
   gap: 2rem;
   overflow: hidden;
 }
