@@ -10,7 +10,6 @@ import {
   Facebook,
   Twitter,
 } from "lucide-react";
-import PageNavigation from "@/components/navigation/PageNavigation";
 import seoMetadata from "@/data/seometadata.json";
 import { JsonLd, generateContactPageSchema } from "@/components/seo/JsonLd";
 import "./contact.css";
@@ -201,7 +200,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-      <PageNavigation currentPage="/contact" />
     </main>
   );
 }
