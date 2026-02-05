@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import PageNavigation from "@/components/navigation/PageNavigation";
 import experienceData from "@/data/experience.json";
 import seoMetadata from "@/data/seometadata.json";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -142,7 +141,6 @@ export default function ExperiencePage() {
           </div>
         </div>
       </section>
-      <PageNavigation currentPage="/experience" />
     </main>
   );
 }
