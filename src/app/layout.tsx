@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import Navbar from "@/components/layouts/Navbar";
+import RootLoadingWrapper from "@/components/ui/RootLoadingWrapper";
 import seoMetadata from "@/data/seometadata.json";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -155,8 +156,10 @@ export default function RootLayout({
           storageKey="portfolio-theme"
           disableTransitionOnChange={false}
         >
-          <Navbar orientation="horizontal" />
-          <main className="page-content">{children}</main>
+          <RootLoadingWrapper>
+            <Navbar orientation="horizontal" />
+            <main className="page-content">{children}</main>
+          </RootLoadingWrapper>
         </ThemeProvider>
       </body>
     </html>
