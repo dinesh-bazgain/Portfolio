@@ -24,7 +24,7 @@
 .footer-copyright p {
   margin: 0;
   font-size: 0.875rem;
-  color: var(--muted-foreground);
+  color: var(--primary);
 }
 
 .footer-tagline {
