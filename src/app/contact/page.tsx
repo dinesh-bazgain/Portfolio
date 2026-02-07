@@ -122,14 +122,14 @@ export default function ContactPage() {
                 href="mailto:dinesh.bazgain@gmail.com"
                 className="info-card clickable"
               >
-                <Mail className="info-icon" size={20} />
+                <Mail className="info-icon" size={40} />
                 <div className="info-content">
                   <h3>Email</h3>
                   <span>dinesh.bazgain@gmail.com</span>
                 </div>
               </a>
               <div className="info-card">
-                <MapPin className="info-icon" size={20} />
+                <MapPin className="info-icon" size={40} />
                 <div className="info-content">
                   <h3>Location</h3>
                   <span>Available for remote work worldwide</span>
