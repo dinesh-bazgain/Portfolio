@@ -21,7 +21,7 @@ export default function Footer() {
             <p>© {currentYear} Dinesh Bajgain. All rights reserved.</p>
           </div>
 
-          {/* Right: Social Links - Hidden on Mobile */}
+          {/* Right: Social Links */}
           <div className="footer-socials">
             <a
               href="https://github.com/dinesh-bajgain-dev"
