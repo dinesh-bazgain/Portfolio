@@ -81,12 +81,8 @@
   transform: translateY(-2px);
 }
 
-/* Hide social icons on mobile */
+/* Mobile responsive layout */
 @media (max-width: 768px) {
-  .footer-socials {
-    display: none;
-  }
-
   .footer-content {
     flex-direction: column;
     text-align: center;
@@ -96,5 +92,10 @@
   .footer-tagline {
     width: 100%;
     justify-content: center;
+  }
+
+  .footer-socials {
+    justify-content: center;
+    width: 100%;
   }
 }
