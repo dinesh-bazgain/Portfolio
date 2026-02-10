@@ -127,10 +127,10 @@
 }
 
 .skill-icon-wrapper {
-  width: 56px;
-  height: 56px;
-  min-width: 56px;
-  min-height: 56px;
+  width: 55px;
+  height: 55px;
+  min-width: 55px;
+  min-height: 55px;
   display: flex;
   align-items: center;
   justify-content: center;
