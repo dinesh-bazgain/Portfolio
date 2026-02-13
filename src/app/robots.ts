@@ -8,8 +8,16 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: "/",
-        disallow: ["/api/", "/_next/", "/private/", "/*.json$", "/scripts/"],
+        allow: ["/", "/profile.jpeg", "/og-image.png", "/icons/", "/portrait.png"],
+        disallow: [
+          "/api/",
+          "/_next/",
+          "/private/",
+          "/*.json$",
+          "/scripts/",
+          "/mark.png",
+          "/resume.pdf",
+        ],
       },
       {
         userAgent: "Googlebot",
@@ -18,7 +26,8 @@ export default function robots(): MetadataRoute.Robots {
       },
       {
         userAgent: "Googlebot-Image",
-        allow: "/",
+        allow: ["/", "/profile.jpeg", "/og-image.png", "/icons/", "/portrait.png"],
+        disallow: ["/mark.png"],
       },
       {
         userAgent: "Bingbot",
