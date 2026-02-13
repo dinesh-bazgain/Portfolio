@@ -1,0 +1,37 @@
+# robots.txt - Image Protection Strategy
+# This file controls which images search engines can index
+
+# Allow all crawlers by default
+User-agent: *
+
+# Allow general site crawling
+Allow: /
+
+# ============================================
+# SELECTIVE IMAGE INDEXING
+# ============================================
+
+# Allow indexing of important portfolio images (good for SEO)
+Allow: /profile.jpeg
+Allow: /og-image.png
+Allow: /icons/
+Allow: /portrait.png
+
+# Disallow indexing of personal/high-resolution images
+# These won't appear in Google Image Search
+Disallow: /mark.png
+
+# Optional: Disallow specific image types from being indexed
+# Uncomment the lines below if you want to block certain file types
+# Disallow: /*.png$
+# Disallow: /*.jpg$
+# Disallow: /*.jpeg$
+
+# ============================================
+# ADDITIONAL PROTECTION
+# ============================================
+
+Allow: /resume.pdf
+
+# Sitemap location (if you have one)
+# Sitemap: https://dinesh-bajgain.com.np/sitemap.xml
