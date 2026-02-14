@@ -5,6 +5,7 @@ import { MapPin, Heart } from "lucide-react";
 
 import { JsonLd, generateAboutPageSchema } from "@/components/seo/JsonLd";
 import "./about.css";
+import { url } from "inspector";
 
 export const metadata: Metadata = {
   title: seoMetadata.pages.about.title,
@@ -63,6 +64,9 @@ export default function AboutPage() {
           <div className="section-header">
             <Heart className="section-icon" size={24} />
             <h1 className="section-title">My Story</h1>
+            <section className="hidden-photo">
+              <img src="/profile.jpeg" alt="Profile photo of Dinesh Bajgain" />
+            </section>
           </div>
           <div className="story-content">
             <p className="story-text">{about.bio}</p>
