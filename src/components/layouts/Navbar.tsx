@@ -73,10 +73,10 @@ const Navbar = ({
                 item.disabled
                   ? undefined
                   : () => {
-                      if (onNavClick) onNavClick(item.id);
-                      setIsOpen(false); // Close menu on click
-                      if (onMenuToggle) onMenuToggle(false);
-                    }
+                    if (onNavClick) onNavClick(item.id);
+                    setIsOpen(false); // Close menu on click
+                    if (onMenuToggle) onMenuToggle(false);
+                  }
               }
               className="nav-link"
             >
@@ -111,13 +111,11 @@ const Navbar = ({
       <nav ref={navRef} className={`site-top-navbar ${className}`}>
         <div className="site-navbar-inner">
           <div className="site-navbar-logo">
-            <Image
-              src="/mark.png"
-              alt="Logo"
-              width={40}
-              height={40}
+            <div
+              className="navbar-logo-image"
               onClick={() => router.push("/")}
-              style={{ cursor: "pointer" }}
+              role="img"
+              aria-label="Logo"
             />
           </div>
           <div className="site-navbar-left">
